@@ -99,7 +99,7 @@ word_list = []
 generated_list = []
 
 
-for i in tqdm(range(261*batchsize, len(df_trigger), batchsize)):
+for i in tqdm(range(4192, len(df_trigger), batchsize)):
 # for i in range(144, len(df_trigger), batchsize):
     # print(i)
     # generation setting
@@ -107,29 +107,31 @@ for i in tqdm(range(261*batchsize, len(df_trigger), batchsize)):
     batch_word = list(batch['word'])
     batch_list = list(batch['trigger'])
     batch_lens = list(batch['length'])
-    try:
-        # generate sentences
-        outputs = GPT2_batch_generation(batch_list, max_gen_len, top_p, num_beams, method, top_k, temperature, num_return)
+
+    # generate sentences
+    outputs = GPT2_batch_generation(batch_list, max_gen_len, top_p, num_beams, method, top_k, temperature, num_return)
 
 
-        # extract sentences for each word
-        for j in range(len(batch)):
-            trigger = batch_list[j]
-            word = batch_word[j]
-            num = batch_lens[j]
-            for k in range(num_return*j, num_return*j+num_return):
+    # extract sentences for each word
+    for j in range(len(batch)):
+        trigger = batch_list[j]
+        word = batch_word[j]
+        num = batch_lens[j]
+        for k in range(num_return*j, num_return*j+num_return):
+            try:
                 s = extract_sent(str(outputs[k]), word, num)
-                if s != '':
-                    trigger_list.append(trigger)
-                    word_list.append(word)
-                    generated_list.append(s)
+            except:
+                s = ''
+                print(i,j)
+            if s != '':
+                trigger_list.append(trigger)
+                word_list.append(word)
+                generated_list.append(s)
 
-        # storage
-        if i%100 == 0 :
-            succeed['trigger'] = trigger_list
-            succeed['word'] = word_list
-            succeed['generate'] = generated_list
-            df_succeed = pd.DataFrame(succeed)
-            df_succeed.to_csv('data/succeed_batch.csv')
-    except:
-        print(i)
+    # storage
+    if i%100 == 0 :
+        succeed['trigger'] = trigger_list
+        succeed['word'] = word_list
+        succeed['generate'] = generated_list
+        df_succeed = pd.DataFrame(succeed)
+        df_succeed.to_csv('data/succeed_batch.csv')
