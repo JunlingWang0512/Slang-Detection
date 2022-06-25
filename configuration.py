@@ -12,7 +12,7 @@ class Constants(object):
     class __Constants:
         def __init__(self):
             # Environment setup.
-            self.DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+            self.DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
             self.DTYPE = torch.float32
             self.DATA_DIR = 'data/'
             # self.EXPERIMENT_DIR = '/Users/feichi/local_2021-2023/MP_project/MELS_final/MELS/result'
@@ -51,7 +51,6 @@ class Configuration(object):
         # General.
         parser.add_argument('--seed', type=int, default=None, help='Random number generator seed.')
 
-
         # data augmentation parameters
         parser.add_argument('--trigger_name', default = None,help = 'trigger data file name')
         parser.add_argument('--generate_name', default = None, help = 'generated data file name')
@@ -66,11 +65,9 @@ class Configuration(object):
         parser.add_argument('--num_return', type = int, default = 6, help = 'generation number for each trigger')
 
         # metrics calculation
-        parser.add_argument('--metric', default = 'bleu', help = 'The metric to evaluate the quality of data: bleu, perplexity')
+        parser.add_argument('--metric', default = 'bleu', help = 'bleu, perplexity, freqency.The metric to evaluate the quality of data: bleu, perplexity')
         parser.add_argument('--refer_name', default = None, help = 'reference data file name')
         parser.add_argument('--eval_name', default = None, help = 'data file name to evaluate')
-        
-
 
 
         config = parser.parse_args()

@@ -27,18 +27,22 @@ class COMPUTE_BLEU:
         # arrange data into the form to use the metrics
 
         for key in list(self.dict_eval.keys()):
-            preds = self.dict_eval[key]
-            refers = self.dict_refer[key]
+            try:
+                preds = self.dict_eval[key]
+                refers = self.dict_refer[key]
 
-            tok_refers = [self.tokenizer.tokenize(refer) for refer in refers]
-            self.references += [tok_refers]*len(preds)
+                tok_refers = [self.tokenizer.tokenize(refer) for refer in refers]
+                self.references += [tok_refers]*len(preds)
 
-            tok_preds = [self.tokenizer.tokenize(pred) for pred in preds]
-            self.predictions += tok_preds
+                tok_preds = [self.tokenizer.tokenize(pred) for pred in preds]
+                self.predictions += tok_preds
+            except:
+                continue
 
     def compute_metric(self):
-        metric = load_metric('bleu')
         self.set_input()
+        print('input set')
+        metric = load_metric('bleu')
         self.score = metric.compute(predictions=self.predictions, references=self.references)
         return self.score
 
@@ -59,32 +63,12 @@ class COMPUTE_PERPLEXITY:
             self.input_texts += preds
 
     def compute_metric(self):
-        metric = load_metric('perplexity')
         self.set_input()
-        self.score = metric.compute(model_id = 'gpt2', input_texts = self.input_texts, batch_size = 16, device = C.DEVICE)
+        print('input set')
+        metric = load_metric('perplexity')
+        self.score = metric.compute(model_id = 'gpt2', input_texts = self.input_texts, batch_size = 16, device = 'gpu')
         return self.score
 
-
-class COMPUTE_PERPLEXITY:
-    def __init__(self, config):
-        self.config = config
-        self.data_eval = pd.read_csv(C.DATA_DIR+self.config.eval_name, index_col = 0).drop_duplicates(keep='first').reset_index()
-        self.input_texts = []
-        self.score = None
-
-    def set_input(self):
-        # arrange data into the form to use the metrics
-        dict_eval = self.data_eval.groupby('word')['generate'].apply(list).to_dict()
-
-        for key in list(dict_eval.keys()):
-            preds = dict_eval[key]
-            self.input_texts += preds
-
-    def compute_metric(self):
-        metric = load_metric('perplexity')
-        self.set_input()
-        self.score = metric.compute(model_id = 'gpt2', input_texts = self.input_texts, batch_size = 16, device = C.DEVICE)
-        return self.score
 
 
 class COMPUTE_FREQENCY:
@@ -106,6 +90,7 @@ class COMPUTE_FREQENCY:
                 self.word_freqs[word] += 1
 
     def compute_metric(self):
+        self.set_input()
         return len(self.word_freqs), self.word_freqs
 
 
@@ -124,6 +109,8 @@ def get_metric(config):
     if config.metric == 'freqency':
         count_freq = COMPUTE_FREQENCY(config)
         count, freq = count_freq.compute_metric()
+        print(count)
+        print(freq)
         return count, freq
 
 

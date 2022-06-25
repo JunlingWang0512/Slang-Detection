@@ -13,7 +13,7 @@ def example_gener(word,wordlist):
     return s
 
 
-filedir = "data/slang_augment_50000_split.csv"
+filedir = "data/slang_augment_30000_split.csv"
 data_cleaned = pd.read_csv(filedir).sort_values(['word'])
 
 temp_list = []
@@ -39,4 +39,4 @@ df_trigger['word'] = trigger_word
 df_trigger['length'] = trigger_len
 df_trigger['trigger'] = trigger_list
 df_trigger = df_trigger.reset_index()
-df_trigger.to_csv('data/trigger_data_new.csv', index = False)
+df_trigger.to_csv('data/trigger_data.csv', index = False)
