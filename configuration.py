@@ -53,8 +53,8 @@ class Configuration(object):
 
 
         # data augmentation parameters
-        parser.add_argument('--trigger_name', help = 'trigger data file name')
-        parser.add_argument('--generate_name', help = 'generated data file name')
+        parser.add_argument('--trigger_name', default = None,help = 'trigger data file name')
+        parser.add_argument('--generate_name', default = None, help = 'generated data file name')
         parser.add_argument('--model', default = 'GPT2', help = 'augmentation model')
         parser.add_argument('--bs', type = int, default=16, help = 'batch size')
         parser.add_argument('--max_gen_len', type = int, default = 50, help = 'max generation length for augmentation')
@@ -64,6 +64,14 @@ class Configuration(object):
         parser.add_argument('--num_beams', type = int, default = 5, help = 'beam size')
         parser.add_argument('--temperature', type = float, default = 0.5, help = 'temperature value')
         parser.add_argument('--num_return', type = int, default = 6, help = 'generation number for each trigger')
+
+        # metrics calculation
+        parser.add_argument('--metric', default = 'bleu', help = 'The metric to evaluate the quality of data: bleu, perplexity')
+        parser.add_argument('--refer_name', default = None, help = 'reference data file name')
+        parser.add_argument('--eval_name', default = None, help = 'data file name to evaluate')
+        
+
+
 
         config = parser.parse_args()
         return Configuration(vars(config))

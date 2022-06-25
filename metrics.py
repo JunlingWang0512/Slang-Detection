@@ -1,43 +1,132 @@
-from transformers import GPT2LMHeadModel, GPT2Tokenizer
-from datasets import list_metrics, load_metric
+from transformers import AutoTokenizer
+from datasets import load_metric
 import pandas as pd
 import torch
+from configuration import CONSTANTS as C
+from configuration import Configuration
+from collections import defaultdict
 
 # load tokenizer and model
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-print(device)
-tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
-model = GPT2LMHeadModel.from_pretrained("gpt2", return_dict = True).to(device)
+print(C.DEVICE)
 
-# metrics to choose
-metrics_list = list_metrics()
-print(metrics_list)
+class COMPUTE_BLEU:
+    def __init__(self, config):
+        self.config = config
+        self.tokenizer = AutoTokenizer.from_pretrained("bert-base-cased")
+        self.data_refer = pd.read_csv(C.DATA_DIR+self.config.refer_name, index_col=0).sort_values(['word']).drop_duplicates(keep='first').reset_index()
+        self.data_eval = pd.read_csv(C.DATA_DIR+self.config.eval_name, index_col = 0).drop_duplicates(keep='first').reset_index()
+        # data_cleaned = pd.read_csv(C.DATA_DIR+'data_cleaned_new.csv', index_col=0).sort_values(['word'])
+        # data_generated = pd.read_csv(C.DATA_DIR+'succeed_batch.csv', index_col = 0)
+        self.dict_refer = self.data_refer.groupby('word')['example'].apply(list).to_dict()
+        self.dict_eval = self.data_eval.groupby('word')['generate'].apply(list).to_dict()
+        self.predictions = []
+        self.references = []
+        self.score = None
 
-# load data
-filedir = "data/"
-data_cleaned = pd.read_csv(filedir+'data_cleaned_new.csv', index_col=0).sort_values(['word'])
-data_generated = pd.read_csv(filedir+'succeed_batch.csv', index_col = 0)
+    def set_input(self):
+        # arrange data into the form to use the metrics
 
-# delete repeated sentences
-data_cleaned = data_cleaned.drop_duplicates(keep='first')
-data_generated = data_generated.drop_duplicates(keep='first')
+        for key in list(self.dict_eval.keys()):
+            preds = self.dict_eval[key]
+            refers = self.dict_refer[key]
 
-# arrange data into the form to use the metrics
-dict_refer = data_cleaned.groupby('word')['example'].apply(list).to_dict()
-dict_eval = data_generated.groupby('word')['generate'].apply(list).to_dict()
-predictions = []
-references = []
-for key in list(dict_eval.keys()):
-    preds = dict_eval[key]
-    refers = dict_refer[key]
+            tok_refers = [self.tokenizer.tokenize(refer) for refer in refers]
+            self.references += [tok_refers]*len(preds)
 
-    tok_refers = [tokenizer.tokenize(refer) for refer in refers]
-    references += [tok_refers]*len(preds)
-    tok_preds = [tokenizer.tokenize(pred) for pred in preds]
-    predictions += tok_preds
+            tok_preds = [self.tokenizer.tokenize(pred) for pred in preds]
+            self.predictions += tok_preds
 
-# use BLEU metric
-metric = load_metric('bleu')
-final_score = metric.compute(predictions=predictions, references=references)
+    def compute_metric(self):
+        metric = load_metric('bleu')
+        self.set_input()
+        self.score = metric.compute(predictions=self.predictions, references=self.references)
+        return self.score
 
-final_score
+
+class COMPUTE_PERPLEXITY:
+    def __init__(self, config):
+        self.config = config
+        self.data_eval = pd.read_csv(C.DATA_DIR+self.config.eval_name, index_col = 0).drop_duplicates(keep='first').reset_index()
+        self.input_texts = []
+        self.score = None
+
+    def set_input(self):
+        # arrange data into the form to use the metrics
+        dict_eval = self.data_eval.groupby('word')['generate'].apply(list).to_dict()
+
+        for key in list(dict_eval.keys()):
+            preds = dict_eval[key]
+            self.input_texts += preds
+
+    def compute_metric(self):
+        metric = load_metric('perplexity')
+        self.set_input()
+        self.score = metric.compute(model_id = 'gpt2', input_texts = self.input_texts, batch_size = 16, device = C.DEVICE)
+        return self.score
+
+
+class COMPUTE_PERPLEXITY:
+    def __init__(self, config):
+        self.config = config
+        self.data_eval = pd.read_csv(C.DATA_DIR+self.config.eval_name, index_col = 0).drop_duplicates(keep='first').reset_index()
+        self.input_texts = []
+        self.score = None
+
+    def set_input(self):
+        # arrange data into the form to use the metrics
+        dict_eval = self.data_eval.groupby('word')['generate'].apply(list).to_dict()
+
+        for key in list(dict_eval.keys()):
+            preds = dict_eval[key]
+            self.input_texts += preds
+
+    def compute_metric(self):
+        metric = load_metric('perplexity')
+        self.set_input()
+        self.score = metric.compute(model_id = 'gpt2', input_texts = self.input_texts, batch_size = 16, device = C.DEVICE)
+        return self.score
+
+
+class COMPUTE_FREQENCY:
+    def __init__(self, config):
+        self.config = config
+        self.tokenizer = AutoTokenizer.from_pretrained("bert-base-cased")
+        self.data_eval = pd.read_csv(C.DATA_DIR+self.config.eval_name, index_col = 0).drop_duplicates(keep='first').reset_index()
+        self.list_sents = list(self.data_eval['generate'])
+        self.input_texts = []
+        self.score = None
+        self.word_freqs = defaultdict(int)
+
+    def set_input(self):
+        # arrange data into the form to use the metrics
+        list_tokens = [self.tokenizer.tokenize(sent) for sent in self.list_sents]
+
+        for text in list_tokens:
+            for word in text:
+                self.word_freqs[word] += 1
+
+    def compute_metric(self):
+        return len(self.word_freqs), self.word_freqs
+
+
+def get_metric(config):
+    # use BLEU metric
+    if config.metric == 'bleu':
+        bleu = COMPUTE_BLEU(config)
+        score = bleu.compute_metric()
+        print(score)
+        return score
+    if config.metric == 'perplexity':
+        perplexity = COMPUTE_PERPLEXITY(config)
+        score = perplexity.compute_metric()
+        print(score)
+        return score
+    if config.metric == 'freqency':
+        count_freq = COMPUTE_FREQENCY(config)
+        count, freq = count_freq.compute_metric()
+        return count, freq
+
+
+if __name__ == '__main__':
+    config = Configuration.parse_cmd()
+    get_metric(config)

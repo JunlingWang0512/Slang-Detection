@@ -13,7 +13,7 @@ def example_gener(word,wordlist):
     return s
 
 
-filedir = "data/slang_test_10000_split.csv"
+filedir = "data/slang_augment_50000_split.csv"
 data_cleaned = pd.read_csv(filedir).sort_values(['word'])
 
 temp_list = []

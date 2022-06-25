@@ -89,7 +89,7 @@ def generate_store(df_trigger, tokenizer, model, config):
     generated_list = []
 
 
-    for i in tqdm(range(4192, len(df_trigger), config.bs)):
+    for i in tqdm(range(0, len(df_trigger), config.bs)):
     # for i in range(144, len(df_trigger), batchsize):
         # print(i)
         # generation setting
