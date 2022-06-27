@@ -15,7 +15,10 @@ class Constants(object):
             self.DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
             self.DTYPE = torch.float32
             self.DATA_DIR = 'data/'
-            # self.EXPERIMENT_DIR = '/Users/feichi/local_2021-2023/MP_project/MELS_final/MELS/result'
+            self.ADAPTER_DIR = 'adapters/'
+            self.TRAIN_CLS = 'train_cls.csv'
+            self.EVAL_CLS = 'eval_cls.csv'
+            self.TEST_CLS = 'test_cls.csv'
 
     instance = None
 
@@ -69,6 +72,12 @@ class Configuration(object):
         parser.add_argument('--refer_name', default = None, help = 'reference data file name')
         parser.add_argument('--eval_name', default = None, help = 'data file name to evaluate')
 
+        # adapter enhance
+        parser.add_argument('--mlm_name', default = None, help = 'load from augment result')
+        parser.add_argument('--n_epochs_mlm', default = 50, help = 'mlm task epochs')
+        parser.add_argument('--n_epochs_cls', default = 50, help = 'cls task epochs')
+        parser.add_argument('--update_adapter_cls', type = bool, default = True, help = 'whether to update adapter when doing cls')
+        parser.add_argument('--activate_adapter_cls', type = bool, default = True, help = 'whether to activate adapter when doing cls, i.e. use augment to enhance or not')
 
         config = parser.parse_args()
         return Configuration(vars(config))
