@@ -16,3 +16,11 @@ TODO:
 (OPTIONAL)
 1. If we can pretrain on GPT2 and then generate.
 2. Generate on other datasets.
+
+
+# MLM and CLS
+
+TODO:
+1. add evaluation set and evaluation and test process.
+2. test on GPU.
+3. add LR scheduler and different opt method.
