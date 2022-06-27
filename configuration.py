@@ -4,6 +4,7 @@ import json
 import os
 import pprint
 import torch
+import time
 
 class Constants(object):
     """
@@ -19,6 +20,7 @@ class Constants(object):
             self.TRAIN_CLS = 'train_cls.csv'
             self.EVAL_CLS = 'eval_cls.csv'
             self.TEST_CLS = 'test_cls.csv'
+            self.TIME = int(time.time())
 
     instance = None
 
@@ -74,8 +76,8 @@ class Configuration(object):
 
         # adapter enhance
         parser.add_argument('--mlm_name', default = None, help = 'load from augment result')
-        parser.add_argument('--n_epochs_mlm', default = 50, help = 'mlm task epochs')
-        parser.add_argument('--n_epochs_cls', default = 50, help = 'cls task epochs')
+        parser.add_argument('--n_epochs_mlm', type = int, default = 50, help = 'mlm task epochs')
+        parser.add_argument('--n_epochs_cls', type = int, default = 50, help = 'cls task epochs')
         parser.add_argument('--update_adapter_cls', type = bool, default = True, help = 'whether to update adapter when doing cls')
         parser.add_argument('--activate_adapter_cls', type = bool, default = True, help = 'whether to activate adapter when doing cls, i.e. use augment to enhance or not')
 

@@ -11,7 +11,10 @@ class MLMDateset(torch.utils.data.Dataset):
         return len(self.data)
     def __getitem__(self, idx):
         self.create_MLM()
-        return {key: torch.tensor(val[idx]).to(C.DEVICE) for key, val in self.inputs.items()}
+        return {'input_ids':self.inputs['input_ids'].detach().clone()[idx].to(C.DEVICE),
+                'token_type_ids':self.inputs['token_type_ids'].detach().clone()[idx].to(C.DEVICE),
+                'attention_mask':self.inputs['attention_mask'].detach().clone()[idx].to(C.DEVICE),
+                'labels':self.inputs['labels'].detach().clone()[idx].to(C.DEVICE)}
 
     def create_MLM(self):
         self.inputs['labels'] = self.inputs['input_ids'].detach().clone()
@@ -32,4 +35,7 @@ class CLSDataset(torch.utils.data.Dataset):
     def __len__(self):
         return len(self.data_cls)
     def __getitem__(self, idx):
-        return {key: torch.tensor(val[idx]).to(C.DEVICE) for key, val in self.inputs.items()}
+        return {'input_ids':self.inputs['input_ids'].detach().clone()[idx].to(C.DEVICE),
+                'token_type_ids':self.inputs['token_type_ids'].detach().clone()[idx].to(C.DEVICE),
+                'attention_mask':self.inputs['attention_mask'].detach().clone()[idx].to(C.DEVICE),
+                'labels':self.inputs['labels'].detach().clone()[idx].to(C.DEVICE)}
