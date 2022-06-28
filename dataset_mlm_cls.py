@@ -2,6 +2,9 @@ import torch
 from configuration import CONSTANTS as C
 
 class MLMDateset(torch.utils.data.Dataset):
+    """
+    Dataset for mask language modelling task.
+    """
     def __init__(self, data, tokenizer):
         self.data  = data
         self.inputs = tokenizer(self.data, return_tensors="pt", padding=True)
@@ -27,6 +30,9 @@ class MLMDateset(torch.utils.data.Dataset):
 
 
 class CLSDataset(torch.utils.data.Dataset):
+    """
+    Dataset for classification task.
+    """
     def __init__(self, data_cls, tokenizer):
         self.data_cls  = data_cls
         self.tokenizer = tokenizer
