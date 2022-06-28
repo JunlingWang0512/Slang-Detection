@@ -14,7 +14,7 @@ need to test which method and which parameter is better.
 generation speed: about 4min on CPU, batchsize = 32.
 
 TODO:
-1. Find a method to test the generation quality(BLEU, diversity:word freqency, hugging face, human evaluation, lexical differences, MAUVE). 
+1. Find a method to test the generation quality(BLEU, diversity:word freqency, perplexity, hugging face, human evaluation, lexical differences, MAUVE). 
 2. Do grid search / random search on the parameters, find the dataset with best quality. write script
 3. random 100 augmented data for human evaluation
 

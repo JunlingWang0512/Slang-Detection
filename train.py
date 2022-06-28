@@ -4,8 +4,9 @@ from transformers import BertTokenizer
 from transformers.adapters import BertAdapterModel
 import pandas as pd
 from configuration import CONSTANTS as C
-from data_mlm_cls import MLMDateset, CLSDataset
+from dataset_mlm_cls import MLMDateset, CLSDataset
 from configuration import Configuration
+import os
 
 
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
@@ -40,6 +41,11 @@ def train_mlm(config):
             loss.backward()
             optimizer.step()
 
+    if not os.path.exists(C.ADAPTER_DIR):
+        os.makedirs(C.ADAPTER_DIR)
+        print("save adapter at directory " , C.ADAPTER_DIR ,  " Created ")
+    else:    
+        print("save adapter at directory " , C.ADAPTER_DIR ,  " already exists")    
     model_mlm.save_adapter(save_directory=C.ADAPTER_DIR + 'ad_' + str(C.TIME) + '/', adapter_name = 'mlm_adapter', with_head = True)
 
 
