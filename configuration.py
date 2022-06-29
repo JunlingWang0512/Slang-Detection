@@ -15,12 +15,13 @@ class Constants(object):
             # Environment setup.
             self.DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
             self.DTYPE = torch.float32
+            self.TIME = int(time.time())
             self.DATA_DIR = 'data/'
-            self.ADAPTER_DIR = 'adapters/'
+            self.MODEL_DIR = 'models/model_'+str(self.TIME) + '/'
             self.TRAIN_CLS = 'train_cls.csv'
             self.EVAL_CLS = 'eval_cls.csv'
             self.TEST_CLS = 'test_cls.csv'
-            self.TIME = int(time.time())
+            
 
     instance = None
 
@@ -75,11 +76,12 @@ class Configuration(object):
         parser.add_argument('--eval_name', default = None, help = 'data file name to evaluate')
 
         # adapter enhance
-        parser.add_argument('--mlm_name', default = None, help = 'load from augment result')
+        parser.add_argument('--mlm_train_name', default = None, help = 'train set load from augment result')
+        parser.add_argument('--mlm_eval_name', default = None, help = 'test set load from augment result')
         parser.add_argument('--n_epochs_mlm', type = int, default = 50, help = 'mlm task epochs')
         parser.add_argument('--n_epochs_cls', type = int, default = 50, help = 'cls task epochs')
         parser.add_argument('--update_adapter_cls', type = bool, default = True, help = 'whether to update adapter when doing cls')
-        parser.add_argument('--activate_adapter_cls', type = bool, default = True, help = 'whether to activate adapter when doing cls, i.e. use augment to enhance or not')
+        parser.add_argument('--enhance', type = bool, default = True, help = 'whether to enhance with adapter when doing cls')
 
         config = parser.parse_args()
         return Configuration(vars(config))

@@ -1,4 +1,7 @@
 import pandas as pd
+import random
+from configuration import CONSTANTS as C
+
 def data_cls_csv():
     train_sl = pd.read_csv("data/slang_train_10000_split.csv")
     train_st = pd.read_csv("data/standard_train_10000.csv")
@@ -45,7 +48,7 @@ def example_gener(word,wordlist):
 
 
 def data_trigger_csv():
-    filedir = "data/slang_augment_30000_split.csv"
+    filedir = C.DATA_DIR + "slang_augment_30000_split.csv"
     data_cleaned = pd.read_csv(filedir).sort_values(['word'])
 
     temp_list = []
@@ -73,6 +76,19 @@ def data_trigger_csv():
     df_trigger = df_trigger.reset_index()
     df_trigger.to_csv('data/trigger_data.csv', index = False)
 
+def augment_split_csv():
+    filedir = C.DATA_DIR + 'augment_result_06251547.csv'
+    data_augment = pd.read_csv(filedir, index_col=0)  
+    random.seed(122)
+    sample_idx = random.sample(range(0, data_augment.shape[0]), k=data_augment.shape[0])
+    train_cnt = int(data_augment.shape[0]* 0.8)
+    train = data_augment.iloc[sample_idx[:train_cnt]]
+    eval = data_augment.iloc[sample_idx[train_cnt:]]
+    train.to_csv(C.DATA_DIR + 'augment_train.csv')
+    eval.to_csv(C.DATA_DIR + 'augment_eval.csv')
+
+
 if __name__ == '__main__':
     data_cls_csv()
     data_trigger_csv()
+    augment_split_csv()
