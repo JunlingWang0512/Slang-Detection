@@ -42,11 +42,11 @@ def train_mlm(config):
     model_mlm.add_masked_lm_head('mlm_head')
     model_mlm.to(C.DEVICE)
 
-    train_mlm = list(pd.read_csv(C.DATA_DIR+config.mlm_train_name)['generate'])[:100]
-    eval_mlm = list(pd.read_csv(C.DATA_DIR+config.mlm_eval_name)['generate'])[:100]
+    train_mlm = pd.read_csv(C.DATA_DIR+config.mlm_train_name)[:100]
+    eval_mlm = pd.read_csv(C.DATA_DIR+config.mlm_eval_name)[:100]
 
-    trainset_mlm = MLMDateset(train_mlm, tokenizer)
-    evalset_mlm = MLMDateset(eval_mlm, tokenizer)
+    trainset_mlm = MLMDateset(train_mlm, tokenizer, config)
+    evalset_mlm = MLMDateset(eval_mlm, tokenizer, config)
 
     trainloader_mlm = torch.utils.data.DataLoader(trainset_mlm, batch_size = 16, shuffle = True)
     evalloader_mlm = torch.utils.data.DataLoader(evalset_mlm, batch_size = 16, shuffle = True)

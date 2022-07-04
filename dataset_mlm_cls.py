@@ -1,15 +1,30 @@
 import torch
 from configuration import CONSTANTS as C
+from tkinter import _flatten
+
+def find_sub_list(sl,l):
+    results=[]
+    sll=len(sl)
+    for ind in (i for i,e in enumerate(l) if e==sl[0]):
+        if l[ind:ind+sll]==sl:
+            results.append(list(range(ind,ind+sll)))
+
+    return results
+
 
 class MLMDateset(torch.utils.data.Dataset):
     """
     Dataset for mask language modelling task.
     """
-    def __init__(self, data, tokenizer):
-        self.data  = data
-        self.inputs = tokenizer(self.data, return_tensors="pt", padding=True)
+    def __init__(self, data, tokenizer, config):
+        self.data = list(data['generate'])
+        self.word = list(data['word'])
+        self.tokenizer = tokenizer
+        self.inputs = self.tokenizer(self.data, return_tensors="pt", padding=True) #pt: return pytorch tensor
         self.random_tensor = torch.rand(self.inputs['input_ids'].shape)
+        self.random_tensor2 = torch.rand(self.inputs['input_ids'].shape)
         self.masked_tensor = None
+        self.config = config
     def __len__(self):
         return len(self.data)
     def __getitem__(self, idx):
@@ -20,13 +35,33 @@ class MLMDateset(torch.utils.data.Dataset):
                 'labels':self.inputs['labels'].detach().clone()[idx].to(C.DEVICE)}
 
     def create_MLM(self):
-        self.inputs['labels'] = self.inputs['input_ids'].detach().clone()
-        self.masked_tensor = (self.random_tensor < 0.15)*(self.inputs['input_ids'] != '101') * (self.inputs['input_ids'] != '102') * (self.inputs['input_ids'] != 0)
+        #get the index of slang word in each sentence
+        index_result = []
+        for i in range(len(self.data)):
+            inputs = self.tokenizer(self.data[i], return_tensors="pt", padding=True)
+            word = self.tokenizer(self.word[i], return_tensors="pt", padding=True)
+            list1 = inputs['input_ids'].numpy().tolist()
+            list2 = word['input_ids'].numpy().tolist()
+            del(list2[0][len(list2[0])-1])
+            del(list2[0][0])
+            index_result.append(list(_flatten(find_sub_list(list2[0],list1[0]))))
+
+        #create false tensor
+        mask_tensor = torch.zeros(self.inputs['input_ids'].shape,dtype=torch.bool)
+        for i in range(len(mask_tensor)):
+            mask_tensor[i, index_result[i]] = True 
+
+        self.inputs['labels'] = self.inputs['input_ids'].detach().clone() 
+        self.masked_tensor = (self.random_tensor2 < self.config.mlm_threshold) *(self.random_tensor < 0.15)*(self.inputs['input_ids'] != '101') * \
+            (self.inputs['input_ids'] != '102') * (self.inputs['input_ids'] != 0)\
+                | (self.random_tensor2 >= self.config.mlm_threshold) * mask_tensor
+
+    
         non_zero_indices = []
         for i in range(len(self.inputs['input_ids'])):
-            non_zero_indices.append(torch.flatten(self.masked_tensor[i].nonzero()).tolist())
+            non_zero_indices.append(torch.flatten(self.masked_tensor[i].nonzero()).tolist())#Flattens input by reshaping it into a one-dimensional tensor. 
         for i in range(len(self.inputs['input_ids'])):
-            self.inputs['input_ids'][i, non_zero_indices[i]] = 103
+            self.inputs['input_ids'][i, non_zero_indices[i]] = 103 #103: masked token
 
 
 class CLSDataset(torch.utils.data.Dataset):
