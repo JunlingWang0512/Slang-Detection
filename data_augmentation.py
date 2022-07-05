@@ -23,7 +23,7 @@ def model_init(config):
     return tokenizer, model
 
 def model_batch_generation(batch_list, tokenizer, model, config):
-
+    torch.cuda.empty_cache()
     inputs = tokenizer(batch_list, return_tensors="pt", padding=True)
 
     if inputs['input_ids'].size(1)>512:

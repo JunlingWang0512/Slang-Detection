@@ -106,7 +106,7 @@ def get_metric(config):
         score = perplexity.compute_metric()
         print(score)
         return score
-    if config.metric == 'freqency':
+    if config.metric == 'frequency':
         count_freq = COMPUTE_FREQENCY(config)
         count, freq = count_freq.compute_metric()
         print(count)

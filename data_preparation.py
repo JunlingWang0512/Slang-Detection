@@ -74,7 +74,7 @@ def data_trigger_csv():
     df_trigger['length'] = trigger_len
     df_trigger['trigger'] = trigger_list
     df_trigger = df_trigger.reset_index()
-    df_trigger.to_csv('data/trigger_data.csv', index = False)
+    df_trigger.to_csv(C.DATA_DIR+'trigger_data.csv', index = False)
 
 def augment_split_csv():
     filedir = C.DATA_DIR + 'augment_result_06251547.csv'
@@ -87,8 +87,17 @@ def augment_split_csv():
     train.to_csv(C.DATA_DIR + 'augment_train.csv')
     eval.to_csv(C.DATA_DIR + 'augment_eval.csv')
 
+def rsearch_trigger_csv():
+    filedir = C.DATA_DIR + 'trigger_data_new.csv'
+    trigger_new = pd.read_csv(filedir, index_col=0)
+    random.seed(122)
+    sample_idx = random.sample(range(0, trigger_new.shape[0]), k=100)
+    rsearch_trigger = trigger_new.iloc[sample_idx].reset_index(drop = True)
+    rsearch_trigger.to_csv(C.DATA_DIR + 'rsearch_trigger.csv')
+
 
 if __name__ == '__main__':
     data_cls_csv()
     data_trigger_csv()
     augment_split_csv()
+    rsearch_trigger_csv()
