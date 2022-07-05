@@ -78,6 +78,8 @@ def extract_sent(s, word, num):
         if(len(re.findall("(.*?)"+str(word)+"(.*?)",s1)) >= 1):
             s2 = s1.replace('\xa0', '')
             s2 = s2.strip()
+            if len(re.findall("[0-9]+\. "+str(word)+" :(.*?)$", s2)) >= 1:
+                s2 = re.findall("(.*?)[0-9]+\. "+str(word)+" :", s2)[0].strip()
     return s2
 
 
@@ -124,6 +126,7 @@ def generate_store(df_trigger, tokenizer, model, config):
             succeed['word'] = word_list
             succeed['generate'] = generated_list
             df_succeed = pd.DataFrame(succeed)
+            df_succeed = df_succeed.drop_duplicates(keep='first').reset_index()
             df_succeed.to_csv(C.DATA_DIR+config.generate_name)
 
 
