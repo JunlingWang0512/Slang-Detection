@@ -1,62 +1,960 @@
 cuda
 cuda
-{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test0.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 40, 'method': 'top_p', 'top_k': 30, 'top_p': 0.5, 'temperature': 0.30000000000000004, 'num_return': 8}
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test0.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 60, 'method': 'top_p', 'top_k': 31, 'top_p': 1.0, 'temperature': 0.30000000000000004, 'num_return': 8}
+outof memory??
 time 36
-{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test1.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 56, 'method': 'top_k', 'top_k': 32, 'top_p': 0.6000000000000001, 'temperature': 0.4, 'num_return': 10}
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test1.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 56, 'method': 'top_k', 'top_k': 35, 'top_p': 0.8, 'temperature': 1.0, 'num_return': 6}
+time 142
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test2.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 42, 'method': 'top_k', 'top_k': 24, 'top_p': 0.4, 'temperature': 0.2, 'num_return': 8}
+outof memory??
+time 25
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test3.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 60, 'method': 'top_p', 'top_k': 28, 'top_p': 1.0, 'temperature': 0.2, 'num_return': 10}
+outof memory??
+time 15
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test4.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 60, 'method': 'top_p', 'top_k': 20, 'top_p': 0.6000000000000001, 'temperature': 0.9, 'num_return': 4}
+time 119
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test5.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 49, 'method': 'top_p', 'top_k': 30, 'top_p': 0.7000000000000001, 'temperature': 0.6000000000000001, 'num_return': 3}
+time 91
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test6.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 42, 'method': 'top_p', 'top_k': 32, 'top_p': 1.0, 'temperature': 0.4, 'num_return': 5}
+time 109
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test7.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 48, 'method': 'top_k', 'top_k': 25, 'top_p': 1.0, 'temperature': 0.9, 'num_return': 3}
+time 83
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test8.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 55, 'method': 'top_p', 'top_k': 38, 'top_p': 0.4, 'temperature': 0.5, 'num_return': 8}
+outof memory??
+time 27
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test9.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 41, 'method': 'top_k', 'top_k': 39, 'top_p': 0.9, 'temperature': 0.6000000000000001, 'num_return': 2}
+time 65
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test10.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 46, 'method': 'top_p', 'top_k': 39, 'top_p': 0.7000000000000001, 'temperature': 1.0, 'num_return': 8}
+outof memory??
+time 26
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test11.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 58, 'method': 'top_k', 'top_k': 31, 'top_p': 0.2, 'temperature': 0.5, 'num_return': 2}
+time 78
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test12.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 49, 'method': 'top_p', 'top_k': 34, 'top_p': 1.0, 'temperature': 1.0, 'num_return': 2}
+time 72
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test13.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 59, 'method': 'top_p', 'top_k': 26, 'top_p': 0.30000000000000004, 'temperature': 0.30000000000000004, 'num_return': 1}
+time 71
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test14.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 56, 'method': 'top_k', 'top_k': 23, 'top_p': 0.6000000000000001, 'temperature': 0.9, 'num_return': 2}
+time 72
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test15.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 46, 'method': 'top_k', 'top_k': 23, 'top_p': 0.9, 'temperature': 1.0, 'num_return': 2}
+time 66
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test16.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 43, 'method': 'top_p', 'top_k': 34, 'top_p': 0.7000000000000001, 'temperature': 0.30000000000000004, 'num_return': 5}
+time 117
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test17.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 59, 'method': 'top_p', 'top_k': 27, 'top_p': 0.9, 'temperature': 0.9, 'num_return': 6}
+time 156
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test18.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 59, 'method': 'top_p', 'top_k': 21, 'top_p': 0.4, 'temperature': 0.5, 'num_return': 10}
+outof memory??
+time 14
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test19.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 42, 'method': 'top_p', 'top_k': 38, 'top_p': 0.6000000000000001, 'temperature': 0.9, 'num_return': 8}
+outof memory??
+time 25
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test20.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 60, 'method': 'top_p', 'top_k': 34, 'top_p': 0.0, 'temperature': 0.7000000000000001, 'num_return': 9}
+outof memory??
+time 29
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test21.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 43, 'method': 'top_k', 'top_k': 21, 'top_p': 0.1, 'temperature': 0.8, 'num_return': 9}
+outof memory??
+time 26
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test22.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 51, 'method': 'top_k', 'top_k': 39, 'top_p': 0.8, 'temperature': 0.9, 'num_return': 7}
+outof memory??
+time 24
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test23.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 59, 'method': 'top_p', 'top_k': 20, 'top_p': 0.7000000000000001, 'temperature': 0.8, 'num_return': 7}
+outof memory??
+time 26
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test24.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 55, 'method': 'top_p', 'top_k': 24, 'top_p': 0.9, 'temperature': 0.4, 'num_return': 5}
+time 132
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test25.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 58, 'method': 'top_p', 'top_k': 39, 'top_p': 0.30000000000000004, 'temperature': 0.2, 'num_return': 4}
+outof memory??
+time 32
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test26.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 40, 'method': 'top_p', 'top_k': 20, 'top_p': 0.4, 'temperature': 1.0, 'num_return': 10}
+outof memory??
+time 14
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test27.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 56, 'method': 'top_k', 'top_k': 34, 'top_p': 0.5, 'temperature': 1.0, 'num_return': 2}
+time 75
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test28.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 49, 'method': 'top_k', 'top_k': 37, 'top_p': 0.30000000000000004, 'temperature': 0.9, 'num_return': 5}
+time 116
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test29.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 40, 'method': 'top_p', 'top_k': 32, 'top_p': 1.0, 'temperature': 1.0, 'num_return': 9}
+outof memory??
+time 26
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test30.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 50, 'method': 'top_k', 'top_k': 38, 'top_p': 0.5, 'temperature': 0.5, 'num_return': 7}
+outof memory??
+time 24
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test31.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 56, 'method': 'top_k', 'top_k': 32, 'top_p': 0.9, 'temperature': 0.1, 'num_return': 3}
+time 87
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test32.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 52, 'method': 'top_p', 'top_k': 34, 'top_p': 0.8, 'temperature': 1.0, 'num_return': 8}
+outof memory??
+time 27
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test33.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 42, 'method': 'top_k', 'top_k': 28, 'top_p': 0.5, 'temperature': 0.8, 'num_return': 6}
+time 127
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test34.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 45, 'method': 'top_k', 'top_k': 39, 'top_p': 0.9, 'temperature': 0.30000000000000004, 'num_return': 3}
+time 80
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test35.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 59, 'method': 'top_p', 'top_k': 24, 'top_p': 0.7000000000000001, 'temperature': 0.7000000000000001, 'num_return': 9}
+outof memory??
+time 29
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test36.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 52, 'method': 'top_p', 'top_k': 37, 'top_p': 0.7000000000000001, 'temperature': 0.30000000000000004, 'num_return': 3}
+time 93
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test37.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 57, 'method': 'top_k', 'top_k': 36, 'top_p': 0.30000000000000004, 'temperature': 0.8, 'num_return': 3}
+time 87
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test38.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 48, 'method': 'top_p', 'top_k': 40, 'top_p': 0.9, 'temperature': 1.0, 'num_return': 8}
+outof memory??
+time 26
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test39.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 56, 'method': 'top_p', 'top_k': 24, 'top_p': 0.30000000000000004, 'temperature': 0.30000000000000004, 'num_return': 2}
+time 86
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test40.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 42, 'method': 'top_p', 'top_k': 40, 'top_p': 0.5, 'temperature': 0.5, 'num_return': 8}
+outof memory??
+time 25
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test41.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 43, 'method': 'top_p', 'top_k': 30, 'top_p': 1.0, 'temperature': 0.5, 'num_return': 3}
+time 80
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test42.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 59, 'method': 'top_p', 'top_k': 29, 'top_p': 0.7000000000000001, 'temperature': 0.9, 'num_return': 5}
+time 136
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test43.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 46, 'method': 'top_p', 'top_k': 30, 'top_p': 0.5, 'temperature': 0.7000000000000001, 'num_return': 9}
+outof memory??
+time 27
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test44.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 44, 'method': 'top_k', 'top_k': 20, 'top_p': 0.8, 'temperature': 0.5, 'num_return': 4}
+time 93
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test45.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 58, 'method': 'top_k', 'top_k': 39, 'top_p': 0.30000000000000004, 'temperature': 0.4, 'num_return': 3}
+time 86
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test46.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 40, 'method': 'top_p', 'top_k': 34, 'top_p': 0.6000000000000001, 'temperature': 0.5, 'num_return': 9}
+outof memory??
+time 26
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test47.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 60, 'method': 'top_k', 'top_k': 25, 'top_p': 0.8, 'temperature': 0.6000000000000001, 'num_return': 9}
+outof memory??
+time 27
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test48.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 50, 'method': 'top_p', 'top_k': 36, 'top_p': 0.6000000000000001, 'temperature': 0.4, 'num_return': 4}
+time 107
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test49.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 58, 'method': 'top_p', 'top_k': 31, 'top_p': 0.0, 'temperature': 0.1, 'num_return': 4}
+time 115
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test50.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 47, 'method': 'top_p', 'top_k': 37, 'top_p': 0.6000000000000001, 'temperature': 0.30000000000000004, 'num_return': 6}
+time 141
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test51.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 54, 'method': 'top_p', 'top_k': 38, 'top_p': 0.4, 'temperature': 0.5, 'num_return': 10}
+outof memory??
+time 14
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test52.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 43, 'method': 'top_k', 'top_k': 33, 'top_p': 0.30000000000000004, 'temperature': 0.2, 'num_return': 2}
+time 67
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test53.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 55, 'method': 'top_k', 'top_k': 31, 'top_p': 1.0, 'temperature': 0.1, 'num_return': 8}
+outof memory??
+time 26
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test54.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 50, 'method': 'top_k', 'top_k': 35, 'top_p': 0.2, 'temperature': 0.2, 'num_return': 3}
+time 82
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test55.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 46, 'method': 'top_k', 'top_k': 35, 'top_p': 0.6000000000000001, 'temperature': 0.9, 'num_return': 8}
+outof memory??
+time 24
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test56.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 59, 'method': 'top_k', 'top_k': 25, 'top_p': 0.7000000000000001, 'temperature': 0.9, 'num_return': 5}
+time 125
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test57.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 56, 'method': 'top_p', 'top_k': 37, 'top_p': 0.1, 'temperature': 0.2, 'num_return': 4}
+time 112
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test58.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 49, 'method': 'top_k', 'top_k': 27, 'top_p': 0.8, 'temperature': 0.9, 'num_return': 6}
+time 132
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test59.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 40, 'method': 'top_p', 'top_k': 39, 'top_p': 0.8, 'temperature': 0.1, 'num_return': 2}
+time 71
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test60.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 44, 'method': 'top_p', 'top_k': 39, 'top_p': 0.1, 'temperature': 0.9, 'num_return': 8}
+outof memory??
+time 25
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test61.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 60, 'method': 'top_k', 'top_k': 25, 'top_p': 0.30000000000000004, 'temperature': 0.30000000000000004, 'num_return': 1}
+time 63
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test62.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 54, 'method': 'top_p', 'top_k': 27, 'top_p': 0.5, 'temperature': 0.7000000000000001, 'num_return': 3}
+time 95
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test63.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 60, 'method': 'top_p', 'top_k': 23, 'top_p': 0.30000000000000004, 'temperature': 0.30000000000000004, 'num_return': 1}
+time 73
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test64.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 48, 'method': 'top_p', 'top_k': 39, 'top_p': 0.0, 'temperature': 1.0, 'num_return': 6}
+time 143
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test65.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 41, 'method': 'top_p', 'top_k': 34, 'top_p': 0.5, 'temperature': 0.30000000000000004, 'num_return': 8}
+outof memory??
+time 24
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test66.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 50, 'method': 'top_p', 'top_k': 23, 'top_p': 0.30000000000000004, 'temperature': 0.1, 'num_return': 9}
+outof memory??
+time 27
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test67.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 47, 'method': 'top_p', 'top_k': 29, 'top_p': 0.6000000000000001, 'temperature': 0.4, 'num_return': 10}
+outof memory??
+time 14
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test68.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 56, 'method': 'top_p', 'top_k': 24, 'top_p': 0.4, 'temperature': 0.6000000000000001, 'num_return': 5}
+time 131
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test69.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 53, 'method': 'top_k', 'top_k': 36, 'top_p': 0.2, 'temperature': 0.5, 'num_return': 9}
+outof memory??
+time 27
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test70.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 47, 'method': 'top_p', 'top_k': 29, 'top_p': 0.1, 'temperature': 0.5, 'num_return': 9}
+outof memory??
+time 27
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test71.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 46, 'method': 'top_k', 'top_k': 37, 'top_p': 0.0, 'temperature': 0.6000000000000001, 'num_return': 1}
+time 57
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test72.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 45, 'method': 'top_k', 'top_k': 36, 'top_p': 0.4, 'temperature': 1.0, 'num_return': 1}
+time 55
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test73.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 52, 'method': 'top_p', 'top_k': 21, 'top_p': 0.7000000000000001, 'temperature': 0.7000000000000001, 'num_return': 5}
+time 127
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test74.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 42, 'method': 'top_p', 'top_k': 29, 'top_p': 0.1, 'temperature': 0.4, 'num_return': 10}
+outof memory??
+time 14
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test75.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 44, 'method': 'top_p', 'top_k': 28, 'top_p': 0.0, 'temperature': 0.5, 'num_return': 3}
+time 86
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test76.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 45, 'method': 'top_k', 'top_k': 39, 'top_p': 0.8, 'temperature': 0.2, 'num_return': 9}
+outof memory??
+time 25
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test77.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 47, 'method': 'top_p', 'top_k': 33, 'top_p': 0.5, 'temperature': 0.8, 'num_return': 3}
+time 88
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test78.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 56, 'method': 'top_p', 'top_k': 37, 'top_p': 0.2, 'temperature': 0.8, 'num_return': 8}
+outof memory??
+time 27
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test79.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 50, 'method': 'top_k', 'top_k': 28, 'top_p': 0.4, 'temperature': 0.1, 'num_return': 7}
+outof memory??
+time 24
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test80.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 60, 'method': 'top_p', 'top_k': 30, 'top_p': 0.1, 'temperature': 0.8, 'num_return': 9}
+outof memory??
+time 29
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test81.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 53, 'method': 'top_k', 'top_k': 39, 'top_p': 0.7000000000000001, 'temperature': 0.4, 'num_return': 10}
+outof memory??
+time 15
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test82.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 42, 'method': 'top_k', 'top_k': 37, 'top_p': 1.0, 'temperature': 0.2, 'num_return': 4}
+time 91
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test83.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 46, 'method': 'top_k', 'top_k': 33, 'top_p': 0.9, 'temperature': 0.8, 'num_return': 3}
+time 80
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test84.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 58, 'method': 'top_p', 'top_k': 23, 'top_p': 0.7000000000000001, 'temperature': 0.2, 'num_return': 1}
+time 72
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test85.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 56, 'method': 'top_p', 'top_k': 34, 'top_p': 0.2, 'temperature': 0.1, 'num_return': 5}
+time 135
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test86.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 43, 'method': 'top_k', 'top_k': 29, 'top_p': 0.5, 'temperature': 0.6000000000000001, 'num_return': 4}
+time 93
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test87.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 52, 'method': 'top_p', 'top_k': 29, 'top_p': 0.30000000000000004, 'temperature': 0.4, 'num_return': 5}
+time 126
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test88.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 57, 'method': 'top_p', 'top_k': 40, 'top_p': 0.7000000000000001, 'temperature': 1.0, 'num_return': 8}
+outof memory??
+time 27
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test89.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 49, 'method': 'top_k', 'top_k': 34, 'top_p': 0.8, 'temperature': 0.1, 'num_return': 5}
+time 113
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test90.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 40, 'method': 'top_k', 'top_k': 36, 'top_p': 0.7000000000000001, 'temperature': 0.4, 'num_return': 2}
+time 66
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test91.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 51, 'method': 'top_p', 'top_k': 25, 'top_p': 0.7000000000000001, 'temperature': 0.4, 'num_return': 4}
+time 109
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test92.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 44, 'method': 'top_k', 'top_k': 37, 'top_p': 0.4, 'temperature': 0.7000000000000001, 'num_return': 5}
+time 109
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test93.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 45, 'method': 'top_k', 'top_k': 25, 'top_p': 0.4, 'temperature': 0.30000000000000004, 'num_return': 9}
+outof memory??
+time 26
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test94.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 48, 'method': 'top_k', 'top_k': 39, 'top_p': 0.7000000000000001, 'temperature': 0.9, 'num_return': 9}
+outof memory??
+time 26
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test95.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 54, 'method': 'top_p', 'top_k': 22, 'top_p': 0.7000000000000001, 'temperature': 0.7000000000000001, 'num_return': 1}
+time 65
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test96.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 52, 'method': 'top_p', 'top_k': 24, 'top_p': 0.4, 'temperature': 0.5, 'num_return': 1}
+time 68
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test97.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 57, 'method': 'top_k', 'top_k': 38, 'top_p': 0.1, 'temperature': 0.2, 'num_return': 3}
+time 88
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test98.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 45, 'method': 'top_k', 'top_k': 38, 'top_p': 0.30000000000000004, 'temperature': 0.30000000000000004, 'num_return': 1}
+time 53
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test99.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 51, 'method': 'top_k', 'top_k': 23, 'top_p': 0.6000000000000001, 'temperature': 0.1, 'num_return': 7}
+outof memory??
+time 24
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test100.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 45, 'method': 'top_k', 'top_k': 34, 'top_p': 0.0, 'temperature': 1.0, 'num_return': 10}
+outof memory??
+time 15
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test101.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 40, 'method': 'top_p', 'top_k': 31, 'top_p': 0.8, 'temperature': 0.9, 'num_return': 2}
+time 71
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test102.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 43, 'method': 'top_k', 'top_k': 24, 'top_p': 0.4, 'temperature': 0.30000000000000004, 'num_return': 8}
+outof memory??
+time 24
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test103.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 52, 'method': 'top_k', 'top_k': 30, 'top_p': 0.8, 'temperature': 0.6000000000000001, 'num_return': 1}
+time 61
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test104.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 42, 'method': 'top_k', 'top_k': 22, 'top_p': 0.1, 'temperature': 0.2, 'num_return': 4}
+time 91
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test105.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 50, 'method': 'top_p', 'top_k': 24, 'top_p': 0.1, 'temperature': 0.4, 'num_return': 10}
+outof memory??
+time 15
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test106.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 49, 'method': 'top_p', 'top_k': 28, 'top_p': 1.0, 'temperature': 0.30000000000000004, 'num_return': 9}
+outof memory??
+time 26
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test107.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 60, 'method': 'top_p', 'top_k': 28, 'top_p': 1.0, 'temperature': 0.7000000000000001, 'num_return': 5}
+time 124
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test108.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 51, 'method': 'top_p', 'top_k': 31, 'top_p': 0.1, 'temperature': 0.6000000000000001, 'num_return': 8}
+outof memory??
+time 27
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test109.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 45, 'method': 'top_p', 'top_k': 32, 'top_p': 0.4, 'temperature': 0.4, 'num_return': 1}
+time 62
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test110.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 48, 'method': 'top_k', 'top_k': 26, 'top_p': 0.4, 'temperature': 0.9, 'num_return': 4}
+time 95
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test111.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 42, 'method': 'top_k', 'top_k': 27, 'top_p': 0.5, 'temperature': 0.2, 'num_return': 2}
+time 62
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test112.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 59, 'method': 'top_k', 'top_k': 20, 'top_p': 0.0, 'temperature': 0.4, 'num_return': 2}
+time 75
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test113.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 50, 'method': 'top_k', 'top_k': 22, 'top_p': 0.5, 'temperature': 0.9, 'num_return': 10}
+outof memory??
+time 14
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test114.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 54, 'method': 'top_k', 'top_k': 34, 'top_p': 0.4, 'temperature': 0.9, 'num_return': 6}
+time 137
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test115.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 41, 'method': 'top_k', 'top_k': 40, 'top_p': 1.0, 'temperature': 0.5, 'num_return': 6}
+time 123
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test116.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 49, 'method': 'top_p', 'top_k': 30, 'top_p': 0.30000000000000004, 'temperature': 1.0, 'num_return': 4}
+time 108
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test117.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 54, 'method': 'top_p', 'top_k': 30, 'top_p': 0.0, 'temperature': 0.1, 'num_return': 6}
+time 154
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test118.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 45, 'method': 'top_p', 'top_k': 32, 'top_p': 0.8, 'temperature': 0.7000000000000001, 'num_return': 6}
+time 138
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test119.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 44, 'method': 'top_p', 'top_k': 22, 'top_p': 0.7000000000000001, 'temperature': 0.2, 'num_return': 7}
+outof memory??
+time 25
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test120.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 45, 'method': 'top_p', 'top_k': 39, 'top_p': 0.2, 'temperature': 0.7000000000000001, 'num_return': 6}
+time 138
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test121.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 56, 'method': 'top_k', 'top_k': 23, 'top_p': 0.7000000000000001, 'temperature': 0.7000000000000001, 'num_return': 3}
+time 88
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test122.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 49, 'method': 'top_k', 'top_k': 20, 'top_p': 0.9, 'temperature': 0.1, 'num_return': 3}
+time 85
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test123.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 52, 'method': 'top_k', 'top_k': 38, 'top_p': 0.7000000000000001, 'temperature': 0.1, 'num_return': 9}
+outof memory??
+time 27
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test124.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 45, 'method': 'top_p', 'top_k': 40, 'top_p': 0.30000000000000004, 'temperature': 0.6000000000000001, 'num_return': 5}
+time 122
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test125.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 55, 'method': 'top_p', 'top_k': 36, 'top_p': 0.0, 'temperature': 0.2, 'num_return': 5}
+time 129
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test126.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 53, 'method': 'top_p', 'top_k': 40, 'top_p': 0.1, 'temperature': 0.5, 'num_return': 6}
+time 151
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test127.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 49, 'method': 'top_k', 'top_k': 26, 'top_p': 0.9, 'temperature': 0.6000000000000001, 'num_return': 5}
+time 117
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test128.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 50, 'method': 'top_p', 'top_k': 20, 'top_p': 0.8, 'temperature': 0.1, 'num_return': 2}
+time 79
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test129.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 57, 'method': 'top_p', 'top_k': 40, 'top_p': 0.2, 'temperature': 0.1, 'num_return': 3}
+time 98
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test130.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 53, 'method': 'top_k', 'top_k': 40, 'top_p': 0.1, 'temperature': 0.30000000000000004, 'num_return': 7}
+outof memory??
+time 25
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test131.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 49, 'method': 'top_p', 'top_k': 24, 'top_p': 0.7000000000000001, 'temperature': 0.8, 'num_return': 1}
+time 68
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test132.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 57, 'method': 'top_p', 'top_k': 37, 'top_p': 0.1, 'temperature': 0.9, 'num_return': 8}
+outof memory??
+time 27
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test133.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 59, 'method': 'top_k', 'top_k': 20, 'top_p': 0.5, 'temperature': 0.9, 'num_return': 1}
+time 65
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test134.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 42, 'method': 'top_p', 'top_k': 30, 'top_p': 0.8, 'temperature': 1.0, 'num_return': 6}
+time 135
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test135.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 46, 'method': 'top_k', 'top_k': 28, 'top_p': 0.9, 'temperature': 0.8, 'num_return': 7}
+outof memory??
+time 24
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test136.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 47, 'method': 'top_p', 'top_k': 28, 'top_p': 0.30000000000000004, 'temperature': 0.4, 'num_return': 8}
+outof memory??
 time 28
-{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test2.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 54, 'method': 'top_p', 'top_k': 24, 'top_p': 0.30000000000000004, 'temperature': 0.4, 'num_return': 5}
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test137.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 41, 'method': 'top_p', 'top_k': 31, 'top_p': 1.0, 'temperature': 0.1, 'num_return': 8}
+outof memory??
+time 27
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test138.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 51, 'method': 'top_p', 'top_k': 23, 'top_p': 1.0, 'temperature': 1.0, 'num_return': 5}
+time 121
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test139.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 47, 'method': 'top_k', 'top_k': 39, 'top_p': 0.8, 'temperature': 0.5, 'num_return': 5}
+time 113
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test140.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 47, 'method': 'top_p', 'top_k': 24, 'top_p': 0.7000000000000001, 'temperature': 0.2, 'num_return': 2}
+time 82
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test141.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 48, 'method': 'top_k', 'top_k': 24, 'top_p': 0.6000000000000001, 'temperature': 0.6000000000000001, 'num_return': 4}
+time 98
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test142.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 40, 'method': 'top_p', 'top_k': 27, 'top_p': 0.2, 'temperature': 0.30000000000000004, 'num_return': 4}
+time 98
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test143.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 46, 'method': 'top_k', 'top_k': 37, 'top_p': 0.30000000000000004, 'temperature': 0.2, 'num_return': 1}
+time 54
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test144.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 40, 'method': 'top_k', 'top_k': 36, 'top_p': 0.30000000000000004, 'temperature': 0.7000000000000001, 'num_return': 5}
+time 104
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test145.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 50, 'method': 'top_p', 'top_k': 26, 'top_p': 0.30000000000000004, 'temperature': 0.5, 'num_return': 4}
+time 108
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test146.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 48, 'method': 'top_p', 'top_k': 22, 'top_p': 0.2, 'temperature': 0.8, 'num_return': 7}
+outof memory??
+time 25
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test147.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 57, 'method': 'top_k', 'top_k': 33, 'top_p': 0.6000000000000001, 'temperature': 0.1, 'num_return': 4}
+time 102
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test148.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 51, 'method': 'top_k', 'top_k': 21, 'top_p': 0.6000000000000001, 'temperature': 0.8, 'num_return': 8}
+outof memory??
+time 25
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test149.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 60, 'method': 'top_k', 'top_k': 36, 'top_p': 0.6000000000000001, 'temperature': 1.0, 'num_return': 8}
+outof memory??
+time 25
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test150.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 58, 'method': 'top_p', 'top_k': 29, 'top_p': 0.2, 'temperature': 0.8, 'num_return': 3}
+time 98
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test151.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 46, 'method': 'top_p', 'top_k': 20, 'top_p': 0.7000000000000001, 'temperature': 0.4, 'num_return': 6}
+time 140
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test152.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 48, 'method': 'top_k', 'top_k': 21, 'top_p': 0.1, 'temperature': 0.1, 'num_return': 7}
+outof memory??
 time 24
-{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test3.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 52, 'method': 'top_k', 'top_k': 39, 'top_p': 0.7000000000000001, 'temperature': 0.2, 'num_return': 1}
-time 20
-{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test4.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 42, 'method': 'top_k', 'top_k': 27, 'top_p': 0.6000000000000001, 'temperature': 0.2, 'num_return': 3}
-time 20
-{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test5.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 43, 'method': 'top_k', 'top_k': 25, 'top_p': 0.30000000000000004, 'temperature': 0.9, 'num_return': 8}
-time 24
-{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test6.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 42, 'method': 'top_p', 'top_k': 27, 'top_p': 0.1, 'temperature': 0.1, 'num_return': 3}
-time 21
-{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test7.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 52, 'method': 'top_k', 'top_k': 34, 'top_p': 0.30000000000000004, 'temperature': 1.0, 'num_return': 4}
-time 21
-{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test8.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 45, 'method': 'top_p', 'top_k': 25, 'top_p': 0.9, 'temperature': 0.1, 'num_return': 8}
-time 24
-{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test9.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 41, 'method': 'top_k', 'top_k': 35, 'top_p': 0.8, 'temperature': 0.5, 'num_return': 10}
-time 24
-{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test10.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 57, 'method': 'top_k', 'top_k': 38, 'top_p': 0.1, 'temperature': 0.2, 'num_return': 1}
-time 20
-{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test11.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 56, 'method': 'top_p', 'top_k': 30, 'top_p': 0.8, 'temperature': 0.5, 'num_return': 3}
-time 22
-{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test12.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 53, 'method': 'top_p', 'top_k': 33, 'top_p': 0.30000000000000004, 'temperature': 0.4, 'num_return': 6}
-time 24
-{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test13.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 59, 'method': 'top_k', 'top_k': 38, 'top_p': 0.7000000000000001, 'temperature': 0.1, 'num_return': 2}
-time 20
-{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test14.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 42, 'method': 'top_p', 'top_k': 33, 'top_p': 0.0, 'temperature': 0.1, 'num_return': 4}
-time 22
-{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test15.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 46, 'method': 'top_k', 'top_k': 39, 'top_p': 0.1, 'temperature': 0.9, 'num_return': 7}
-time 22
-{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test16.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 57, 'method': 'top_p', 'top_k': 24, 'top_p': 0.9, 'temperature': 0.6000000000000001, 'num_return': 8}
-time 26
-{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test17.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 42, 'method': 'top_k', 'top_k': 36, 'top_p': 0.7000000000000001, 'temperature': 0.4, 'num_return': 8}
-time 22
-{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test18.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 48, 'method': 'top_k', 'top_k': 32, 'top_p': 0.2, 'temperature': 0.2, 'num_return': 2}
-time 20
-{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test19.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 59, 'method': 'top_k', 'top_k': 20, 'top_p': 0.7000000000000001, 'temperature': 0.4, 'num_return': 9}
-time 26
-{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test20.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 54, 'method': 'top_p', 'top_k': 22, 'top_p': 0.7000000000000001, 'temperature': 0.4, 'num_return': 8}
-time 26
-{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test21.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 53, 'method': 'top_k', 'top_k': 39, 'top_p': 0.4, 'temperature': 0.4, 'num_return': 10}
-time 26
-{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test22.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 45, 'method': 'top_k', 'top_k': 31, 'top_p': 0.5, 'temperature': 0.4, 'num_return': 8}
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test153.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 45, 'method': 'top_p', 'top_k': 38, 'top_p': 1.0, 'temperature': 0.4, 'num_return': 4}
+time 93
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test154.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 44, 'method': 'top_k', 'top_k': 32, 'top_p': 0.7000000000000001, 'temperature': 0.6000000000000001, 'num_return': 7}
+outof memory??
 time 23
-{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test23.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 59, 'method': 'top_k', 'top_k': 35, 'top_p': 0.4, 'temperature': 0.7000000000000001, 'num_return': 4}
-time 22
-{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test24.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 48, 'method': 'top_k', 'top_k': 29, 'top_p': 0.8, 'temperature': 0.9, 'num_return': 8}
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test155.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 46, 'method': 'top_k', 'top_k': 38, 'top_p': 0.6000000000000001, 'temperature': 0.7000000000000001, 'num_return': 8}
+outof memory??
+time 25
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test156.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 43, 'method': 'top_p', 'top_k': 24, 'top_p': 0.1, 'temperature': 0.30000000000000004, 'num_return': 9}
+outof memory??
+time 27
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test157.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 46, 'method': 'top_k', 'top_k': 31, 'top_p': 0.1, 'temperature': 0.6000000000000001, 'num_return': 9}
+outof memory??
+time 26
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test158.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 54, 'method': 'top_k', 'top_k': 31, 'top_p': 0.30000000000000004, 'temperature': 0.7000000000000001, 'num_return': 9}
+outof memory??
+time 26
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test159.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 46, 'method': 'top_k', 'top_k': 33, 'top_p': 0.2, 'temperature': 1.0, 'num_return': 6}
+time 133
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test160.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 43, 'method': 'top_p', 'top_k': 27, 'top_p': 0.7000000000000001, 'temperature': 0.1, 'num_return': 2}
+time 77
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test161.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 54, 'method': 'top_k', 'top_k': 28, 'top_p': 0.0, 'temperature': 0.4, 'num_return': 7}
+outof memory??
+time 25
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test162.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 56, 'method': 'top_k', 'top_k': 28, 'top_p': 0.30000000000000004, 'temperature': 0.2, 'num_return': 9}
+outof memory??
+time 28
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test163.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 49, 'method': 'top_p', 'top_k': 39, 'top_p': 1.0, 'temperature': 0.5, 'num_return': 6}
+time 141
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test164.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 54, 'method': 'top_k', 'top_k': 40, 'top_p': 0.2, 'temperature': 0.4, 'num_return': 3}
+time 88
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test165.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 55, 'method': 'top_k', 'top_k': 33, 'top_p': 0.5, 'temperature': 1.0, 'num_return': 10}
+outof memory??
+time 15
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test166.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 46, 'method': 'top_k', 'top_k': 26, 'top_p': 0.2, 'temperature': 0.30000000000000004, 'num_return': 7}
+outof memory??
 time 23
-{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test25.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 41, 'method': 'top_p', 'top_k': 37, 'top_p': 0.9, 'temperature': 0.7000000000000001, 'num_return': 3}
-time 39
-{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test26.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 47, 'method': 'top_p', 'top_k': 40, 'top_p': 0.8, 'temperature': 0.4, 'num_return': 9}
-time 37
-{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test27.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 48, 'method': 'top_k', 'top_k': 28, 'top_p': 0.5, 'temperature': 0.6000000000000001, 'num_return': 4}
-time 21
-{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test28.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 40, 'method': 'top_k', 'top_k': 29, 'top_p': 0.2, 'temperature': 0.6000000000000001, 'num_return': 7}
-time 22
-{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test29.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 45, 'method': 'top_p', 'top_k': 30, 'top_p': 0.1, 'temperature': 0.4, 'num_return': 4}
-time 21
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test167.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 58, 'method': 'top_p', 'top_k': 36, 'top_p': 0.0, 'temperature': 0.9, 'num_return': 2}
+time 91
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test168.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 51, 'method': 'top_k', 'top_k': 39, 'top_p': 0.5, 'temperature': 1.0, 'num_return': 3}
+time 85
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test169.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 42, 'method': 'top_p', 'top_k': 35, 'top_p': 0.9, 'temperature': 0.5, 'num_return': 8}
+outof memory??
+time 26
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test170.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 43, 'method': 'top_p', 'top_k': 30, 'top_p': 0.6000000000000001, 'temperature': 0.8, 'num_return': 3}
+time 92
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test171.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 57, 'method': 'top_p', 'top_k': 28, 'top_p': 0.5, 'temperature': 0.7000000000000001, 'num_return': 5}
+time 147
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test172.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 42, 'method': 'top_k', 'top_k': 22, 'top_p': 0.0, 'temperature': 0.4, 'num_return': 1}
+time 63
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test173.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 46, 'method': 'top_k', 'top_k': 39, 'top_p': 0.1, 'temperature': 0.8, 'num_return': 6}
+time 144
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test174.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 44, 'method': 'top_k', 'top_k': 24, 'top_p': 0.6000000000000001, 'temperature': 0.7000000000000001, 'num_return': 2}
+time 79
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test175.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 53, 'method': 'top_p', 'top_k': 39, 'top_p': 0.0, 'temperature': 0.2, 'num_return': 10}
+outof memory??
+time 15
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test176.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 51, 'method': 'top_k', 'top_k': 29, 'top_p': 0.30000000000000004, 'temperature': 0.1, 'num_return': 3}
+time 95
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test177.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 41, 'method': 'top_p', 'top_k': 26, 'top_p': 0.1, 'temperature': 0.30000000000000004, 'num_return': 1}
+time 69
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test178.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 50, 'method': 'top_p', 'top_k': 29, 'top_p': 0.2, 'temperature': 0.7000000000000001, 'num_return': 6}
+time 163
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test179.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 60, 'method': 'top_p', 'top_k': 35, 'top_p': 0.30000000000000004, 'temperature': 0.8, 'num_return': 1}
+time 88
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test180.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 45, 'method': 'top_p', 'top_k': 26, 'top_p': 0.0, 'temperature': 0.6000000000000001, 'num_return': 7}
+outof memory??
+time 27
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test181.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 48, 'method': 'top_p', 'top_k': 37, 'top_p': 0.8, 'temperature': 0.2, 'num_return': 7}
+outof memory??
+time 27
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test182.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 47, 'method': 'top_p', 'top_k': 27, 'top_p': 0.9, 'temperature': 0.5, 'num_return': 6}
+time 155
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test183.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 51, 'method': 'top_k', 'top_k': 23, 'top_p': 0.5, 'temperature': 0.9, 'num_return': 4}
+time 112
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test184.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 44, 'method': 'top_k', 'top_k': 33, 'top_p': 0.9, 'temperature': 0.2, 'num_return': 1}
+time 65
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test185.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 54, 'method': 'top_p', 'top_k': 27, 'top_p': 0.5, 'temperature': 0.8, 'num_return': 6}
+time 168
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test186.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 41, 'method': 'top_k', 'top_k': 39, 'top_p': 0.0, 'temperature': 0.7000000000000001, 'num_return': 8}
+outof memory??
+time 25
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test187.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 40, 'method': 'top_p', 'top_k': 29, 'top_p': 0.6000000000000001, 'temperature': 0.8, 'num_return': 10}
+outof memory??
+time 14
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test188.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 45, 'method': 'top_k', 'top_k': 38, 'top_p': 1.0, 'temperature': 1.0, 'num_return': 7}
+outof memory??
+time 25
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test189.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 56, 'method': 'top_p', 'top_k': 33, 'top_p': 0.5, 'temperature': 0.8, 'num_return': 3}
+time 111
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test190.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 42, 'method': 'top_k', 'top_k': 26, 'top_p': 0.7000000000000001, 'temperature': 0.5, 'num_return': 10}
+outof memory??
+time 15
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test191.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 55, 'method': 'top_p', 'top_k': 37, 'top_p': 0.7000000000000001, 'temperature': 0.9, 'num_return': 1}
+time 84
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test192.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 60, 'method': 'top_p', 'top_k': 20, 'top_p': 0.9, 'temperature': 1.0, 'num_return': 8}
+outof memory??
+time 28
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test193.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 42, 'method': 'top_p', 'top_k': 32, 'top_p': 0.6000000000000001, 'temperature': 0.4, 'num_return': 5}
+time 129
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test194.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 46, 'method': 'top_p', 'top_k': 35, 'top_p': 0.30000000000000004, 'temperature': 0.1, 'num_return': 6}
+time 153
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test195.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 44, 'method': 'top_k', 'top_k': 36, 'top_p': 0.5, 'temperature': 0.5, 'num_return': 4}
+time 102
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test196.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 41, 'method': 'top_k', 'top_k': 22, 'top_p': 0.30000000000000004, 'temperature': 0.2, 'num_return': 5}
+time 118
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test197.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 54, 'method': 'top_k', 'top_k': 24, 'top_p': 0.6000000000000001, 'temperature': 0.6000000000000001, 'num_return': 10}
+outof memory??
+time 15
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test198.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 59, 'method': 'top_p', 'top_k': 27, 'top_p': 0.7000000000000001, 'temperature': 0.2, 'num_return': 2}
+time 100
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test199.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 40, 'method': 'top_k', 'top_k': 26, 'top_p': 0.0, 'temperature': 0.7000000000000001, 'num_return': 8}
+outof memory??
+time 26
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test200.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 52, 'method': 'top_p', 'top_k': 38, 'top_p': 0.4, 'temperature': 0.5, 'num_return': 5}
+time 142
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test201.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 41, 'method': 'top_p', 'top_k': 27, 'top_p': 1.0, 'temperature': 0.8, 'num_return': 7}
+outof memory??
+time 25
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test202.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 59, 'method': 'top_p', 'top_k': 39, 'top_p': 1.0, 'temperature': 0.8, 'num_return': 3}
+time 103
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test203.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 47, 'method': 'top_k', 'top_k': 37, 'top_p': 0.9, 'temperature': 0.2, 'num_return': 2}
+time 80
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test204.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 45, 'method': 'top_p', 'top_k': 31, 'top_p': 0.2, 'temperature': 0.7000000000000001, 'num_return': 2}
+time 88
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test205.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 60, 'method': 'top_k', 'top_k': 31, 'top_p': 0.7000000000000001, 'temperature': 0.7000000000000001, 'num_return': 9}
+outof memory??
+time 29
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test206.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 41, 'method': 'top_k', 'top_k': 24, 'top_p': 0.5, 'temperature': 0.6000000000000001, 'num_return': 8}
+outof memory??
+time 25
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test207.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 56, 'method': 'top_p', 'top_k': 33, 'top_p': 0.1, 'temperature': 0.30000000000000004, 'num_return': 9}
+outof memory??
+time 31
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test208.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 49, 'method': 'top_k', 'top_k': 38, 'top_p': 0.30000000000000004, 'temperature': 0.2, 'num_return': 6}
+time 145
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test209.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 49, 'method': 'top_k', 'top_k': 40, 'top_p': 0.4, 'temperature': 0.7000000000000001, 'num_return': 10}
+outof memory??
+time 14
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test210.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 49, 'method': 'top_p', 'top_k': 24, 'top_p': 0.9, 'temperature': 0.2, 'num_return': 2}
+time 87
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test211.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 56, 'method': 'top_p', 'top_k': 37, 'top_p': 0.6000000000000001, 'temperature': 0.4, 'num_return': 6}
+time 163
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test212.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 58, 'method': 'top_p', 'top_k': 27, 'top_p': 0.30000000000000004, 'temperature': 0.4, 'num_return': 1}
+time 82
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test213.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 50, 'method': 'top_p', 'top_k': 32, 'top_p': 0.4, 'temperature': 0.2, 'num_return': 6}
+time 156
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test214.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 42, 'method': 'top_p', 'top_k': 27, 'top_p': 0.30000000000000004, 'temperature': 0.1, 'num_return': 7}
+outof memory??
+time 25
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test215.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 50, 'method': 'top_k', 'top_k': 37, 'top_p': 0.7000000000000001, 'temperature': 0.8, 'num_return': 3}
+time 96
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test216.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 40, 'method': 'top_p', 'top_k': 28, 'top_p': 0.2, 'temperature': 0.8, 'num_return': 3}
+time 96
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test217.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 40, 'method': 'top_k', 'top_k': 27, 'top_p': 0.5, 'temperature': 0.1, 'num_return': 8}
+outof memory??
+time 25
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test218.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 56, 'method': 'top_p', 'top_k': 20, 'top_p': 1.0, 'temperature': 0.2, 'num_return': 8}
+outof memory??
+time 27
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test219.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 51, 'method': 'top_p', 'top_k': 27, 'top_p': 1.0, 'temperature': 0.8, 'num_return': 10}
+outof memory??
+time 14
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test220.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 47, 'method': 'top_k', 'top_k': 37, 'top_p': 1.0, 'temperature': 0.9, 'num_return': 10}
+outof memory??
+time 15
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test221.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 44, 'method': 'top_k', 'top_k': 21, 'top_p': 0.1, 'temperature': 0.2, 'num_return': 4}
+time 103
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test222.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 52, 'method': 'top_p', 'top_k': 37, 'top_p': 1.0, 'temperature': 0.7000000000000001, 'num_return': 6}
+time 146
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test223.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 42, 'method': 'top_k', 'top_k': 24, 'top_p': 1.0, 'temperature': 1.0, 'num_return': 1}
+time 62
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test224.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 42, 'method': 'top_p', 'top_k': 22, 'top_p': 0.5, 'temperature': 0.4, 'num_return': 1}
+time 68
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test225.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 47, 'method': 'top_p', 'top_k': 30, 'top_p': 0.8, 'temperature': 0.6000000000000001, 'num_return': 4}
+time 116
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test226.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 42, 'method': 'top_p', 'top_k': 22, 'top_p': 0.30000000000000004, 'temperature': 1.0, 'num_return': 2}
+time 84
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test227.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 52, 'method': 'top_p', 'top_k': 28, 'top_p': 0.6000000000000001, 'temperature': 0.9, 'num_return': 7}
+outof memory??
+time 27
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test228.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 40, 'method': 'top_p', 'top_k': 30, 'top_p': 0.6000000000000001, 'temperature': 0.8, 'num_return': 7}
+outof memory??
+time 26
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test229.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 59, 'method': 'top_k', 'top_k': 28, 'top_p': 0.1, 'temperature': 0.1, 'num_return': 3}
+time 104
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test230.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 60, 'method': 'top_k', 'top_k': 32, 'top_p': 1.0, 'temperature': 0.30000000000000004, 'num_return': 7}
+outof memory??
+time 27
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test231.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 43, 'method': 'top_p', 'top_k': 23, 'top_p': 0.2, 'temperature': 0.9, 'num_return': 10}
+outof memory??
+time 15
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test232.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 57, 'method': 'top_k', 'top_k': 24, 'top_p': 0.5, 'temperature': 0.7000000000000001, 'num_return': 5}
+time 136
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test233.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 42, 'method': 'top_p', 'top_k': 27, 'top_p': 0.0, 'temperature': 0.4, 'num_return': 7}
+outof memory??
+time 25
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test234.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 49, 'method': 'top_p', 'top_k': 26, 'top_p': 0.30000000000000004, 'temperature': 0.1, 'num_return': 9}
+outof memory??
+time 29
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test235.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 44, 'method': 'top_k', 'top_k': 34, 'top_p': 1.0, 'temperature': 0.7000000000000001, 'num_return': 8}
+outof memory??
+time 25
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test236.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 59, 'method': 'top_p', 'top_k': 30, 'top_p': 0.9, 'temperature': 1.0, 'num_return': 2}
+time 95
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test237.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 57, 'method': 'top_p', 'top_k': 37, 'top_p': 0.5, 'temperature': 0.4, 'num_return': 9}
+outof memory??
+time 29
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test238.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 54, 'method': 'top_k', 'top_k': 31, 'top_p': 0.7000000000000001, 'temperature': 0.2, 'num_return': 7}
+outof memory??
+time 25
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test239.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 56, 'method': 'top_k', 'top_k': 39, 'top_p': 0.5, 'temperature': 0.1, 'num_return': 5}
+time 132
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test240.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 57, 'method': 'top_p', 'top_k': 24, 'top_p': 0.0, 'temperature': 0.6000000000000001, 'num_return': 8}
+outof memory??
+time 28
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test241.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 46, 'method': 'top_p', 'top_k': 32, 'top_p': 0.6000000000000001, 'temperature': 0.2, 'num_return': 6}
+time 153
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test242.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 40, 'method': 'top_k', 'top_k': 36, 'top_p': 0.0, 'temperature': 1.0, 'num_return': 6}
+time 136
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test243.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 41, 'method': 'top_p', 'top_k': 23, 'top_p': 0.9, 'temperature': 0.4, 'num_return': 3}
+time 94
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test244.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 52, 'method': 'top_p', 'top_k': 33, 'top_p': 1.0, 'temperature': 0.4, 'num_return': 7}
+outof memory??
+time 25
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test245.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 55, 'method': 'top_k', 'top_k': 37, 'top_p': 0.1, 'temperature': 0.6000000000000001, 'num_return': 1}
+time 72
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test246.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 58, 'method': 'top_k', 'top_k': 31, 'top_p': 0.7000000000000001, 'temperature': 0.5, 'num_return': 10}
+outof memory??
+time 14
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test247.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 59, 'method': 'top_k', 'top_k': 40, 'top_p': 0.2, 'temperature': 0.6000000000000001, 'num_return': 6}
+time 154
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test248.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 56, 'method': 'top_p', 'top_k': 33, 'top_p': 0.6000000000000001, 'temperature': 0.30000000000000004, 'num_return': 9}
+outof memory??
+time 28
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test249.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 59, 'method': 'top_k', 'top_k': 26, 'top_p': 0.5, 'temperature': 1.0, 'num_return': 9}
+outof memory??
+time 29
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test250.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 56, 'method': 'top_k', 'top_k': 37, 'top_p': 0.0, 'temperature': 0.2, 'num_return': 7}
+outof memory??
+time 26
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test251.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 43, 'method': 'top_k', 'top_k': 32, 'top_p': 0.6000000000000001, 'temperature': 0.7000000000000001, 'num_return': 1}
+time 60
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test252.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 57, 'method': 'top_k', 'top_k': 32, 'top_p': 0.8, 'temperature': 0.30000000000000004, 'num_return': 8}
+outof memory??
+time 26
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test253.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 59, 'method': 'top_p', 'top_k': 26, 'top_p': 0.2, 'temperature': 0.7000000000000001, 'num_return': 3}
+time 102
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test254.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 43, 'method': 'top_p', 'top_k': 26, 'top_p': 0.1, 'temperature': 0.9, 'num_return': 10}
+outof memory??
+time 15
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test255.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 59, 'method': 'top_k', 'top_k': 20, 'top_p': 0.6000000000000001, 'temperature': 0.2, 'num_return': 3}
+time 93
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test256.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 41, 'method': 'top_k', 'top_k': 28, 'top_p': 1.0, 'temperature': 0.1, 'num_return': 2}
+time 66
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test257.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 43, 'method': 'top_p', 'top_k': 37, 'top_p': 0.4, 'temperature': 1.0, 'num_return': 1}
+time 64
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test258.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 58, 'method': 'top_p', 'top_k': 40, 'top_p': 1.0, 'temperature': 0.6000000000000001, 'num_return': 10}
+outof memory??
+time 15
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test259.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 55, 'method': 'top_p', 'top_k': 30, 'top_p': 0.6000000000000001, 'temperature': 0.2, 'num_return': 4}
+time 113
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test260.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 60, 'method': 'top_k', 'top_k': 21, 'top_p': 0.8, 'temperature': 0.5, 'num_return': 5}
+time 136
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test261.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 52, 'method': 'top_k', 'top_k': 36, 'top_p': 0.30000000000000004, 'temperature': 0.6000000000000001, 'num_return': 3}
+time 91
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test262.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 54, 'method': 'top_p', 'top_k': 40, 'top_p': 0.0, 'temperature': 0.5, 'num_return': 7}
+outof memory??
+time 27
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test263.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 50, 'method': 'top_p', 'top_k': 30, 'top_p': 0.2, 'temperature': 0.6000000000000001, 'num_return': 9}
+outof memory??
+time 30
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test264.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 43, 'method': 'top_p', 'top_k': 31, 'top_p': 0.6000000000000001, 'temperature': 0.6000000000000001, 'num_return': 5}
+time 135
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test265.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 55, 'method': 'top_p', 'top_k': 29, 'top_p': 0.0, 'temperature': 0.4, 'num_return': 1}
+time 80
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test266.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 56, 'method': 'top_p', 'top_k': 37, 'top_p': 0.2, 'temperature': 0.8, 'num_return': 6}
+time 154
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test267.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 51, 'method': 'top_k', 'top_k': 36, 'top_p': 0.6000000000000001, 'temperature': 0.8, 'num_return': 2}
+time 75
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test268.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 50, 'method': 'top_p', 'top_k': 39, 'top_p': 0.30000000000000004, 'temperature': 0.9, 'num_return': 2}
+time 78
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test269.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 44, 'method': 'top_p', 'top_k': 20, 'top_p': 0.7000000000000001, 'temperature': 0.4, 'num_return': 5}
+time 119
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test270.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 56, 'method': 'top_p', 'top_k': 36, 'top_p': 0.0, 'temperature': 0.6000000000000001, 'num_return': 9}
+outof memory??
+time 28
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test271.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 59, 'method': 'top_p', 'top_k': 38, 'top_p': 0.9, 'temperature': 0.2, 'num_return': 6}
+time 157
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test272.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 53, 'method': 'top_p', 'top_k': 28, 'top_p': 0.7000000000000001, 'temperature': 1.0, 'num_return': 1}
+time 66
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test273.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 57, 'method': 'top_k', 'top_k': 37, 'top_p': 0.2, 'temperature': 0.5, 'num_return': 9}
+outof memory??
+time 32
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test274.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 59, 'method': 'top_k', 'top_k': 31, 'top_p': 0.0, 'temperature': 1.0, 'num_return': 6}
+time 154
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test275.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 57, 'method': 'top_p', 'top_k': 21, 'top_p': 0.30000000000000004, 'temperature': 0.1, 'num_return': 3}
+time 100
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test276.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 55, 'method': 'top_p', 'top_k': 25, 'top_p': 0.30000000000000004, 'temperature': 0.30000000000000004, 'num_return': 1}
+time 70
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test277.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 41, 'method': 'top_k', 'top_k': 30, 'top_p': 0.5, 'temperature': 0.7000000000000001, 'num_return': 2}
+time 67
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test278.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 59, 'method': 'top_k', 'top_k': 36, 'top_p': 0.4, 'temperature': 0.8, 'num_return': 5}
+time 125
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test279.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 50, 'method': 'top_p', 'top_k': 32, 'top_p': 0.30000000000000004, 'temperature': 0.7000000000000001, 'num_return': 2}
+time 82
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test280.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 58, 'method': 'top_k', 'top_k': 34, 'top_p': 0.9, 'temperature': 0.6000000000000001, 'num_return': 3}
+time 89
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test281.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 43, 'method': 'top_k', 'top_k': 22, 'top_p': 0.8, 'temperature': 0.7000000000000001, 'num_return': 8}
+outof memory??
+time 24
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test282.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 52, 'method': 'top_p', 'top_k': 21, 'top_p': 0.5, 'temperature': 0.6000000000000001, 'num_return': 2}
+time 82
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test283.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 55, 'method': 'top_k', 'top_k': 23, 'top_p': 0.2, 'temperature': 0.30000000000000004, 'num_return': 1}
+time 64
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test284.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 59, 'method': 'top_k', 'top_k': 38, 'top_p': 0.0, 'temperature': 0.4, 'num_return': 3}
+time 92
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test285.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 47, 'method': 'top_p', 'top_k': 35, 'top_p': 0.4, 'temperature': 0.1, 'num_return': 5}
+time 123
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test286.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 48, 'method': 'top_k', 'top_k': 30, 'top_p': 0.2, 'temperature': 0.2, 'num_return': 4}
+time 97
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test287.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 47, 'method': 'top_k', 'top_k': 39, 'top_p': 0.7000000000000001, 'temperature': 0.6000000000000001, 'num_return': 2}
+time 75
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test288.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 51, 'method': 'top_k', 'top_k': 32, 'top_p': 0.30000000000000004, 'temperature': 0.1, 'num_return': 7}
+outof memory??
+time 25
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test289.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 54, 'method': 'top_p', 'top_k': 24, 'top_p': 0.1, 'temperature': 0.4, 'num_return': 4}
+time 114
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test290.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 50, 'method': 'top_p', 'top_k': 21, 'top_p': 0.4, 'temperature': 0.4, 'num_return': 7}
+outof memory??
+time 25
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test291.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 47, 'method': 'top_k', 'top_k': 21, 'top_p': 0.2, 'temperature': 0.4, 'num_return': 3}
+time 84
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test292.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 51, 'method': 'top_k', 'top_k': 22, 'top_p': 0.4, 'temperature': 0.7000000000000001, 'num_return': 2}
+time 73
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test293.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 48, 'method': 'top_p', 'top_k': 32, 'top_p': 0.9, 'temperature': 0.2, 'num_return': 9}
+outof memory??
+time 27
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test294.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 58, 'method': 'top_p', 'top_k': 23, 'top_p': 0.9, 'temperature': 0.30000000000000004, 'num_return': 9}
+outof memory??
+time 29
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test295.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 55, 'method': 'top_p', 'top_k': 26, 'top_p': 0.5, 'temperature': 0.6000000000000001, 'num_return': 1}
+time 72
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test296.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 42, 'method': 'top_p', 'top_k': 27, 'top_p': 0.2, 'temperature': 0.8, 'num_return': 10}
+outof memory??
+time 14
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test297.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 59, 'method': 'top_p', 'top_k': 37, 'top_p': 0.9, 'temperature': 0.1, 'num_return': 10}
+outof memory??
+time 14
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test298.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 48, 'method': 'top_p', 'top_k': 23, 'top_p': 0.7000000000000001, 'temperature': 0.30000000000000004, 'num_return': 6}
+time 142
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test299.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 44, 'method': 'top_p', 'top_k': 40, 'top_p': 0.0, 'temperature': 0.30000000000000004, 'num_return': 7}
+outof memory??
+time 24
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test300.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 50, 'method': 'top_k', 'top_k': 34, 'top_p': 0.4, 'temperature': 0.30000000000000004, 'num_return': 4}
+time 100
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test301.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 57, 'method': 'top_p', 'top_k': 26, 'top_p': 0.2, 'temperature': 0.8, 'num_return': 2}
+time 88
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test302.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 42, 'method': 'top_p', 'top_k': 33, 'top_p': 0.0, 'temperature': 0.9, 'num_return': 3}
+time 86
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test303.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 58, 'method': 'top_k', 'top_k': 35, 'top_p': 0.30000000000000004, 'temperature': 0.9, 'num_return': 8}
+outof memory??
+time 27
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test304.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 57, 'method': 'top_p', 'top_k': 31, 'top_p': 0.8, 'temperature': 0.1, 'num_return': 5}
+time 135
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test305.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 48, 'method': 'top_k', 'top_k': 38, 'top_p': 0.1, 'temperature': 0.2, 'num_return': 10}
+outof memory??
+time 15
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test306.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 57, 'method': 'top_k', 'top_k': 20, 'top_p': 1.0, 'temperature': 0.7000000000000001, 'num_return': 5}
+time 125
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test307.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 42, 'method': 'top_k', 'top_k': 37, 'top_p': 0.2, 'temperature': 0.9, 'num_return': 1}
+time 55
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test308.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 47, 'method': 'top_k', 'top_k': 34, 'top_p': 0.8, 'temperature': 0.8, 'num_return': 10}
+outof memory??
+time 14
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test309.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 59, 'method': 'top_k', 'top_k': 32, 'top_p': 0.0, 'temperature': 0.30000000000000004, 'num_return': 4}
+time 104
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test310.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 41, 'method': 'top_k', 'top_k': 27, 'top_p': 0.9, 'temperature': 0.4, 'num_return': 7}
+outof memory??
+time 23
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test311.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 41, 'method': 'top_p', 'top_k': 36, 'top_p': 0.7000000000000001, 'temperature': 0.5, 'num_return': 8}
+outof memory??
+time 24
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test312.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 56, 'method': 'top_k', 'top_k': 34, 'top_p': 0.1, 'temperature': 0.8, 'num_return': 3}
+time 94
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test313.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 47, 'method': 'top_p', 'top_k': 38, 'top_p': 0.1, 'temperature': 0.2, 'num_return': 3}
+time 93
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test314.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 54, 'method': 'top_k', 'top_k': 37, 'top_p': 0.4, 'temperature': 1.0, 'num_return': 3}
+time 90
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test315.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 50, 'method': 'top_p', 'top_k': 32, 'top_p': 0.1, 'temperature': 0.30000000000000004, 'num_return': 1}
+time 67
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test316.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 52, 'method': 'top_p', 'top_k': 34, 'top_p': 0.2, 'temperature': 0.9, 'num_return': 7}
+outof memory??
+time 26
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test317.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 50, 'method': 'top_p', 'top_k': 20, 'top_p': 0.6000000000000001, 'temperature': 0.7000000000000001, 'num_return': 7}
+outof memory??
+time 25
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test318.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 46, 'method': 'top_k', 'top_k': 23, 'top_p': 0.0, 'temperature': 0.4, 'num_return': 7}
+outof memory??
+time 23
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test319.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 50, 'method': 'top_k', 'top_k': 37, 'top_p': 0.6000000000000001, 'temperature': 0.5, 'num_return': 4}
+time 100
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test320.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 50, 'method': 'top_p', 'top_k': 21, 'top_p': 0.4, 'temperature': 0.6000000000000001, 'num_return': 3}
+time 94
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test321.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 48, 'method': 'top_p', 'top_k': 33, 'top_p': 0.7000000000000001, 'temperature': 0.6000000000000001, 'num_return': 6}
+time 148
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test322.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 52, 'method': 'top_k', 'top_k': 29, 'top_p': 0.30000000000000004, 'temperature': 0.9, 'num_return': 7}
+outof memory??
+time 25
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test323.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 48, 'method': 'top_p', 'top_k': 39, 'top_p': 0.7000000000000001, 'temperature': 0.2, 'num_return': 4}
+time 110
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test324.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 49, 'method': 'top_p', 'top_k': 22, 'top_p': 0.0, 'temperature': 0.8, 'num_return': 3}
+time 95
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test325.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 52, 'method': 'top_p', 'top_k': 20, 'top_p': 0.7000000000000001, 'temperature': 0.5, 'num_return': 2}
+time 89
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test326.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 46, 'method': 'top_p', 'top_k': 34, 'top_p': 0.2, 'temperature': 0.1, 'num_return': 2}
+time 84
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test327.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 49, 'method': 'top_p', 'top_k': 29, 'top_p': 0.7000000000000001, 'temperature': 0.30000000000000004, 'num_return': 6}
+time 147
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test328.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 54, 'method': 'top_k', 'top_k': 24, 'top_p': 0.8, 'temperature': 1.0, 'num_return': 6}
+time 143
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test329.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 51, 'method': 'top_p', 'top_k': 37, 'top_p': 0.8, 'temperature': 0.1, 'num_return': 1}
+time 71
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test330.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 48, 'method': 'top_k', 'top_k': 29, 'top_p': 1.0, 'temperature': 0.5, 'num_return': 6}
+time 135
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test331.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 46, 'method': 'top_k', 'top_k': 39, 'top_p': 0.9, 'temperature': 0.30000000000000004, 'num_return': 8}
+outof memory??
+time 26
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test332.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 60, 'method': 'top_p', 'top_k': 26, 'top_p': 1.0, 'temperature': 0.7000000000000001, 'num_return': 4}
+time 110
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test333.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 50, 'method': 'top_k', 'top_k': 39, 'top_p': 0.1, 'temperature': 0.2, 'num_return': 6}
+time 136
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test334.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 46, 'method': 'top_p', 'top_k': 33, 'top_p': 0.7000000000000001, 'temperature': 0.9, 'num_return': 1}
+time 72
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test335.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 44, 'method': 'top_p', 'top_k': 24, 'top_p': 0.8, 'temperature': 0.6000000000000001, 'num_return': 2}
+time 86
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test336.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 53, 'method': 'top_k', 'top_k': 26, 'top_p': 0.30000000000000004, 'temperature': 0.8, 'num_return': 4}
+time 107
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test337.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 52, 'method': 'top_k', 'top_k': 40, 'top_p': 0.4, 'temperature': 0.1, 'num_return': 2}
+time 77
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test338.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 48, 'method': 'top_k', 'top_k': 26, 'top_p': 0.0, 'temperature': 0.6000000000000001, 'num_return': 8}
+outof memory??
+time 25
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test339.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 46, 'method': 'top_k', 'top_k': 28, 'top_p': 0.7000000000000001, 'temperature': 0.8, 'num_return': 7}
+outof memory??
+time 24
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test340.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 51, 'method': 'top_p', 'top_k': 27, 'top_p': 1.0, 'temperature': 1.0, 'num_return': 3}
+time 89
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test341.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 51, 'method': 'top_k', 'top_k': 21, 'top_p': 0.5, 'temperature': 0.9, 'num_return': 8}
+outof memory??
+time 26
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test342.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 41, 'method': 'top_k', 'top_k': 38, 'top_p': 0.0, 'temperature': 0.7000000000000001, 'num_return': 8}
+outof memory??
+time 24
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test343.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 51, 'method': 'top_p', 'top_k': 39, 'top_p': 0.9, 'temperature': 0.2, 'num_return': 3}
+time 98
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test344.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 56, 'method': 'top_p', 'top_k': 30, 'top_p': 0.4, 'temperature': 0.5, 'num_return': 10}
+outof memory??
+time 15
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test345.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 56, 'method': 'top_p', 'top_k': 31, 'top_p': 1.0, 'temperature': 0.5, 'num_return': 3}
+time 95
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test346.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 60, 'method': 'top_p', 'top_k': 33, 'top_p': 0.1, 'temperature': 0.9, 'num_return': 7}
+outof memory??
+time 27
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test347.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 53, 'method': 'top_p', 'top_k': 23, 'top_p': 0.9, 'temperature': 0.8, 'num_return': 5}
+time 135
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test348.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 47, 'method': 'top_p', 'top_k': 35, 'top_p': 0.0, 'temperature': 1.0, 'num_return': 2}
+time 83
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test349.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 55, 'method': 'top_p', 'top_k': 31, 'top_p': 0.8, 'temperature': 0.5, 'num_return': 6}
+time 158
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test350.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 57, 'method': 'top_k', 'top_k': 27, 'top_p': 0.7000000000000001, 'temperature': 0.1, 'num_return': 10}
+outof memory??
+time 15
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test351.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 47, 'method': 'top_k', 'top_k': 39, 'top_p': 1.0, 'temperature': 1.0, 'num_return': 8}
+outof memory??
+time 26
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test352.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 40, 'method': 'top_p', 'top_k': 26, 'top_p': 0.1, 'temperature': 0.30000000000000004, 'num_return': 3}
+time 89
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test353.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 59, 'method': 'top_p', 'top_k': 24, 'top_p': 0.1, 'temperature': 0.5, 'num_return': 9}
+outof memory??
+time 29
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test354.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 48, 'method': 'top_p', 'top_k': 30, 'top_p': 0.1, 'temperature': 0.1, 'num_return': 10}
+outof memory??
+time 15
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test355.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 57, 'method': 'top_k', 'top_k': 32, 'top_p': 0.5, 'temperature': 0.30000000000000004, 'num_return': 9}
+outof memory??
+time 28
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test356.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 59, 'method': 'top_k', 'top_k': 33, 'top_p': 0.2, 'temperature': 0.1, 'num_return': 3}
+time 96
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test357.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 50, 'method': 'top_k', 'top_k': 30, 'top_p': 0.9, 'temperature': 0.6000000000000001, 'num_return': 8}
+outof memory??
+time 26
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test358.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 58, 'method': 'top_k', 'top_k': 33, 'top_p': 0.9, 'temperature': 0.7000000000000001, 'num_return': 10}
+outof memory??
+time 14
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test359.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 45, 'method': 'top_p', 'top_k': 30, 'top_p': 0.5, 'temperature': 0.6000000000000001, 'num_return': 1}
+time 67
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test360.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 52, 'method': 'top_p', 'top_k': 31, 'top_p': 0.5, 'temperature': 0.2, 'num_return': 5}
+time 133
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test361.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 52, 'method': 'top_k', 'top_k': 20, 'top_p': 0.0, 'temperature': 0.5, 'num_return': 10}
+outof memory??
+time 15
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test362.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 54, 'method': 'top_k', 'top_k': 22, 'top_p': 0.7000000000000001, 'temperature': 0.2, 'num_return': 8}
+outof memory??
+time 27
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test363.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 60, 'method': 'top_p', 'top_k': 37, 'top_p': 0.9, 'temperature': 0.8, 'num_return': 3}
+time 109
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test364.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 49, 'method': 'top_k', 'top_k': 40, 'top_p': 1.0, 'temperature': 0.8, 'num_return': 4}
+time 103
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test365.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 45, 'method': 'top_p', 'top_k': 23, 'top_p': 0.1, 'temperature': 0.9, 'num_return': 3}
+time 97
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test366.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 55, 'method': 'top_p', 'top_k': 31, 'top_p': 0.5, 'temperature': 0.7000000000000001, 'num_return': 1}
+time 76
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test367.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 58, 'method': 'top_k', 'top_k': 37, 'top_p': 0.9, 'temperature': 0.8, 'num_return': 6}
+time 147
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test368.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 43, 'method': 'top_p', 'top_k': 38, 'top_p': 0.8, 'temperature': 0.30000000000000004, 'num_return': 7}
+outof memory??
+time 26
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test369.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 57, 'method': 'top_p', 'top_k': 20, 'top_p': 0.2, 'temperature': 0.6000000000000001, 'num_return': 10}
+outof memory??
+time 15
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test370.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 40, 'method': 'top_p', 'top_k': 33, 'top_p': 0.4, 'temperature': 0.5, 'num_return': 9}
+outof memory??
+time 27
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test371.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 56, 'method': 'top_k', 'top_k': 22, 'top_p': 0.8, 'temperature': 0.5, 'num_return': 3}
+time 94
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test372.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 45, 'method': 'top_k', 'top_k': 28, 'top_p': 0.0, 'temperature': 0.6000000000000001, 'num_return': 10}
+outof memory??
+time 15
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test373.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 40, 'method': 'top_p', 'top_k': 24, 'top_p': 0.6000000000000001, 'temperature': 0.8, 'num_return': 8}
+outof memory??
+time 25
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test374.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 57, 'method': 'top_k', 'top_k': 29, 'top_p': 0.6000000000000001, 'temperature': 0.2, 'num_return': 9}
+outof memory??
+time 28
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test375.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 44, 'method': 'top_p', 'top_k': 31, 'top_p': 0.7000000000000001, 'temperature': 0.7000000000000001, 'num_return': 6}
+time 141
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test376.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 60, 'method': 'top_p', 'top_k': 38, 'top_p': 0.5, 'temperature': 0.6000000000000001, 'num_return': 2}
+time 91
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test377.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 44, 'method': 'top_k', 'top_k': 37, 'top_p': 0.5, 'temperature': 0.30000000000000004, 'num_return': 7}
+outof memory??
+time 24
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test378.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 40, 'method': 'top_k', 'top_k': 22, 'top_p': 0.0, 'temperature': 0.6000000000000001, 'num_return': 4}
+time 97
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test379.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 58, 'method': 'top_p', 'top_k': 28, 'top_p': 0.0, 'temperature': 0.7000000000000001, 'num_return': 2}
+time 90
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test380.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 49, 'method': 'top_k', 'top_k': 30, 'top_p': 0.2, 'temperature': 0.7000000000000001, 'num_return': 4}
+time 101
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test381.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 42, 'method': 'top_p', 'top_k': 34, 'top_p': 0.1, 'temperature': 0.2, 'num_return': 7}
+outof memory??
+time 24
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test382.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 42, 'method': 'top_p', 'top_k': 40, 'top_p': 0.1, 'temperature': 0.8, 'num_return': 6}
+time 139
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test383.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 41, 'method': 'top_p', 'top_k': 31, 'top_p': 0.8, 'temperature': 0.5, 'num_return': 2}
+time 79
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test384.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 56, 'method': 'top_k', 'top_k': 38, 'top_p': 0.4, 'temperature': 0.2, 'num_return': 7}
+outof memory??
+time 25
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test385.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 41, 'method': 'top_p', 'top_k': 40, 'top_p': 0.5, 'temperature': 0.8, 'num_return': 9}
+outof memory??
+time 29
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test386.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 49, 'method': 'top_k', 'top_k': 36, 'top_p': 0.0, 'temperature': 1.0, 'num_return': 1}
+time 63
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test387.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 40, 'method': 'top_k', 'top_k': 31, 'top_p': 0.9, 'temperature': 1.0, 'num_return': 2}
+time 72
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test388.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 49, 'method': 'top_k', 'top_k': 33, 'top_p': 0.8, 'temperature': 0.7000000000000001, 'num_return': 2}
+time 71
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test389.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 46, 'method': 'top_p', 'top_k': 37, 'top_p': 0.0, 'temperature': 0.1, 'num_return': 1}
+time 72
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test390.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 49, 'method': 'top_p', 'top_k': 30, 'top_p': 0.4, 'temperature': 0.9, 'num_return': 5}
+time 128
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test391.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 51, 'method': 'top_p', 'top_k': 33, 'top_p': 0.7000000000000001, 'temperature': 0.30000000000000004, 'num_return': 8}
+outof memory??
+time 27
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test392.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 49, 'method': 'top_k', 'top_k': 25, 'top_p': 1.0, 'temperature': 0.4, 'num_return': 8}
+outof memory??
+time 25
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test393.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 58, 'method': 'top_k', 'top_k': 33, 'top_p': 0.5, 'temperature': 0.30000000000000004, 'num_return': 2}
+time 84
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test394.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 42, 'method': 'top_k', 'top_k': 33, 'top_p': 0.8, 'temperature': 0.8, 'num_return': 1}
+time 60
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test395.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 40, 'method': 'top_p', 'top_k': 34, 'top_p': 0.2, 'temperature': 0.5, 'num_return': 9}
+outof memory??
+time 27
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test396.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 50, 'method': 'top_k', 'top_k': 24, 'top_p': 0.0, 'temperature': 0.5, 'num_return': 4}
+time 101
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test397.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 54, 'method': 'top_p', 'top_k': 38, 'top_p': 0.4, 'temperature': 0.4, 'num_return': 5}
+time 135
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test398.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 59, 'method': 'top_p', 'top_k': 35, 'top_p': 0.1, 'temperature': 0.2, 'num_return': 7}
+outof memory??
+time 26
+{'trigger_name': 'rsearch_trigger.csv', 'generate_name': 'test_aug_2/test399.csv', 'model': 'GPT2', 'bs': 16, 'max_gen_len': 59, 'method': 'top_k', 'top_k': 36, 'top_p': 0.6000000000000001, 'temperature': 0.1, 'num_return': 10}
+outof memory??
+time 15

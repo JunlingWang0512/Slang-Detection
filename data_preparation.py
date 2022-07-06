@@ -48,7 +48,7 @@ def example_gener(word,wordlist):
 
 
 def data_trigger_csv():
-    filedir = C.DATA_DIR + "slang_augment_30000_split.csv"
+    filedir = C.DATA_DIR + "slang_augment_50000_updated.csv"
     data_cleaned = pd.read_csv(filedir).sort_values(['word'])
 
     temp_list = []
@@ -88,10 +88,10 @@ def augment_split_csv():
     eval.to_csv(C.DATA_DIR + 'augment_eval.csv')
 
 def rsearch_trigger_csv():
-    filedir = C.DATA_DIR + 'trigger_data_new.csv'
+    filedir = C.DATA_DIR + 'trigger_data.csv'
     trigger_new = pd.read_csv(filedir, index_col=0)
     random.seed(122)
-    sample_idx = random.sample(range(0, trigger_new.shape[0]), k=100)
+    sample_idx = random.sample(range(0, trigger_new.shape[0]), k=1000)
     rsearch_trigger = trigger_new.iloc[sample_idx].reset_index(drop = True)
     rsearch_trigger.to_csv(C.DATA_DIR + 'rsearch_trigger.csv')
 
@@ -99,5 +99,5 @@ def rsearch_trigger_csv():
 if __name__ == '__main__':
     data_cls_csv()
     data_trigger_csv()
-    augment_split_csv()
+    # augment_split_csv()
     rsearch_trigger_csv()
