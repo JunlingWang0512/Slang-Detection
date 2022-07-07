@@ -59,8 +59,10 @@ warnings.filterwarnings("ignore")
 
 #metric:
 random_search_df = pd.read_csv(C.DATA_DIR + 'random_search_result.csv', index_col = 0)
-metric_dict_list = {'bleu':[], 'perplexity':[], 'frequency':[]}
-metric_list = ['bleu','perplexity','frequency']
+# metric_dict_list = {'bleu':[], 'perplexity':[], 'count':[], 'count_rate':[]}
+metric_dict_list = {'count':[], 'count_rate':[]}
+# metric_list = ['bleu','perplexity','frequency']
+metric_list = ['frequency']
 for i in range(len(random_search_df)):
     print('i =', i)
     generate_name = random_search_df.loc[i, 'generate_name']
@@ -75,8 +77,10 @@ for i in range(len(random_search_df)):
             metric_dict_list[metric].append(metric_cal['mean_perplexity'])
             print(metric_cal['mean_perplexity'])
         if metric == 'frequency':
-            metric_dict_list[metric].append(metric_cal[0])
+            metric_dict_list['count'].append(metric_cal[0])
             print(metric_cal[0])
+            metric_dict_list['count_rate'].append(metric_cal[1])
+            print(metric_cal[1])
     if i%20 == 0:
         df = pd.DataFrame(metric_dict_list)
         df.to_csv(C.DATA_DIR+'random_search_metrics.csv')

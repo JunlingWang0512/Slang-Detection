@@ -81,6 +81,7 @@ class COMPUTE_FREQENCY:
         self.list_sents = list(self.data_eval['generate'])
         self.input_texts = []
         self.score = None
+        self.length = len(self.data_eval)
         self.word_freqs = defaultdict(int)
 
     def set_input(self):
@@ -93,7 +94,7 @@ class COMPUTE_FREQENCY:
 
     def compute_metric(self):
         self.set_input()
-        return len(self.word_freqs), self.word_freqs
+        return len(self.word_freqs), len(self.word_freqs)/self.length, self.word_freqs
 
 
 def get_metric(config):
@@ -111,10 +112,10 @@ def get_metric(config):
         return score
     if config.metric == 'frequency':
         count_freq = COMPUTE_FREQENCY(config)
-        count, freq = count_freq.compute_metric()
+        count, count_rate, freq = count_freq.compute_metric()
         # print(count)
         # print(freq)
-        return count, freq
+        return count, count_rate, freq
 
 
 if __name__ == '__main__':
