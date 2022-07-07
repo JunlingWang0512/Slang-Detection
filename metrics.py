@@ -1,5 +1,6 @@
 from transformers import AutoTokenizer
 from datasets import load_metric
+# from evaluate import load
 import pandas as pd
 import torch
 from configuration import CONSTANTS as C
@@ -65,8 +66,9 @@ class COMPUTE_PERPLEXITY:
     def compute_metric(self):
         self.set_input()
         print('input set')
-        metric = load_metric('perplexity')
-        self.score = metric.compute(model_id = 'gpt2', input_texts = self.input_texts, batch_size = 16, device = 'gpu')
+        # results = perplexity.compute(predictions=predictions, model_id='gpt2')
+        metric = load_metric('perplexity', module_type="metric")
+        self.score = metric.compute(model_id = 'gpt2', input_texts = self.input_texts, batch_size = 16, device = 'cpu')
         return self.score
 
 
@@ -99,18 +101,19 @@ def get_metric(config):
     if config.metric == 'bleu':
         bleu = COMPUTE_BLEU(config)
         score = bleu.compute_metric()
-        print(score)
+        # print(score)
         return score
     if config.metric == 'perplexity':
         perplexity = COMPUTE_PERPLEXITY(config)
         score = perplexity.compute_metric()
-        print(score)
+
+        # print(score)
         return score
     if config.metric == 'frequency':
         count_freq = COMPUTE_FREQENCY(config)
         count, freq = count_freq.compute_metric()
-        print(count)
-        print(freq)
+        # print(count)
+        # print(freq)
         return count, freq
 
 

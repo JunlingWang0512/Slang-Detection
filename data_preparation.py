@@ -1,6 +1,7 @@
 import pandas as pd
 import random
 from configuration import CONSTANTS as C
+import numpy as np
 
 def data_cls_csv():
     train_sl = pd.read_csv("data/slang_train_10000_split.csv")
@@ -96,8 +97,26 @@ def rsearch_trigger_csv():
     rsearch_trigger.to_csv(C.DATA_DIR + 'rsearch_trigger.csv')
 
 
+def human_eval_csv(metric_name):
+    df_metrics = pd.read_csv(C.DATA_DIR+'random_search_metrics.csv', index_col = 0)
+    df_paras = pd.read_csv(C.DATA_DIR+'random_search_result.csv', index_col = 0)
+
+    max_idx = np.argmax(np.array(df_metrics[metric_name]))
+    min_idx = np.argmin(np.array(df_metrics[metric_name]))
+    new_metrics = abs(np.array(df_metrics[metric_name]) - np.mean(np.array(df_metrics[metric_name])))
+    avg_idx = np.argmin(new_metrics)
+
+    pd.read_csv(C.DATA_DIR+df_paras.loc[max_idx, 'generate_name'], index_col=0)[:100].to_csv(C.DATA_DIR + 'human_eval/' +metric_name + '_max.csv')
+    pd.read_csv(C.DATA_DIR+df_paras.loc[min_idx, 'generate_name'], index_col=0)[:100].to_csv(C.DATA_DIR + 'human_eval/' +metric_name + '_min.csv')
+    pd.read_csv(C.DATA_DIR+df_paras.loc[avg_idx, 'generate_name'], index_col=0)[:100].to_csv(C.DATA_DIR + 'human_eval/' +metric_name + '_avg.csv')
+
+
 if __name__ == '__main__':
-    data_cls_csv()
-    data_trigger_csv()
+    # data_cls_csv()
+    # data_trigger_csv()
     # augment_split_csv()
-    rsearch_trigger_csv()
+    # rsearch_trigger_csv()
+    human_eval_csv('bleu')
+    human_eval_csv('perplexity')
+    human_eval_csv('frequency')
+
