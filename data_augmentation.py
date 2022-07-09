@@ -3,6 +3,7 @@ import torch
 import pandas as pd
 from tqdm import tqdm
 import re
+import random
 import warnings
 from configuration import Configuration
 from configuration import CONSTANTS as C
@@ -21,6 +22,49 @@ def model_init(config):
         tokenizer.padding_side = "left" 
         tokenizer.pad_token = tokenizer.eos_token # to avoid an error
     return tokenizer, model
+
+
+def example_gener(word,wordlist):
+    s= ""
+#     print("word",word)
+#     print("wordlist",wordlist)
+    for i in range(len(wordlist)):
+#         print("i",i)
+#         print("wordlist[i]",wordlist[i])
+        s = s+str(i+1) + ". " + str(word) + " : "+str(wordlist[i])+"\n"
+    s = s + str(len(wordlist)+1) + ". " +str(word) + " : "
+    return s
+
+
+def data_trigger_csv():
+    filedir = C.DATA_DIR + C.AUG_ORIGIN_CSV
+    data_cleaned = pd.read_csv(filedir).sort_values(['word'])
+
+    temp_list = []
+    tempword = data_cleaned.iloc[0, 0]
+
+    trigger_list = []
+    trigger_word = []
+    trigger_len = []
+    for i in range(len(data_cleaned)):
+        if (data_cleaned.iloc[i, 0] == tempword):
+            temp_list.append(data_cleaned.iloc[i, 1])
+        else:
+            s = example_gener(tempword, temp_list)
+            trigger_list.append(s)
+            trigger_word.append(tempword)
+            trigger_len.append(len(temp_list))
+            tempword = data_cleaned.iloc[i, 0]
+            temp_list = [data_cleaned.iloc[i, 1]]
+
+
+    df_trigger = pd.DataFrame(columns = ['word', 'trigger', 'length'])
+    df_trigger['word'] = trigger_word
+    df_trigger['length'] = trigger_len
+    df_trigger['trigger'] = trigger_list
+    df_trigger = df_trigger.reset_index()
+    df_trigger.to_csv(C.DATA_DIR+C.AUG_TRIGGER_CSV, index = False)
+
 
 def model_batch_generation(batch_list, tokenizer, model, config):
     torch.cuda.empty_cache()
@@ -82,8 +126,10 @@ def extract_sent(s, word, num):
     return s2
 
 
-def generate_store(df_trigger, tokenizer, model, config):
+def generate_store(tokenizer, model, config):
     # generate result storage
+    df_trigger = pd.read_csv(C.DATA_DIR + C.AUG_TRIGGER_CSV, index_col = 0)
+
     succeed = {'trigger': [], 'word': [], 'generate':[]}
     trigger_list = []
     word_list = []
@@ -129,13 +175,26 @@ def generate_store(df_trigger, tokenizer, model, config):
             df_succeed.to_csv(C.DATA_DIR+config.generate_name)
 
 
+def augment_split_csv(config):
+    filedir = C.DATA_DIR + config.aug_result_csv
+    data_augment = pd.read_csv(filedir, index_col=0)  
+    random.seed(122)
+    sample_idx = random.sample(range(0, data_augment.shape[0]), k=data_augment.shape[0])
+    train_cnt = int(data_augment.shape[0]* 0.8)
+    train = data_augment.iloc[sample_idx[:train_cnt]]
+    eval = data_augment.iloc[sample_idx[train_cnt:]]
+    train.to_csv(C.DATA_DIR + C.TRAIN_MLM_CSV)
+    eval.to_csv(C.DATA_DIR + C.EVAL_MLM_CSV)
+
+
 
 if __name__ == '__main__':
     config = Configuration.parse_cmd()
+    data_trigger_csv()
+    print("trigger data generated")
     tokenizer, model = model_init(config)
     # load trigger data file
-    df_trigger = pd.read_csv(C.DATA_DIR + config.trigger_name, index_col = 0)
-    generate_store(df_trigger, tokenizer, model, config)
+    generate_store(tokenizer, model, config)
 
 
 

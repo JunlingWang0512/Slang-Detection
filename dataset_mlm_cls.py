@@ -1,6 +1,7 @@
 import torch
 from configuration import CONSTANTS as C
 from tkinter import _flatten
+import pandas as pd
 
 def find_sub_list(sl,l):
     results=[]
@@ -10,6 +11,38 @@ def find_sub_list(sl,l):
             results.append(list(range(ind,ind+sll)))
 
     return results
+
+def data_cls_csv():
+    train_sl = pd.read_csv(C.DATA_DIR + "slang_train_10000_split.csv")
+    train_st = pd.read_csv(C.DATA_DIR + "standard_train_10000.csv")
+    test_sl = pd.read_csv(C.DATA_DIR + "slang_test_10000_split.csv")
+    test_st = pd.read_csv(C.DATA_DIR + "standard_test_10000.csv")
+
+    train_sl["label"] = 1
+    train_st["label"] = 0
+    test_sl["label"] = 1
+    test_st["label"] = 0
+
+    train_sl = train_sl[['example', 'label']]
+    train_st = train_st[['train', 'label']]
+    test_sl = test_sl[['example', 'label']]
+    test_st = test_st[['test', 'label']]
+
+    train_st.columns = ['example', 'label']
+    test_st.columns = ['example', 'label']
+
+    eval_sl = test_sl[:5000]
+    eval_st = test_st[:5000]
+    test_sl = test_sl[5000:]
+    test_st = test_st[5000:]
+
+    trainset = pd.concat([train_sl,train_st], axis = 0).reset_index(drop = True)
+    evalset = pd.concat([eval_sl,eval_st], axis = 0).reset_index(drop = True)
+    testset = pd.concat([test_sl,test_st], axis = 0).reset_index(drop = True)
+
+    trainset.to_csv(C.DATA_DIR + C.TRAIN_CLS_CSV)
+    evalset.to_csv(C.DATA_DIR + C.EVAL_CLS_CSV)
+    testset.to_csv(C.DATA_DIR + C.TEST_CLS_CSV)
 
 
 class MLMDateset(torch.utils.data.Dataset):

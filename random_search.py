@@ -11,6 +11,15 @@ import warnings
 warnings.filterwarnings("ignore")
 
 
+def rsearch_trigger_csv():
+    filedir = C.DATA_DIR + C.AUG_TRIGGER_CSV
+    trigger_new = pd.read_csv(filedir, index_col=0)
+    random.seed(122)
+    sample_idx = random.sample(range(0, trigger_new.shape[0]), k=1000)
+    rsearch_trigger = trigger_new.iloc[sample_idx].reset_index(drop = True)
+    rsearch_trigger.to_csv(C.DATA_DIR + 'rsearch_trigger.csv')
+
+
 def random_search_paras():
     #ITERATE WITH DICT
     #最后也用dict 保存最后的csv结果
@@ -18,15 +27,13 @@ def random_search_paras():
     metric_list = ['bleu','perplexity','frequency']
     dict_list = {'trigger_name':[], 'generate_name':[],'max_gen_len':[],'method':[],'top_k':[],'top_p':[],\
         'temperature':[],'num_return':[]}#'num_beams':[],
-    # dict_test = {'trigger_name':'trigger_data_new.csv', 'generate_name': 'test1.csv', 'model':'GPT2','bs': 16, 'max_gen_len': 50, 'method': 'top_k', 'top_k': 30, 'top_p': 0.5, 'num_beams': 5, 'temperature': 0.5, 'num_return': 6
-    # }
+  
     for i in range(400):
         # dict_test = {'trigger_name':'trigger_data_new.csv', 'generate_name': 'test1.csv', 'model':'GPT2','bs': 16, \
         # 'max_gen_len': 50, 'method': 'top_k', 'top_k': 30, 'top_p': 0.5, 'num_beams': 5, 'temperature': 0.5, 'num_return': 6}
         start = time.time()
         torch.cuda.empty_cache()
         try:
-            trigger_name = 'rsearch_trigger.csv'
             generate_name = 'test_aug_2/test'+str(i)+'.csv'
             max_gen_len = random.randint(40,60)
             method = method_list[random.randint(0,1)]
@@ -35,7 +42,7 @@ def random_search_paras():
             # num_beams = random.randint(1,10)
             temperature = 0.1*random.randint(1,10)
             num_return = random.randint(1, 10)
-            dict_temp = {'trigger_name': trigger_name, 'generate_name': generate_name, 'model':'GPT2','bs': 16, \
+            dict_temp = {'generate_name': generate_name, 'model':'GPT2','bs': 16, \
             'max_gen_len': max_gen_len, 'method': method, 'top_k': top_k, 'top_p':top_p , 'temperature':temperature , 'num_return': num_return} #'num_beams': num_beams,
             print(dict_temp)
             config = Configuration(dict_temp)
@@ -90,6 +97,7 @@ def metric_cal():
     df = pd.DataFrame(metric_dict_list)
     df.to_csv(C.DATA_DIR+'random_search_metrics.csv')
 
+
 def human_eval_csv(metric_name):
     df_metrics = pd.read_csv(C.DATA_DIR+'random_search_metrics.csv', index_col = 0)
     df_paras = pd.read_csv(C.DATA_DIR+'random_search_result.csv', index_col = 0)
@@ -114,12 +122,13 @@ def human_eval_csv(metric_name):
     df_word_avg.to_csv(C.DATA_DIR + 'human_eval/' +metric_name + '_avg.csv')
     df_word_min.to_csv(C.DATA_DIR + 'human_eval/' +metric_name + '_min.csv')
 
+
 def avg_para_augment():
     df_metrics = pd.read_csv(C.DATA_DIR+'random_search_metrics.csv', index_col = 0)
     df_paras = pd.read_csv(C.DATA_DIR+'random_search_result.csv', index_col = 0)
 
-    # metric_list = ['bleu', 'perplexity', 'count_rate']
-    metric_list = ['perplexity', 'count_rate']
+    metric_list = ['bleu', 'perplexity', 'count_rate']
+    # metric_list = ['perplexity', 'count_rate']
     for metric_name in metric_list:
         # max_idx = np.argmax(np.array(df_metrics[metric_name]))
         new_metrics = abs(np.array(df_metrics[metric_name]) - np.mean(np.array(df_metrics[metric_name])))
@@ -128,7 +137,7 @@ def avg_para_augment():
 
         dict_avg_paras = dict(df_paras.loc[avg_idx])
         dict_avg_paras['generate_name'] = 'aug_final/avg_'+metric_name + '.csv'
-        dict_avg_paras['trigger_name'] = 'trigger_data.csv'
+        dict_avg_paras['trigger_name'] = C.AUG_TRIGGER_CSV
         dict_avg_paras['model'] = 'GPT2'
         dict_avg_paras['bs'] = 16
 

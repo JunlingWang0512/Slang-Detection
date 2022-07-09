@@ -18,9 +18,13 @@ class Constants(object):
             self.TIME = int(time.time())
             self.DATA_DIR = 'data/'
             self.MODEL_DIR = 'models/model_'+str(self.TIME) + '/'
-            self.TRAIN_CLS = 'train_cls.csv'
-            self.EVAL_CLS = 'eval_cls.csv'
-            self.TEST_CLS = 'test_cls.csv'
+            self.AUG_ORIGIN_CSV = 'slang_augment_50000_updated.csv'
+            self.AUG_TRIGGER_CSV = 'trigger_data.csv'
+            self.TRAIN_CLS_CSV = 'cls_train.csv'
+            self.EVAL_CLS_CSV = 'cls_eval.csv'
+            self.TEST_CLS_CSV = 'cls_test.csv'
+            self.TRAIN_MLM_CSV = 'mlm_train.csv'
+            self.EVAL_MLM_CSV = 'mlm_eval.csv'
             
 
     instance = None
@@ -55,10 +59,10 @@ class Configuration(object):
         parser = argparse.ArgumentParser()
 
         # General.
+        parser.add_argument('--pipeline', default=None, help='Different steps for the project')
         parser.add_argument('--seed', type=int, default=None, help='Random number generator seed.')
 
         # data augmentation parameters
-        parser.add_argument('--trigger_name', default = None,help = 'trigger data file name')
         parser.add_argument('--generate_name', default = None, help = 'generated data file name')
         parser.add_argument('--model', default = 'GPT2', help = 'augmentation model')
         parser.add_argument('--bs', type = int, default=16, help = 'batch size')
