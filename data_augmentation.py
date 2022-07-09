@@ -3,7 +3,6 @@ import torch
 import pandas as pd
 from tqdm import tqdm
 import re
-import random
 import warnings
 from configuration import Configuration
 from configuration import CONSTANTS as C
@@ -159,7 +158,7 @@ def generate_store(tokenizer, model, config):
                     s = extract_sent(str(outputs[k]), word, num)
                 except:
                     s = ''
-                    print(i,j)
+                    print('sentence extract failed for :', i,j)
                 if s != '':
                     trigger_list.append(trigger)
                     word_list.append(word)
@@ -173,18 +172,6 @@ def generate_store(tokenizer, model, config):
             df_succeed = pd.DataFrame(succeed)
             df_succeed = df_succeed.drop_duplicates(keep='first').reset_index()
             df_succeed.to_csv(C.DATA_DIR+config.generate_name)
-
-
-def augment_split_csv(config):
-    filedir = C.DATA_DIR + config.aug_result_csv
-    data_augment = pd.read_csv(filedir, index_col=0)  
-    random.seed(122)
-    sample_idx = random.sample(range(0, data_augment.shape[0]), k=data_augment.shape[0])
-    train_cnt = int(data_augment.shape[0]* 0.8)
-    train = data_augment.iloc[sample_idx[:train_cnt]]
-    eval = data_augment.iloc[sample_idx[train_cnt:]]
-    train.to_csv(C.DATA_DIR + C.TRAIN_MLM_CSV)
-    eval.to_csv(C.DATA_DIR + C.EVAL_MLM_CSV)
 
 
 

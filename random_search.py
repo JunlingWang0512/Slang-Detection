@@ -6,6 +6,7 @@ from data_augmentation import model_init, generate_store
 from metrics import get_metric
 import torch
 import time
+import os
 import numpy as np
 import warnings
 warnings.filterwarnings("ignore")
@@ -34,7 +35,9 @@ def random_search_paras():
         start = time.time()
         torch.cuda.empty_cache()
         try:
-            generate_name = 'test_aug_2/test'+str(i)+'.csv'
+            if not os.path.exists(C.DATA_DIR+'test_aug/'):
+                os.makedirs(C.DATA_DIR+'test_aug/') 
+            generate_name = 'test_aug/test'+str(i)+'.csv'
             max_gen_len = random.randint(40,60)
             method = method_list[random.randint(0,1)]
             top_k = random.randint(20,40)
@@ -135,6 +138,8 @@ def avg_para_augment():
         avg_idx = np.argmin(new_metrics)
         # min_idx = np.argmin(np.array(df_metrics[metric_name]))
 
+        if not os.path.exists(C.DATA_DIR+'aug_final/'):
+            os.makedirs(C.DATA_DIR+'aug_final/') 
         dict_avg_paras = dict(df_paras.loc[avg_idx])
         dict_avg_paras['generate_name'] = 'aug_final/avg_'+metric_name + '.csv'
         dict_avg_paras['trigger_name'] = C.AUG_TRIGGER_CSV
@@ -146,6 +151,14 @@ def avg_para_augment():
         df_trigger = pd.read_csv(C.DATA_DIR + config.trigger_name, index_col = 0)
         generate_store(df_trigger, tokenizer, model, config)
 
+
+def joined_augment():
+    metric_list = ['bleu', 'perplexity', 'count_rate']
+    df_list = []
+    for metric_name in metric_list:
+        df_list.append(pd.read_csv(C.DATA_DIR + 'aug_final/avg_'+metric_name + '.csv', index_col = 0))
+    joined_augment = pd.concat(df_list, axis = 0).sort_values(by = 'word').drop_duplicates(keep='first').reset_index(drop = True).drop(columns = ['index'])
+    joined_augment.to_csv(C.DATA_DIR + C.AUG_RESULT_CSV)
 
 if __name__ == '__main__':
     # random_search_paras()

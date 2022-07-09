@@ -20,6 +20,7 @@ class Constants(object):
             self.MODEL_DIR = 'models/model_'+str(self.TIME) + '/'
             self.AUG_ORIGIN_CSV = 'slang_augment_50000_updated.csv'
             self.AUG_TRIGGER_CSV = 'trigger_data.csv'
+            self.AUG_RESULT_CSV = 'final_augment.csv'
             self.TRAIN_CLS_CSV = 'cls_train.csv'
             self.EVAL_CLS_CSV = 'cls_eval.csv'
             self.TEST_CLS_CSV = 'cls_test.csv'

@@ -2,8 +2,9 @@ import pandas as pd
 from configuration import Configuration
 from configuration import CONSTANTS as C
 from data_extraction import extraction_csv
-from data_augmentation import data_trigger_csv, model_init, generate_store 
-from random_search import rsearch_trigger_csv, random_search_paras, metric_cal, human_eval_csv, avg_para_augment
+from data_augmentation import data_trigger_csv, model_init, generate_store
+from random_search import rsearch_trigger_csv, random_search_paras, metric_cal, human_eval_csv, avg_para_augment, joined_augment
+from dataset_mlm_cls import augment_split_csv
 
 if __name__=='__main__':
     config = Configuration.parse_cmd()
@@ -29,7 +30,9 @@ if __name__=='__main__':
 
     if config.pipeline == 'final_augmentation':
         # must have random_search_metrics.csv and random_serach_result.csv
-        avg_para_augment()
+        # avg_para_augment()
+        joined_augment()
+        augment_split_csv()
 
     if config.pipeline == 'random_search_train':
         print("random_search_train")

@@ -7,8 +7,6 @@ from configuration import CONSTANTS as C
 from configuration import Configuration
 from collections import defaultdict
 
-# load tokenizer and model
-print(C.DEVICE)
 
 class COMPUTE_BLEU:
     def __init__(self, config):
@@ -42,7 +40,7 @@ class COMPUTE_BLEU:
 
     def compute_metric(self):
         self.set_input()
-        print('input set')
+        print('metric input set')
         metric = load_metric('bleu')
         self.score = metric.compute(predictions=self.predictions, references=self.references)
         return self.score
@@ -65,7 +63,7 @@ class COMPUTE_PERPLEXITY:
 
     def compute_metric(self):
         self.set_input()
-        print('input set')
+        print('metric input set')
         # results = perplexity.compute(predictions=predictions, model_id='gpt2')
         metric = load_metric('perplexity', module_type="metric")
         self.score = metric.compute(model_id = 'gpt2', input_texts = self.input_texts, batch_size = 16, device = 'cpu')

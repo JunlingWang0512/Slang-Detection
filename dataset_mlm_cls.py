@@ -1,6 +1,7 @@
 import torch
 from configuration import CONSTANTS as C
 from tkinter import _flatten
+import random
 import pandas as pd
 
 def find_sub_list(sl,l):
@@ -11,6 +12,17 @@ def find_sub_list(sl,l):
             results.append(list(range(ind,ind+sll)))
 
     return results
+
+def augment_split_csv():
+    filedir = C.DATA_DIR + C.AUG_RESULT_CSV
+    data_augment = pd.read_csv(filedir, index_col=0)  
+    random.seed(122)
+    sample_idx = random.sample(range(0, data_augment.shape[0]), k=data_augment.shape[0])
+    train_cnt = int(data_augment.shape[0]* 0.8)
+    train = data_augment.iloc[sample_idx[:train_cnt]]
+    eval = data_augment.iloc[sample_idx[train_cnt:]]
+    train.to_csv(C.DATA_DIR + C.TRAIN_MLM_CSV)
+    eval.to_csv(C.DATA_DIR + C.EVAL_MLM_CSV)
 
 def data_cls_csv():
     train_sl = pd.read_csv(C.DATA_DIR + "slang_train_10000_split.csv")
