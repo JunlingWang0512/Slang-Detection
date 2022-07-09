@@ -118,7 +118,8 @@ def avg_para_augment():
     df_metrics = pd.read_csv(C.DATA_DIR+'random_search_metrics.csv', index_col = 0)
     df_paras = pd.read_csv(C.DATA_DIR+'random_search_result.csv', index_col = 0)
 
-    metric_list = ['bleu', 'perplexity', 'count_rate']
+    # metric_list = ['bleu', 'perplexity', 'count_rate']
+    metric_list = ['perplexity', 'count_rate']
     for metric_name in metric_list:
         # max_idx = np.argmax(np.array(df_metrics[metric_name]))
         new_metrics = abs(np.array(df_metrics[metric_name]) - np.mean(np.array(df_metrics[metric_name])))

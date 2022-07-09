@@ -29,7 +29,6 @@ def model_batch_generation(batch_list, tokenizer, model, config):
     if inputs['input_ids'].size(1)>512:
         inputs['input_ids'] = inputs['input_ids'][:, -512:]
         inputs['attention_mask'] = inputs['attention_mask'][:, -512:]
-
     if config.method == 'top_k':
         output_sequences = model.generate(
             input_ids=inputs['input_ids'].to(C.DEVICE),
@@ -37,7 +36,7 @@ def model_batch_generation(batch_list, tokenizer, model, config):
             do_sample=True, # disable sampling to test if batching affects output
             max_length=len(inputs['input_ids'][0]) + config.max_gen_len, # let it generate longer
             pad_token_id=tokenizer.eos_token_id,
-            top_k = config.top_k,
+            top_k = int(config.top_k),
             temperature=config.temperature,
             num_return_sequences= config.num_return
         )
