@@ -42,14 +42,16 @@ def train_mlm(config):
     model_mlm.add_masked_lm_head('mlm_head')
     model_mlm.to(C.DEVICE)
 
-    train_mlm = pd.read_csv(C.DATA_DIR+config.mlm_train_name)[:100]
-    eval_mlm = pd.read_csv(C.DATA_DIR+config.mlm_eval_name)[:100]
+    train_mlm = pd.read_csv(C.DATA_DIR+C.TRAIN_MLM_CSV)
+    eval_mlm = pd.read_csv(C.DATA_DIR+C.EVAL_MLM_CSV)
 
     trainset_mlm = MLMDateset(train_mlm, tokenizer, config)
     evalset_mlm = MLMDateset(eval_mlm, tokenizer, config)
 
-    trainloader_mlm = torch.utils.data.DataLoader(trainset_mlm, batch_size = 16, shuffle = True)
-    evalloader_mlm = torch.utils.data.DataLoader(evalset_mlm, batch_size = 16, shuffle = True)
+    trainloader_mlm = torch.utils.data.DataLoader(trainset_mlm, batch_size = 64, shuffle = True)
+    evalloader_mlm = torch.utils.data.DataLoader(evalset_mlm, batch_size = 64, shuffle = True)
+
+    print('data loaded')
 
     optimizer_mlm = AdamW(model_mlm.parameters(), lr = 1e-5)
 
@@ -59,6 +61,7 @@ def train_mlm(config):
         cnt = 0
         start = time.time()
         for i, batch in enumerate(trainloader_mlm):
+            print(i)
             optimizer_mlm.zero_grad()
             outputs = model_mlm(**batch)
             loss = outputs.loss
@@ -107,8 +110,8 @@ def train_cls(config):
     if config.update_adapter_cls == False:
         adapter_not_update_cls(model_cls)
 
-    train_cls  = pd.read_csv(C.DATA_DIR+C.TRAIN_CLS, index_col=0)[:100]
-    eval_cls  = pd.read_csv(C.DATA_DIR+C.EVAL_CLS, index_col=0)[:100]
+    train_cls  = pd.read_csv(C.DATA_DIR+C.TRAIN_CLS, index_col=0)
+    eval_cls  = pd.read_csv(C.DATA_DIR+C.EVAL_CLS, index_col=0)
 
     trainset_cls = CLSDataset(train_cls, tokenizer)
     evalset_cls = CLSDataset(eval_cls, tokenizer)
@@ -162,6 +165,7 @@ def train_cls(config):
 
 
 if __name__ == '__main__':
+    print(C.DEVICE)
     config = Configuration.parse_cmd()
     train_mlm(config)
     train_cls(config)

@@ -1,3 +1,5 @@
+from regex import I
+from responses import FalseBool
 import torch
 from configuration import CONSTANTS as C
 from tkinter import _flatten
@@ -66,14 +68,17 @@ class MLMDateset(torch.utils.data.Dataset):
         self.word = list(data['word'])
         self.tokenizer = tokenizer
         self.inputs = self.tokenizer(self.data, return_tensors="pt", padding=True) #pt: return pytorch tensor
+
         self.random_tensor = torch.rand(self.inputs['input_ids'].shape)
         self.random_tensor2 = torch.rand(self.inputs['input_ids'].shape)
-        self.masked_tensor = None
         self.config = config
+        self.create_MLM()
+
     def __len__(self):
         return len(self.data)
+
     def __getitem__(self, idx):
-        self.create_MLM()
+        
         return {'input_ids':self.inputs['input_ids'].detach().clone()[idx].to(C.DEVICE),
                 'token_type_ids':self.inputs['token_type_ids'].detach().clone()[idx].to(C.DEVICE),
                 'attention_mask':self.inputs['attention_mask'].detach().clone()[idx].to(C.DEVICE),
@@ -83,13 +88,11 @@ class MLMDateset(torch.utils.data.Dataset):
         #get the index of slang word in each sentence
         index_result = []
         for i in range(len(self.data)):
-            inputs = self.tokenizer(self.data[i], return_tensors="pt", padding=True)
-            word = self.tokenizer(self.word[i], return_tensors="pt", padding=True)
-            list1 = inputs['input_ids'].numpy().tolist()
-            list2 = word['input_ids'].numpy().tolist()
+            list1 = self.inputs['input_ids'].numpy().tolist()[i]
+            list2 = self.tokenizer(self.word[i], return_tensors="pt", padding=False)['input_ids'].numpy().tolist()
             del(list2[0][len(list2[0])-1])
             del(list2[0][0])
-            index_result.append(list(_flatten(find_sub_list(list2[0],list1[0]))))
+            index_result.append(list(_flatten(find_sub_list(list2[0],list1))))
 
         #create false tensor
         mask_tensor = torch.zeros(self.inputs['input_ids'].shape,dtype=torch.bool)

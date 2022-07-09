@@ -3,4 +3,4 @@
 # python metrics.py --refer_name slang_augment_30000_split.csv --eval_name augment_result_06251547.csv --metric perplexity
 # python metrics.py --refer_name slang_augment_30000_split.csv --eval_name augment_result_06251547.csv
 
-python train.py --mlm_train_name augment_train.csv --mlm_eval_name augment_eval.csv --n_epochs_mlm 1 --n_epochs_cls 1
+python train.py --n_epochs_mlm 10 --n_epochs_cls 10

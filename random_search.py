@@ -157,7 +157,8 @@ def joined_augment():
     df_list = []
     for metric_name in metric_list:
         df_list.append(pd.read_csv(C.DATA_DIR + 'aug_final/avg_'+metric_name + '.csv', index_col = 0))
-    joined_augment = pd.concat(df_list, axis = 0).sort_values(by = 'word').drop_duplicates(keep='first').reset_index(drop = True).drop(columns = ['index'])
+    joined_augment = pd.concat(df_list, axis = 0).sort_values(by = 'word').drop_duplicates(keep='first')
+    joined_augment=joined_augment.dropna(axis=0).reset_index(drop = True).drop(columns = ['index'])
     joined_augment.to_csv(C.DATA_DIR + C.AUG_RESULT_CSV)
 
 if __name__ == '__main__':
