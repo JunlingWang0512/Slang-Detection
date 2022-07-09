@@ -102,13 +102,26 @@ def human_eval_csv(metric_name):
     df_paras = pd.read_csv(C.DATA_DIR+'random_search_result.csv', index_col = 0)
 
     max_idx = np.argmax(np.array(df_metrics[metric_name]))
-    min_idx = np.argmin(np.array(df_metrics[metric_name]))
     new_metrics = abs(np.array(df_metrics[metric_name]) - np.mean(np.array(df_metrics[metric_name])))
     avg_idx = np.argmin(new_metrics)
+    min_idx = np.argmin(np.array(df_metrics[metric_name]))
+    
 
-    pd.read_csv(C.DATA_DIR+df_paras.loc[max_idx, 'generate_name'], index_col=0)[:100].to_csv(C.DATA_DIR + 'human_eval/' +metric_name + '_max.csv')
-    pd.read_csv(C.DATA_DIR+df_paras.loc[min_idx, 'generate_name'], index_col=0)[:100].to_csv(C.DATA_DIR + 'human_eval/' +metric_name + '_min.csv')
-    pd.read_csv(C.DATA_DIR+df_paras.loc[avg_idx, 'generate_name'], index_col=0)[:100].to_csv(C.DATA_DIR + 'human_eval/' +metric_name + '_avg.csv')
+    df_max = pd.read_csv(C.DATA_DIR+df_paras.loc[max_idx, 'generate_name'], index_col=0)
+    df_avg = pd.read_csv(C.DATA_DIR+df_paras.loc[min_idx, 'generate_name'], index_col=0)
+    df_min = pd.read_csv(C.DATA_DIR+df_paras.loc[avg_idx, 'generate_name'], index_col=0)
+
+    word_set = set(df_max['word']).intersection(df_avg['word']).intersection(df_min['word'])
+
+    df_word_max = df_max.loc[df_max['word'].isin(word_set)].sort_values(by = 'word').reset_index(drop = True)
+    df_word_avg = df_avg.loc[df_avg['word'].isin(word_set)].sort_values(by = 'word').reset_index(drop = True)
+    df_word_min = df_min.loc[df_min['word'].isin(word_set)].sort_values(by = 'word').reset_index(drop = True)
+
+    df_word_max.to_csv(C.DATA_DIR + 'human_eval/' +metric_name + '_max.csv')
+    df_word_avg.to_csv(C.DATA_DIR + 'human_eval/' +metric_name + '_avg.csv')
+    df_word_min.to_csv(C.DATA_DIR + 'human_eval/' +metric_name + '_min.csv')
+
+    return max_idx, avg_idx, min_idx
 
 
 if __name__ == '__main__':
@@ -116,7 +129,9 @@ if __name__ == '__main__':
     # data_trigger_csv()
     # augment_split_csv()
     # rsearch_trigger_csv()
-    human_eval_csv('bleu')
-    human_eval_csv('perplexity')
-    human_eval_csv('frequency')
+    # human_eval_csv('bleu')
+    # human_eval_csv('perplexity')
+    human_eval_csv('count')
+    human_eval_csv('count_rate')
+
 
