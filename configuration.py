@@ -81,8 +81,6 @@ class Configuration(object):
         parser.add_argument('--eval_name', default = None, help = 'data file name to evaluate')
 
         # adapter enhance
-        parser.add_argument('--mlm_train_name', default = None, help = 'train set load from augment result')
-        parser.add_argument('--mlm_eval_name', default = None, help = 'test set load from augment result')
         parser.add_argument('--mlm_threshold', type = float, default = 0.5, help = 'MLM threshold for masking slang words')
         parser.add_argument('--n_epochs_mlm', type = int, default = 50, help = 'mlm task epochs')
         parser.add_argument('--n_epochs_cls', type = int, default = 50, help = 'cls task epochs')
