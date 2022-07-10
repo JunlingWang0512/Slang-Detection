@@ -1,10 +1,16 @@
-from regex import I
-from responses import FalseBool
 import torch
 from configuration import CONSTANTS as C
 from tkinter import _flatten
 import random
 import pandas as pd
+from transformers import BertTokenizer
+import pickle
+from tqdm import tqdm
+
+tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+tokenizer.padding_side = "left" 
+tokenizer.pad_token = '[PAD]' # to avoid an error
+tokenizer.mask_token = '[MASK]'
 
 def find_sub_list(sl,l):
     results=[]
@@ -59,6 +65,50 @@ def data_cls_csv():
     testset.to_csv(C.DATA_DIR + C.TEST_CLS_CSV)
 
 
+def create_MLM(config):
+    df_augment = pd.read_csv(C.DATA_DIR+C.AUG_RESULT_CSV)
+    sents = list(df_augment['generate'])
+    words = list(df_augment['word'])
+
+    print('tokenizing')
+    inputs = tokenizer(sents, return_tensors="pt", padding=True)
+    inputs_ids = inputs['input_ids'].numpy().tolist()
+
+    random_tensor = torch.rand(inputs['input_ids'].shape)
+    random_tensor2 = torch.rand(inputs['input_ids'].shape)
+
+    #get the index of slang word in each sentence
+    print('token for slang word')
+    index_result = []
+    for i in tqdm(range(len(sents))):
+        list_sent = inputs_ids[i]
+        list_word = tokenizer(words[i], return_tensors="pt", padding=False)['input_ids'].numpy().tolist()[0][1:-1]
+        index_result.append(list(_flatten(find_sub_list(list_word,list_sent))))
+
+    
+    #create false tensor
+    print('create false tensor')
+    mask_tensor = torch.zeros(inputs['input_ids'].shape,dtype=torch.bool)
+    for i in range(len(mask_tensor)):
+        mask_tensor[i, index_result[i]] = True 
+
+    inputs['labels'] = inputs['input_ids'].detach().clone() 
+    masked_tensor = (random_tensor2 < config.mlm_threshold) *(random_tensor < 0.15)*(inputs['input_ids'] != '101') * \
+        (inputs['input_ids'] != '102') * (inputs['input_ids'] != 0)\
+            | (random_tensor2 >= config.mlm_threshold) * mask_tensor
+
+
+    non_zero_indices = []
+    print('create mlm data')
+    for i in range(len(inputs['input_ids'])):
+        non_zero_indices.append(torch.flatten(masked_tensor[i].nonzero()).tolist())#Flattens input by reshaping it into a one-dimensional tensor. 
+    for i in range(len(inputs['input_ids'])):
+        inputs['input_ids'][i, non_zero_indices[i]] = 103 #103: masked token
+    
+    with open('mlm.pickle', 'wb') as handle:
+        pickle.dump(inputs, handle, protocol=pickle.HIGHEST_PROTOCOL)
+
+
 class MLMDateset(torch.utils.data.Dataset):
     """
     Dataset for mask language modelling task.
@@ -68,17 +118,14 @@ class MLMDateset(torch.utils.data.Dataset):
         self.word = list(data['word'])
         self.tokenizer = tokenizer
         self.inputs = self.tokenizer(self.data, return_tensors="pt", padding=True) #pt: return pytorch tensor
-
         self.random_tensor = torch.rand(self.inputs['input_ids'].shape)
         self.random_tensor2 = torch.rand(self.inputs['input_ids'].shape)
+        self.masked_tensor = None
         self.config = config
-        self.create_MLM()
-
     def __len__(self):
         return len(self.data)
-
     def __getitem__(self, idx):
-        
+        self.create_MLM()
         return {'input_ids':self.inputs['input_ids'].detach().clone()[idx].to(C.DEVICE),
                 'token_type_ids':self.inputs['token_type_ids'].detach().clone()[idx].to(C.DEVICE),
                 'attention_mask':self.inputs['attention_mask'].detach().clone()[idx].to(C.DEVICE),
@@ -88,11 +135,13 @@ class MLMDateset(torch.utils.data.Dataset):
         #get the index of slang word in each sentence
         index_result = []
         for i in range(len(self.data)):
-            list1 = self.inputs['input_ids'].numpy().tolist()[i]
-            list2 = self.tokenizer(self.word[i], return_tensors="pt", padding=False)['input_ids'].numpy().tolist()
+            inputs = self.tokenizer(self.data[i], return_tensors="pt", padding=True)
+            word = self.tokenizer(self.word[i], return_tensors="pt", padding=True)
+            list1 = inputs['input_ids'].numpy().tolist()
+            list2 = word['input_ids'].numpy().tolist()
             del(list2[0][len(list2[0])-1])
             del(list2[0][0])
-            index_result.append(list(_flatten(find_sub_list(list2[0],list1))))
+            index_result.append(list(_flatten(find_sub_list(list2[0],list1[0]))))
 
         #create false tensor
         mask_tensor = torch.zeros(self.inputs['input_ids'].shape,dtype=torch.bool)
