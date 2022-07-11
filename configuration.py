@@ -17,7 +17,7 @@ class Constants(object):
             self.DTYPE = torch.float32
             self.TIME = int(time.time())
             self.DATA_DIR = 'data/'
-            self.MODEL_DIR = 'models/model_'+str(self.TIME) + '/'
+            # self.MODEL_DIR = 'models/model_'+str(self.TIME) + '/'
             self.AUG_ORIGIN_CSV = 'slang_augment_50000_updated.csv'
             self.AUG_TRIGGER_CSV = 'trigger_data.csv'
             self.AUG_RESULT_CSV = 'final_augment.csv'

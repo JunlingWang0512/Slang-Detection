@@ -1,4 +1,3 @@
-from cmath import e
 import torch
 from torch.optim import AdamW
 from transformers import BertTokenizer, BertForSequenceClassification
@@ -7,6 +6,7 @@ import pandas as pd
 from configuration import CONSTANTS as C
 from dataset_mlm_cls import MLMDateset, CLSDataset
 from configuration import Configuration
+from tqdm import tqdm
 import os
 import time
 
@@ -59,6 +59,9 @@ def train_mlm(config):
 
     best_val_loss = 10000
     glob_cnt = 0
+    MODEL_MLM_DIR = 'models_mlm/model_'+str(C.TIME) + '/'
+    if not os.path.exists(MODEL_MLM_DIR+'mlm_adapter/'):
+        os.makedirs(MODEL_MLM_DIR+'mlm_adapter/') 
 
     for epoch in range(config.n_epochs_mlm):
         for i, batch in enumerate(trainloader_mlm):
@@ -89,9 +92,7 @@ def train_mlm(config):
 
                 if valid_loss < best_val_loss:
                     best_val_loss = valid_loss
-                    if not os.path.exists(C.MODEL_DIR+'mlm_adapter/'):
-                        os.makedirs(C.MODEL_DIR+'mlm_adapter/') 
-                    model_mlm.save_adapter(save_directory=C.MODEL_DIR + 'mlm_adapter/', adapter_name = 'mlm_adapter', with_head = False)
+                    model_mlm.save_adapter(save_directory=MODEL_MLM_DIR + 'mlm_adapter/', adapter_name = 'mlm_adapter', with_head = False)
                     torch.save({
                         'epoch': epoch,
                         'glob_cnt': glob_cnt,
@@ -99,19 +100,22 @@ def train_mlm(config):
                         'optimizer_state_dict':optimizer_mlm.state_dict(),
                         'train_loss': train_loss,
                         'valid_loss': valid_loss
-                    }, C.MODEL_DIR+'model_mlm.pth')
+                    }, MODEL_MLM_DIR+'model_mlm.pth')
 
                     print('checkpoint saved')
 
 
 
 def train_cls(config):
+    MODEL_MLM_DIR = 'models_mlm/' + config.mlm_adapter_name + '/'
+    MODEL_CLS_DIR = 'models_cls/model_'+str(C.TIME) + '/'
+            
     model_cls = BertAdapterModel.from_pretrained('bert-base-uncased')
     if config.baseline == False:
-        model_cls.load_adapter(adapter_name_or_path=C.MODEL_DIR + 'mlm_adapter/', load_as = 'cls_adapter', set_active = True)
+        model_cls.load_adapter(adapter_name_or_path=MODEL_MLM_DIR + 'mlm_adapter/', load_as = 'cls_adapter', set_active = True)
     else:
         if config.baseline_with_adapter == False:
-            model_cls.load_adapter(adapter_name_or_path=C.MODEL_DIR + 'mlm_adapter/', load_as = 'cls_adapter', set_active = False)
+            model_cls.load_adapter(adapter_name_or_path=config.mlm_adapter_name + 'mlm_adapter/', load_as = 'cls_adapter', set_active = False)
         else:
             model_cls.add_adapter('cls_adapter', set_active = True)
         
@@ -133,18 +137,18 @@ def train_cls(config):
     optimizer_cls = AdamW(model_cls.parameters(), lr = config.lr_cls)
 
     best_val_loss = 10000
-
+    
     # save config file
-    if not os.path.exists(C.MODEL_DIR + 'cls_adapter/'):
-            os.makedirs(C.MODEL_DIR + 'cls_adapter/') 
-    config.to_json(C.MODEL_DIR + 'config.json')
+    if not os.path.exists(MODEL_CLS_DIR + 'cls_adapter/'):
+            os.makedirs(MODEL_CLS_DIR+ 'cls_adapter/') 
+    config.to_json(MODEL_CLS_DIR + 'config.json')
 
     dict_record = {'epoch':[], 'train_loss': [], 'valid_loss': [], 'lr_cls': []}
     for epoch in range(config.n_epochs_cls):
         loss_agg = 0
         cnt = 0
         start = time.time()
-        for i, batch in enumerate(trainloader_cls):
+        for i, batch in tqdm(enumerate(trainloader_cls)):
 
             optimizer_cls.zero_grad()
             outputs = model_cls(**batch)
@@ -160,13 +164,13 @@ def train_cls(config):
         end = time.time()
         elapsed = end-start
 
-        print('[TRAIN CLS {:0>5d} / {:0>3d}] loss: {:.6f}, elapsed {:.3f} secs'.format(epoch, config.n_epochs_mlm, train_loss, elapsed))
+        print('[TRAIN CLS {:0>5d} / {:0>3d}] loss: {:.6f}, elapsed {:.3f} secs'.format(epoch+1, config.n_epochs_cls, train_loss, elapsed))
 
         start = time.time()
         valid_loss = evaluate(model_cls, evalloader_cls)
         end = time.time()
         elapsed = end-start
-        print('[VALID CLS {:0>5d} / {:0>3d}] loss: {:.6f}, elapsed {:.3f} secs'.format(epoch, config.n_epochs_mlm, valid_loss, elapsed))
+        print('[VALID CLS {:0>5d} / {:0>3d}] loss: {:.6f}, elapsed {:.3f} secs'.format(epoch+1, config.n_epochs_cls, valid_loss, elapsed))
 
         for param_group in optimizer_cls.param_groups:
             lr_cls = param_group['lr']
@@ -178,7 +182,7 @@ def train_cls(config):
         dict_record['lr_cls'].append(lr_cls)
 
         df_record = pd.DataFrame(dict_record)
-        df_record.to_csv(C.MODEL_DIR + 'record.csv')
+        df_record.to_csv(MODEL_CLS_DIR + 'record.csv')
 
         # save the best model
         if valid_loss < best_val_loss:
@@ -189,7 +193,7 @@ def train_cls(config):
                 'optimizer_state_dict':optimizer_cls.state_dict(),
                 'train_loss': train_loss,
                 'valid_loss': valid_loss
-            }, C.MODEL_DIR+'model_cls.pth')
+            }, MODEL_CLS_DIR+'model_cls.pth')
 
 
 if __name__ == '__main__':
