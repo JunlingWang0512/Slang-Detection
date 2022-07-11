@@ -70,7 +70,7 @@ class MLMDateset(torch.utils.data.Dataset):
         self.data = list(data['generate'])
         self.word = list(data['word'])
         self.tokenizer = tokenizer
-        self.inputs = self.tokenizer(self.data, return_tensors="pt", padding=True) #pt: return pytorch tensor
+        self.inputs = self.tokenizer(self.data, return_tensors="pt", padding=True, max_length = 512, truncation = True) #pt: return pytorch tensor
         self.input_ids = self.inputs['input_ids'].numpy().tolist()
         self.random_tensor = torch.rand(self.inputs['input_ids'].shape)
         self.random_tensor2 = torch.rand(self.inputs['input_ids'].shape)
@@ -81,10 +81,10 @@ class MLMDateset(torch.utils.data.Dataset):
         return len(self.data)
     def __getitem__(self, idx):
         
-        return {'input_ids':self.inputs['input_ids'].detach().clone()[idx].to(C.DEVICE),
-                'token_type_ids':self.inputs['token_type_ids'].detach().clone()[idx].to(C.DEVICE),
-                'attention_mask':self.inputs['attention_mask'].detach().clone()[idx].to(C.DEVICE),
-                'labels':self.inputs['labels'].detach().clone()[idx].to(C.DEVICE)}
+        return {'input_ids':self.inputs['input_ids'][idx].to(C.DEVICE),
+                'token_type_ids':self.inputs['token_type_ids'][idx].to(C.DEVICE),
+                'attention_mask':self.inputs['attention_mask'][idx].to(C.DEVICE),
+                'labels':self.inputs['labels'][idx].to(C.DEVICE)}
 
     def create_MLM(self):
         print('create mlm')
@@ -120,19 +120,19 @@ class CLSDataset(torch.utils.data.Dataset):
     def __init__(self, data_cls, tokenizer):
         self.data_cls  = data_cls
         self.tokenizer = tokenizer
-        self.inputs = tokenizer(list(self.data_cls['example']), return_tensors="pt", padding=True)
+        self.inputs = tokenizer(list(self.data_cls['example']), return_tensors="pt", padding=True, max_length = 512, truncation = True)
         self.inputs['labels'] = torch.tensor(self.data_cls['label'])
-        self.adjust_input_size()
+        # self.adjust_input_size()
     def __len__(self):
         return len(self.data_cls)
     def __getitem__(self, idx):
-        return {'input_ids':self.inputs['input_ids'].detach().clone()[idx].to(C.DEVICE),
-                'token_type_ids':self.inputs['token_type_ids'].detach().clone()[idx].to(C.DEVICE),
-                'attention_mask':self.inputs['attention_mask'].detach().clone()[idx].to(C.DEVICE),
-                'labels':self.inputs['labels'].detach().clone()[idx].to(C.DEVICE)}
+        return {'input_ids':self.inputs['input_ids'][idx].to(C.DEVICE),
+                'token_type_ids':self.inputs['token_type_ids'][idx].to(C.DEVICE),
+                'attention_mask':self.inputs['attention_mask'][idx].to(C.DEVICE),
+                'labels':self.inputs['labels'][idx].to(C.DEVICE)}
 
-    def adjust_input_size(self):
-        if self.inputs['input_ids'].size(1)>512:
-            self.inputs['input_ids'] = self.inputs['input_ids'][:, -512:]
-            self.inputs['attention_mask'] = self.inputs['attention_mask'][:, -512:]
-            self.inputs['token_type_ids'] = self.inputs['token_type_ids'][:, -512:]
+    # def adjust_input_size(self):
+    #     if self.inputs['input_ids'].size(1)>512:
+    #         self.inputs['input_ids'] = self.inputs['input_ids'][:, -512:]
+    #         self.inputs['attention_mask'] = self.inputs['attention_mask'][:, -512:]
+    #         self.inputs['token_type_ids'] = self.inputs['token_type_ids'][:, -512:]

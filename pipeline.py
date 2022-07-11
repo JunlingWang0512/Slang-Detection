@@ -42,12 +42,16 @@ if __name__=='__main__':
     # ******************* mlm *****************
     if config.pipeline == 'mlm_train':
         train_mlm(config)
+    
+    if config.pipeline == 'random_search_mlm':
+        print('random_search_mlm')
 
     # ******************* cls *****************
     if config.pipeline == 'cls_data_generation':
         data_cls_csv()
-    if config.pipeline == 'random_search_train':
-        print("random_search_train")
+
+    if config.pipeline == 'random_search_cls':
+        print("random_search_cls")
     
 
         

@@ -2,6 +2,7 @@
 import argparse
 import json
 import os
+from pickle import FALSE
 import pprint
 import torch
 import time
@@ -26,6 +27,7 @@ class Constants(object):
             self.TEST_CLS_CSV = 'cls_test.csv'
             self.TRAIN_MLM_CSV = 'mlm_train.csv'
             self.EVAL_MLM_CSV = 'mlm_eval.csv'
+            
             
 
     instance = None
@@ -85,16 +87,21 @@ class Configuration(object):
         parser.add_argument('--mlm_threshold', type = float, default = 0.5, help = 'MLM threshold for masking slang words')
         parser.add_argument('--n_epochs_mlm', type = int, default = 2, help = 'mlm task epochs')
         parser.add_argument('--lr_mlm', type = float, default = 1e-5, help = 'learning rate')
+        parser.add_argument('--wd_mlm', type = float, default = 1e-2, help = 'weight decay')
+        parser.add_argument('--model_size', default = 'base', help = 'mini, base, large')
         
         # cls
-        parser.add_argument('--baseline', type = bool, default = True, help = 'whether to True: use the baseline cls; False:enhance with adapter when doing cls')
+        parser.add_argument('--is_baseline', default = 'yes', help = 'whether to True: use the baseline cls; False:enhance with adapter when doing cls')
         parser.add_argument('--mlm_adapter_name', default = None, help = 'The adapter name to use when applying mlm')
         parser.add_argument('--n_epochs_cls', type = int, default = 50, help = 'cls task epochs')
         parser.add_argument('--lr_cls', type = float, default = 1e-5, help = 'learning rate')
-        parser.add_argument('--baseline_with_adapter', type = bool, default = False, help = 'for baseline model: Whether to add adpater to cls')
-        parser.add_argument('--update_adapter_cls', type = bool, default = True, help = 'for enhanced model: whether to update adapter when doing cls')
+        parser.add_argument('--baseline_with_adapter', default = 'yes', help = 'for baseline model: Whether to add adpater to cls')
+        parser.add_argument('--update_adapter_cls', default = 'yes', help = 'for enhanced model: whether to update adapter when doing cls')
         
+        # cls test 
+        parser.add_argument('--test_model_dir', default = None, help = 'cls model dir')
 
+        
 
         config = parser.parse_args()
         return Configuration(vars(config))
