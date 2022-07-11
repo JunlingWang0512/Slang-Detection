@@ -61,6 +61,7 @@ class Configuration(object):
 
         # General.
         parser.add_argument('--pipeline', default=None, help='Different steps for the project')
+        parser.add_argument('--message', default = None, help = 'some information to describe the task')
         parser.add_argument('--seed', type=int, default=None, help='Random number generator seed.')
 
         # data augmentation parameters
@@ -80,12 +81,20 @@ class Configuration(object):
         parser.add_argument('--refer_name', default = None, help = 'reference data file name')
         parser.add_argument('--eval_name', default = None, help = 'data file name to evaluate')
 
-        # adapter enhance
+        # mlm adapter enhance
         parser.add_argument('--mlm_threshold', type = float, default = 0.5, help = 'MLM threshold for masking slang words')
-        parser.add_argument('--n_epochs_mlm', type = int, default = 50, help = 'mlm task epochs')
+        parser.add_argument('--n_epochs_mlm', type = int, default = 2, help = 'mlm task epochs')
+        parser.add_argument('--lr_mlm', type = float, default = 1e-5, help = 'learning rate')
+        
+        # cls
+        parser.add_argument('--baseline', type = bool, default = True, help = 'whether to True: use the baseline cls; False:enhance with adapter when doing cls')
+        parser.add_argument('--mlm_adapter_name', default = None, help = 'The adapter name to use when applying mlm')
         parser.add_argument('--n_epochs_cls', type = int, default = 50, help = 'cls task epochs')
-        parser.add_argument('--update_adapter_cls', type = bool, default = True, help = 'whether to update adapter when doing cls')
-        parser.add_argument('--enhance', type = bool, default = True, help = 'whether to enhance with adapter when doing cls')
+        parser.add_argument('--lr_cls', type = float, default = 1e-5, help = 'learning rate')
+        parser.add_argument('--baseline_with_adapter', type = bool, default = False, help = 'for baseline model: Whether to add adpater to cls')
+        parser.add_argument('--update_adapter_cls', type = bool, default = True, help = 'for enhanced model: whether to update adapter when doing cls')
+        
+
 
         config = parser.parse_args()
         return Configuration(vars(config))

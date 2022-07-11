@@ -4,14 +4,18 @@ from configuration import CONSTANTS as C
 from data_extraction import extraction_csv
 from data_augmentation import data_trigger_csv, model_init, generate_store
 from random_search import rsearch_trigger_csv, random_search_paras, metric_cal, human_eval_csv, avg_para_augment, joined_augment
-from dataset_mlm_cls import augment_split_csv
+from dataset_mlm_cls import augment_split_csv, data_cls_csv
+from train import train_mlm, train_cls
 
 if __name__=='__main__':
     config = Configuration.parse_cmd()
 
+    # ******************* extraction *****************
     if config.pipeline == 'data_extraction':
         extraction_csv()
 
+
+    # *******************  augmentation **************
     if config.pipeline == 'data_augmentation':
         data_trigger_csv()
         print("trigger data generated")
@@ -34,6 +38,14 @@ if __name__=='__main__':
         joined_augment()
         augment_split_csv()
 
+
+    # ******************* mlm *****************
+    if config.pipeline == 'mlm_train':
+        train_mlm(config)
+
+    # ******************* cls *****************
+    if config.pipeline == 'cls_data_generation':
+        data_cls_csv()
     if config.pipeline == 'random_search_train':
         print("random_search_train")
     

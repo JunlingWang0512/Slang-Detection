@@ -33,9 +33,9 @@ def augment_split_csv():
     eval.to_csv(C.DATA_DIR + C.EVAL_MLM_CSV)
 
 def data_cls_csv():
-    train_sl = pd.read_csv(C.DATA_DIR + "slang_train_10000_split.csv")
+    train_sl = pd.read_csv(C.DATA_DIR + "slang_train_10000.csv")
     train_st = pd.read_csv(C.DATA_DIR + "standard_train_10000.csv")
-    test_sl = pd.read_csv(C.DATA_DIR + "slang_test_10000_split.csv")
+    test_sl = pd.read_csv(C.DATA_DIR + "slang_test_10000.csv")
     test_st = pd.read_csv(C.DATA_DIR + "standard_test_10000.csv")
 
     train_sl["label"] = 1
@@ -44,12 +44,9 @@ def data_cls_csv():
     test_st["label"] = 0
 
     train_sl = train_sl[['example', 'label']]
-    train_st = train_st[['train', 'label']]
+    train_st = train_st[['example', 'label']]
     test_sl = test_sl[['example', 'label']]
-    test_st = test_st[['test', 'label']]
-
-    train_st.columns = ['example', 'label']
-    test_st.columns = ['example', 'label']
+    test_st = test_st[['example', 'label']]
 
     eval_sl = test_sl[:5000]
     eval_st = test_st[:5000]
@@ -65,50 +62,6 @@ def data_cls_csv():
     testset.to_csv(C.DATA_DIR + C.TEST_CLS_CSV)
 
 
-def create_MLM(config):
-    df_augment = pd.read_csv(C.DATA_DIR+C.AUG_RESULT_CSV)
-    sents = list(df_augment['generate'])
-    words = list(df_augment['word'])
-
-    print('tokenizing')
-    inputs = tokenizer(sents, return_tensors="pt", padding=True)
-    inputs_ids = inputs['input_ids'].numpy().tolist()
-
-    random_tensor = torch.rand(inputs['input_ids'].shape)
-    random_tensor2 = torch.rand(inputs['input_ids'].shape)
-
-    #get the index of slang word in each sentence
-    print('token for slang word')
-    index_result = []
-    for i in tqdm(range(len(sents))):
-        list_sent = inputs_ids[i]
-        list_word = tokenizer(words[i], return_tensors="pt", padding=False)['input_ids'].numpy().tolist()[0][1:-1]
-        index_result.append(list(_flatten(find_sub_list(list_word,list_sent))))
-
-    
-    #create false tensor
-    print('create false tensor')
-    mask_tensor = torch.zeros(inputs['input_ids'].shape,dtype=torch.bool)
-    for i in range(len(mask_tensor)):
-        mask_tensor[i, index_result[i]] = True 
-
-    inputs['labels'] = inputs['input_ids'].detach().clone() 
-    masked_tensor = (random_tensor2 < config.mlm_threshold) *(random_tensor < 0.15)*(inputs['input_ids'] != '101') * \
-        (inputs['input_ids'] != '102') * (inputs['input_ids'] != 0)\
-            | (random_tensor2 >= config.mlm_threshold) * mask_tensor
-
-
-    non_zero_indices = []
-    print('create mlm data')
-    for i in range(len(inputs['input_ids'])):
-        non_zero_indices.append(torch.flatten(masked_tensor[i].nonzero()).tolist())#Flattens input by reshaping it into a one-dimensional tensor. 
-    for i in range(len(inputs['input_ids'])):
-        inputs['input_ids'][i, non_zero_indices[i]] = 103 #103: masked token
-    
-    with open('mlm.pickle', 'wb') as handle:
-        pickle.dump(inputs, handle, protocol=pickle.HIGHEST_PROTOCOL)
-
-
 class MLMDateset(torch.utils.data.Dataset):
     """
     Dataset for mask language modelling task.
@@ -118,30 +71,29 @@ class MLMDateset(torch.utils.data.Dataset):
         self.word = list(data['word'])
         self.tokenizer = tokenizer
         self.inputs = self.tokenizer(self.data, return_tensors="pt", padding=True) #pt: return pytorch tensor
+        self.input_ids = self.inputs['input_ids'].numpy().tolist()
         self.random_tensor = torch.rand(self.inputs['input_ids'].shape)
         self.random_tensor2 = torch.rand(self.inputs['input_ids'].shape)
         self.masked_tensor = None
         self.config = config
+        self.create_MLM()
     def __len__(self):
         return len(self.data)
     def __getitem__(self, idx):
-        self.create_MLM()
+        
         return {'input_ids':self.inputs['input_ids'].detach().clone()[idx].to(C.DEVICE),
                 'token_type_ids':self.inputs['token_type_ids'].detach().clone()[idx].to(C.DEVICE),
                 'attention_mask':self.inputs['attention_mask'].detach().clone()[idx].to(C.DEVICE),
                 'labels':self.inputs['labels'].detach().clone()[idx].to(C.DEVICE)}
 
     def create_MLM(self):
+        print('create mlm')
         #get the index of slang word in each sentence
         index_result = []
         for i in range(len(self.data)):
-            inputs = self.tokenizer(self.data[i], return_tensors="pt", padding=True)
-            word = self.tokenizer(self.word[i], return_tensors="pt", padding=True)
-            list1 = inputs['input_ids'].numpy().tolist()
-            list2 = word['input_ids'].numpy().tolist()
-            del(list2[0][len(list2[0])-1])
-            del(list2[0][0])
-            index_result.append(list(_flatten(find_sub_list(list2[0],list1[0]))))
+            list_sent = self.input_ids[i]
+            list_word = self.tokenizer(self.word[i], return_tensors="pt", padding=False)['input_ids'].numpy().tolist()[0][1:-1]
+            index_result.append(list(_flatten(find_sub_list(list_word,list_sent))))
 
         #create false tensor
         mask_tensor = torch.zeros(self.inputs['input_ids'].shape,dtype=torch.bool)
@@ -170,6 +122,7 @@ class CLSDataset(torch.utils.data.Dataset):
         self.tokenizer = tokenizer
         self.inputs = tokenizer(list(self.data_cls['example']), return_tensors="pt", padding=True)
         self.inputs['labels'] = torch.tensor(self.data_cls['label'])
+        self.adjust_input_size()
     def __len__(self):
         return len(self.data_cls)
     def __getitem__(self, idx):
@@ -177,3 +130,9 @@ class CLSDataset(torch.utils.data.Dataset):
                 'token_type_ids':self.inputs['token_type_ids'].detach().clone()[idx].to(C.DEVICE),
                 'attention_mask':self.inputs['attention_mask'].detach().clone()[idx].to(C.DEVICE),
                 'labels':self.inputs['labels'].detach().clone()[idx].to(C.DEVICE)}
+
+    def adjust_input_size(self):
+        if self.inputs['input_ids'].size(1)>512:
+            self.inputs['input_ids'] = self.inputs['input_ids'][:, -512:]
+            self.inputs['attention_mask'] = self.inputs['attention_mask'][:, -512:]
+            self.inputs['token_type_ids'] = self.inputs['token_type_ids'][:, -512:]
