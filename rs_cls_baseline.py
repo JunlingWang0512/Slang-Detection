@@ -4,7 +4,7 @@ from fontTools import configLogger
 from configuration import Configuration
 from train import train_cls_baseline
 from configuration import CONSTANTS as C
-from test import test_baseline_cls
+from eval_test import test_baseline_cls
 import os
 
 print(C.DEVICE)

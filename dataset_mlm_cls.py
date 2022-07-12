@@ -7,10 +7,10 @@ from transformers import BertTokenizer
 import pickle
 from tqdm import tqdm
 
-tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-tokenizer.padding_side = "left" 
-tokenizer.pad_token = '[PAD]' # to avoid an error
-tokenizer.mask_token = '[MASK]'
+# tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+# tokenizer.padding_side = "left" 
+# tokenizer.pad_token = '[PAD]' # to avoid an error
+# tokenizer.mask_token = '[MASK]'
 
 def find_sub_list(sl,l):
     results=[]

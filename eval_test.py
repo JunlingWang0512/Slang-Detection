@@ -35,6 +35,24 @@ def test_baseline_cls(config):
     print(test_loss)
     return test_loss
 
+def test_enhanced_cls(config):
+    TEST_MODEL_DIR = 'models_cls_enhanced_'+ config.model_size + '/' +config.test_model_dir +'/'
+    
+    tokenizer, model_cls_test = init_tokenizer_model(config)
+    
+    model_cls_test.add_adapter('cls_adapter', set_active = True)
+    model_cls_test.add_classification_head('cls')
+    model_cls_test.load_state_dict(torch.load(TEST_MODEL_DIR+'state_dict.pth'))
+    model_cls_test.to(C.DEVICE)
+
+    test_cls  = pd.read_csv(C.DATA_DIR+C.TEST_CLS_CSV, index_col=0)
+    testset_cls = CLSDataset(test_cls, tokenizer)
+    testloader_cls = torch.utils.data.DataLoader(testset_cls, batch_size = 16, shuffle = True)
+
+    test_loss = evaluate(model_cls_test, testloader_cls)
+    print(test_loss)
+    return test_loss
+
 if __name__ == '__main__':
     print(C.DEVICE)
     config = Configuration.parse_cmd()

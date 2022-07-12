@@ -1,6 +1,6 @@
 import torch
 from torch.optim import AdamW
-from transformers import MODEL_FOR_SEQUENCE_CLASSIFICATION_MAPPING, BertTokenizer, BertForSequenceClassification
+from transformers import MODEL_FOR_AUDIO_CLASSIFICATION_MAPPING, BertTokenizer, BertForSequenceClassification
 from transformers.adapters import BertAdapterModel
 import pandas as pd
 from configuration import CONSTANTS as C
@@ -256,8 +256,7 @@ def train_cls_enhanced(config):
     model_cls.add_classification_head('cls')
     model_cls.to(C.DEVICE)
 
-    # if config.update_adapter_cls == 'no':
-    #     adapter_not_update_cls(model_cls)
+    print_bert_para(model_cls)
 
     train_cls  = pd.read_csv(C.DATA_DIR+C.TRAIN_CLS_CSV, index_col=0)
     eval_cls  = pd.read_csv(C.DATA_DIR+C.EVAL_CLS_CSV, index_col=0)
@@ -313,7 +312,6 @@ def train_cls_enhanced(config):
                 dict_record['glob_cnt'].append(glob_cnt)
                 dict_record['train_loss'].append(train_loss)
                 dict_record['valid_loss'].append(valid_loss)
-                # dict_record['lr_cls'].append(lr_cls)
 
                 df_record = pd.DataFrame(dict_record)
                 df_record.to_csv(MODEL_CLS_DIR + 'record.csv')
