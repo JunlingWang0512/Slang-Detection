@@ -246,8 +246,9 @@ def train_cls_baseline(config):
 
 
 def train_cls_enhanced(config):
+    sub_model_dir = 'model_' +str(int(time.time()))
     MODEL_MLM_DIR = 'models_mlm_' + config.model_size + '/' + config.mlm_adapter_name + '/'
-    MODEL_CLS_DIR = 'models_cls_enhanced_' + config.model_size + '/model_' +str(int(time.time())) + '/'
+    MODEL_CLS_DIR = 'models_cls_enhanced_' + config.model_size + '/' + sub_model_dir + '/'
 
     tokenizer, model_cls = init_tokenizer_model(config)
 
@@ -255,8 +256,8 @@ def train_cls_enhanced(config):
     model_cls.add_classification_head('cls')
     model_cls.to(C.DEVICE)
 
-    if config.is_baseline == 'no' and config.update_adapter_cls == 'no':
-        adapter_not_update_cls(model_cls)
+    # if config.update_adapter_cls == 'no':
+    #     adapter_not_update_cls(model_cls)
 
     train_cls  = pd.read_csv(C.DATA_DIR+C.TRAIN_CLS_CSV, index_col=0)
     eval_cls  = pd.read_csv(C.DATA_DIR+C.EVAL_CLS_CSV, index_col=0)
@@ -274,13 +275,17 @@ def train_cls_enhanced(config):
     # save config file
     if not os.path.exists(MODEL_CLS_DIR + 'cls_adapter/'):
             os.makedirs(MODEL_CLS_DIR+ 'cls_adapter/') 
+    if not os.path.exists(MODEL_CLS_DIR + 'cls_adapter_head/'):
+            os.makedirs(MODEL_CLS_DIR+ 'cls_adapter_head/') 
     config.to_json(MODEL_CLS_DIR + 'config.json')
 
     dict_record = {'batch': [], 'epoch':[], 'glob_cnt':[], 'train_loss': [], 'valid_loss': [], 'lr_cls': []}
 
     glob_cnt = 0
+
+    start = time.time()
     for epoch in range(config.n_epochs_cls):
-        start = time.time()
+        epoch_start = time.time()
         for i, batch in tqdm(enumerate(trainloader_cls)):
             glob_cnt += 1
             optimizer_cls.zero_grad()
@@ -289,7 +294,7 @@ def train_cls_enhanced(config):
             loss.backward()
             optimizer_cls.step()
 
-            if glob_cnt % 20 == 0:
+            if glob_cnt % 200 == 0:
 
                 end = time.time()
                 elapsed = end-start
@@ -302,16 +307,13 @@ def train_cls_enhanced(config):
                 elapsed = end-start
                 print('[VALID CLS {:0>4d}, {:0>4d}, {:0>5d} / {:0>4d}] loss: {:.6f}, elapsed {:.3f} secs'.format(i+1, epoch+1, glob_cnt, config.n_epochs_cls, valid_loss, elapsed))
 
-                for param_group in optimizer_cls.param_groups:
-                    lr_cls = param_group['lr']
-
                 # record result for every epoch
                 dict_record['batch'].append(i+1)
                 dict_record['epoch'].append(epoch+1)
                 dict_record['glob_cnt'].append(glob_cnt)
                 dict_record['train_loss'].append(train_loss)
                 dict_record['valid_loss'].append(valid_loss)
-                dict_record['lr_cls'].append(lr_cls)
+                # dict_record['lr_cls'].append(lr_cls)
 
                 df_record = pd.DataFrame(dict_record)
                 df_record.to_csv(MODEL_CLS_DIR + 'record.csv')
@@ -319,7 +321,9 @@ def train_cls_enhanced(config):
                 # save the best model
                 if valid_loss < best_val_loss:
                     best_val_loss = valid_loss
+                    torch.save(model_cls.state_dict(), MODEL_CLS_DIR + 'state_dict.pth')
                     model_cls.save_adapter(save_directory=MODEL_CLS_DIR + 'cls_adapter/', adapter_name = 'cls_adapter', with_head = True)
+                    model_cls.save_head(save_directory=MODEL_CLS_DIR + 'cls_adapter_head/', head_name = 'cls')
                     torch.save({
                         'i': i+1,
                        'epoch': epoch+1,
@@ -328,6 +332,11 @@ def train_cls_enhanced(config):
                         'train_loss': train_loss,
                         'valid_loss': valid_loss
                     }, MODEL_CLS_DIR+'model_cls.pth')
+                start = time.time()
+        epoch_end = time.time()
+        print('training time for one epoch:', epoch_end-epoch_start)
+    
+    return sub_model_dir
 
 if __name__ == '__main__':
     print(C.DEVICE)

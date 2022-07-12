@@ -12,15 +12,15 @@ wd_list = [1e-4, 1e-3, 1e-2, 5e-2]
 for model_size in model_size_list:
     for i in range(10):
         print(i, model_size)
-        try:
-            mlm_threshold = random.randint(0,10) * 0.1
-            lr_mlm = lr_list[random.randint(1, len(lr_list))]
-            wd_mlm = wd_list[random.randint(1, len(wd_list))]
-            dict_mlm = {'mlm_threshold': mlm_threshold, 'n_epochs_mlm': n_epochs_mlm, 'lr_mlm': lr_mlm, 'wd_mlm': wd_mlm, 'model_size': model_size}
-            config = Configuration(dict_mlm)
-            train_mlm(config)
-        except:
-            print('fail', i, model_size)
+        # try:
+        mlm_threshold = random.randint(0,10) * 0.1
+        lr_mlm = lr_list[random.randint(0, len(lr_list)-1)]
+        wd_mlm = wd_list[random.randint(0, len(wd_list)-1)]
+        dict_mlm = {'mlm_threshold': mlm_threshold, 'n_epochs_mlm': n_epochs_mlm, 'lr_mlm': lr_mlm, 'wd_mlm': wd_mlm, 'model_size': model_size}
+        config = Configuration(dict_mlm)
+        train_mlm(config)
+        # except:
+            # print('fail', i, model_size)
 
 
 # # cls search +mlm, with adapter update
