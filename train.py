@@ -280,14 +280,14 @@ def train_cls_enhanced(config):
             os.makedirs(MODEL_CLS_DIR+ 'cls_adapter_head/') 
     config.to_json(MODEL_CLS_DIR + 'config.json')
 
-    dict_record = {'batch': [], 'epoch':[], 'glob_cnt':[], 'train_loss': [], 'valid_loss': [], 'lr_cls': []}
+    dict_record = {'batch': [], 'epoch':[], 'glob_cnt':[], 'train_loss': [], 'valid_loss': []}
 
     glob_cnt = 0
 
     start = time.time()
     for epoch in range(config.n_epochs_cls):
         epoch_start = time.time()
-        for i, batch in tqdm(enumerate(trainloader_cls)):
+        for i, batch in enumerate(trainloader_cls):
             glob_cnt += 1
             optimizer_cls.zero_grad()
             outputs = model_cls(**batch)
