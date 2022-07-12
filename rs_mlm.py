@@ -1,6 +1,6 @@
 import random
 from configuration import Configuration
-from train import train_mlm, train_cls
+from train import train_mlm
 
 # mlm search
 

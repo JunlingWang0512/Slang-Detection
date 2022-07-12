@@ -1,3 +1,10 @@
+# Environment Build Up
+For Linux system, use the command below to build up the conda environment.
+
+```
+conda env create -f environment.yml
+```
+
 # Slang-Detection
 Slang Detection, semantic course, ethz
 

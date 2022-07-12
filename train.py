@@ -12,12 +12,12 @@ import time
 
 def print_bert_para(model_cls):
     for name, para in model_cls.named_parameters():
-        print(name, para)
+        print(name, para.requires_grad)
 
 def mlm_freeze_bert(model_cls):
     for name, para in model_cls.named_parameters():
         if not ('mlm_adapter' in name or 'mlm_head' in name):
-            para.requireds_grad = False
+            para.requires_grad = False
 
 def adapter_not_update_cls(model_cls):
     for name, para in model_cls.named_parameters():
@@ -64,6 +64,7 @@ def train_mlm(config):
     model_mlm.add_masked_lm_head('mlm_head')
     model_mlm.to(C.DEVICE)
     mlm_freeze_bert(model_mlm)
+    # print_bert_para(model_mlm)
 
     print('load training data')
     train_mlm = pd.read_csv(C.DATA_DIR+C.TRAIN_MLM_CSV)
