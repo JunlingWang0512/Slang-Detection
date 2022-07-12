@@ -18,3 +18,5 @@ python train.py --is_baseline no --mlm_adapter_name model_1657482929 --n_epochs_
 
 # mlm
 python train.py --mlm_threshold 0.5 --n_epochs_mlm 10 --lr_mlm 1e-5 --wd_mlm 1e-2 --message 'mlm_test'
+
+python test.py --model_size mini --test_model_dir model_no_1657635271 --baseline_with_adapter no

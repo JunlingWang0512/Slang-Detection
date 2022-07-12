@@ -90,15 +90,15 @@ class Configuration(object):
         parser.add_argument('--wd_mlm', type = float, default = 1e-2, help = 'weight decay')
         parser.add_argument('--model_size', default = 'base', help = 'mini, base, large')
         
-        # cls
-        parser.add_argument('--is_baseline', default = 'yes', help = 'whether to True: use the baseline cls; False:enhance with adapter when doing cls')
-        parser.add_argument('--mlm_adapter_name', default = None, help = 'The adapter name to use when applying mlm')
+        # cls (model_size)
         parser.add_argument('--n_epochs_cls', type = int, default = 50, help = 'cls task epochs')
-        parser.add_argument('--lr_cls', type = float, default = 1e-5, help = 'learning rate')
+        parser.add_argument('--lr_cls', type = float, default = 1e-6, help = 'learning rate')
+        parser.add_argument('--wd_cls', type = float, default = 1e-2, help = 'weight decay')
         parser.add_argument('--baseline_with_adapter', default = 'yes', help = 'for baseline model: Whether to add adpater to cls')
-        parser.add_argument('--update_adapter_cls', default = 'yes', help = 'for enhanced model: whether to update adapter when doing cls')
+        parser.add_argument('--mlm_adapter_name', default = None, help = 'for enhanced model: The adapter name to use when applying mlm')
+        # parser.add_argument('--update_adapter_cls', default = 'yes', help = 'for enhanced model: whether to update adapter when doing cls')
         
-        # cls test 
+        # cls test (model_size)
         parser.add_argument('--test_model_dir', default = None, help = 'cls model dir')
 
         
