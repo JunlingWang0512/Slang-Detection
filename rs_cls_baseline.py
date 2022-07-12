@@ -15,7 +15,7 @@ model_size_list = ['mini', 'base', 'large']
 with_adapter_list = ['yes', 'no']
 lr_list = [1e-7, 5e-7, 1e-6, 1e-5]
 wd_list = [1e-4, 1e-3, 1e-2, 5e-2] 
-model_size = 'mini'
+model_size = 'base'
 
 dict_list_model = {'baseline_with_adapter':[], 'n_epochs_cls':[], 'lr_cls':[], 'wd_cls':[], 'model_size':[], 'test_model_dir':[], 'test_loss':[]}
 for with_adapter in with_adapter_list:
