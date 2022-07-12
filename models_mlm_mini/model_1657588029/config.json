@@ -1,7 +1,0 @@
-{
-  "lr_mlm": 1e-05,
-  "mlm_threshold": 0.6000000000000001,
-  "model_size": "mini",
-  "n_epochs_mlm": 10,
-  "wd_mlm": 0.01
-}

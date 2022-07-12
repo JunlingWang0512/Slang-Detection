@@ -2,5 +2,6 @@ data/
 .ipynb_checkpoints
 test_ipynb/
 __pycache__/
-models*/
+models_cls*/
+models_mr*/
 ~/
