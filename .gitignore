@@ -4,5 +4,5 @@ test_ipynb/
 __pycache__/
 models*/
 ~/
-output*
+outputs/
 rs_cls_baseline.txt

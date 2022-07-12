@@ -64,7 +64,7 @@ def train_mlm(config):
     model_mlm.add_masked_lm_head('mlm_head')
     model_mlm.to(C.DEVICE)
     mlm_freeze_bert(model_mlm)
-    # print_bert_para(model_mlm)
+    print_bert_para(model_mlm)
 
     print('load training data')
     train_mlm = pd.read_csv(C.DATA_DIR+C.TRAIN_MLM_CSV)
@@ -159,6 +159,7 @@ def train_cls_baseline(config):
         model_cls.add_classification_head('cls')
 
     model_cls.to(C.DEVICE)
+    print_bert_para(model_cls)
 
     # load data
     train_cls  = pd.read_csv(C.DATA_DIR+C.TRAIN_CLS_CSV, index_col=0)
