@@ -1,6 +1,6 @@
 data/
-.ipynb_checkpoints
+ipynb_checkpoints/
 test_ipynb/
-__pycache__/
+pycache__/
 models*/
 ~/
