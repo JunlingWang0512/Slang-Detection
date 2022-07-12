@@ -3972,3 +3972,274 @@ training time for one epoch: 933.4144906997681
 [VALID MLM 0976, 0009, 56000 / 0010] loss: 0.197172, elapsed 28.731 secs
 [TRAIN MLM 1476, 0009, 56500 / 0010] loss: 0.044179, elapsed 37.117 secs
 [VALID MLM 1476, 0009, 56500 / 0010] loss: 0.196834, elapsed 28.168 secs
+[TRAIN MLM 1976, 0009, 57000 / 0010] loss: 0.037910, elapsed 37.288 secs
+[VALID MLM 1976, 0009, 57000 / 0010] loss: 0.197047, elapsed 28.159 secs
+[TRAIN MLM 2476, 0009, 57500 / 0010] loss: 0.055477, elapsed 38.434 secs
+[VALID MLM 2476, 0009, 57500 / 0010] loss: 0.197724, elapsed 28.269 secs
+[TRAIN MLM 2976, 0009, 58000 / 0010] loss: 0.050842, elapsed 36.534 secs
+[VALID MLM 2976, 0009, 58000 / 0010] loss: 0.196113, elapsed 28.367 secs
+[TRAIN MLM 3476, 0009, 58500 / 0010] loss: 0.044221, elapsed 37.676 secs
+[VALID MLM 3476, 0009, 58500 / 0010] loss: 0.195940, elapsed 29.011 secs
+[TRAIN MLM 3976, 0009, 59000 / 0010] loss: 0.055363, elapsed 35.841 secs
+[VALID MLM 3976, 0009, 59000 / 0010] loss: 0.196272, elapsed 28.522 secs
+[TRAIN MLM 4476, 0009, 59500 / 0010] loss: 0.054086, elapsed 38.148 secs
+[VALID MLM 4476, 0009, 59500 / 0010] loss: 0.195253, elapsed 28.015 secs
+checkpoint saved
+[TRAIN MLM 4976, 0009, 60000 / 0010] loss: 0.047628, elapsed 38.130 secs
+[VALID MLM 4976, 0009, 60000 / 0010] loss: 0.195541, elapsed 28.090 secs
+[TRAIN MLM 5476, 0009, 60500 / 0010] loss: 0.036815, elapsed 36.628 secs
+[VALID MLM 5476, 0009, 60500 / 0010] loss: 0.194653, elapsed 27.916 secs
+checkpoint saved
+[TRAIN MLM 5976, 0009, 61000 / 0010] loss: 0.046577, elapsed 37.290 secs
+[VALID MLM 5976, 0009, 61000 / 0010] loss: 0.194033, elapsed 29.489 secs
+checkpoint saved
+[TRAIN MLM 6476, 0009, 61500 / 0010] loss: 0.064694, elapsed 36.595 secs
+[VALID MLM 6476, 0009, 61500 / 0010] loss: 0.193480, elapsed 28.147 secs
+checkpoint saved
+training time for one epoch: 885.4809920787811
+[TRAIN MLM 0098, 0010, 62000 / 0010] loss: 0.024488, elapsed 36.456 secs
+[VALID MLM 0098, 0010, 62000 / 0010] loss: 0.194324, elapsed 28.444 secs
+[TRAIN MLM 0598, 0010, 62500 / 0010] loss: 0.031145, elapsed 37.863 secs
+[VALID MLM 0598, 0010, 62500 / 0010] loss: 0.193991, elapsed 28.619 secs
+[TRAIN MLM 1098, 0010, 63000 / 0010] loss: 0.038201, elapsed 38.430 secs
+[VALID MLM 1098, 0010, 63000 / 0010] loss: 0.194704, elapsed 28.101 secs
+[TRAIN MLM 1598, 0010, 63500 / 0010] loss: 0.036238, elapsed 38.769 secs
+[VALID MLM 1598, 0010, 63500 / 0010] loss: 0.194930, elapsed 29.160 secs
+[TRAIN MLM 2098, 0010, 64000 / 0010] loss: 0.027196, elapsed 37.523 secs
+[VALID MLM 2098, 0010, 64000 / 0010] loss: 0.194451, elapsed 28.195 secs
+[TRAIN MLM 2598, 0010, 64500 / 0010] loss: 0.026320, elapsed 36.763 secs
+[VALID MLM 2598, 0010, 64500 / 0010] loss: 0.194432, elapsed 28.250 secs
+[TRAIN MLM 3098, 0010, 65000 / 0010] loss: 0.041259, elapsed 36.938 secs
+[VALID MLM 3098, 0010, 65000 / 0010] loss: 0.194324, elapsed 28.125 secs
+[TRAIN MLM 3598, 0010, 65500 / 0010] loss: 0.050052, elapsed 36.517 secs
+[VALID MLM 3598, 0010, 65500 / 0010] loss: 0.194984, elapsed 28.334 secs
+[TRAIN MLM 4098, 0010, 66000 / 0010] loss: 0.049827, elapsed 35.724 secs
+[VALID MLM 4098, 0010, 66000 / 0010] loss: 0.194627, elapsed 28.384 secs
+[TRAIN MLM 4598, 0010, 66500 / 0010] loss: 0.043714, elapsed 35.449 secs
+[VALID MLM 4598, 0010, 66500 / 0010] loss: 0.193745, elapsed 27.772 secs
+[TRAIN MLM 5098, 0010, 67000 / 0010] loss: 0.056865, elapsed 36.447 secs
+[VALID MLM 5098, 0010, 67000 / 0010] loss: 0.194013, elapsed 28.240 secs
+[TRAIN MLM 5598, 0010, 67500 / 0010] loss: 0.048313, elapsed 38.335 secs
+[VALID MLM 5598, 0010, 67500 / 0010] loss: 0.193840, elapsed 28.545 secs
+[TRAIN MLM 6098, 0010, 68000 / 0010] loss: 0.052462, elapsed 37.762 secs
+[VALID MLM 6098, 0010, 68000 / 0010] loss: 0.192183, elapsed 28.923 secs
+checkpoint saved
+[TRAIN MLM 6598, 0010, 68500 / 0010] loss: 0.048610, elapsed 37.272 secs
+[VALID MLM 6598, 0010, 68500 / 0010] loss: 0.192595, elapsed 28.237 secs
+training time for one epoch: 910.7828929424286
+7 base
+fail 7 base
+8 base
+load training data
+create mlm
+load evaluating data
+create mlm
+data loaded
+[TRAIN MLM 0500, 0001, 00500 / 0010] loss: 0.859362, elapsed 37.290 secs
+[VALID MLM 0500, 0001, 00500 / 0010] loss: 0.818448, elapsed 27.663 secs
+checkpoint saved
+[TRAIN MLM 1000, 0001, 01000 / 0010] loss: 0.374828, elapsed 37.549 secs
+[VALID MLM 1000, 0001, 01000 / 0010] loss: 0.381764, elapsed 28.320 secs
+checkpoint saved
+[TRAIN MLM 1500, 0001, 01500 / 0010] loss: 0.260733, elapsed 36.694 secs
+[VALID MLM 1500, 0001, 01500 / 0010] loss: 0.262090, elapsed 29.410 secs
+checkpoint saved
+[TRAIN MLM 2000, 0001, 02000 / 0010] loss: 0.270436, elapsed 35.744 secs
+[VALID MLM 2000, 0001, 02000 / 0010] loss: 0.208086, elapsed 28.071 secs
+checkpoint saved
+[TRAIN MLM 2500, 0001, 02500 / 0010] loss: 0.142206, elapsed 36.149 secs
+[VALID MLM 2500, 0001, 02500 / 0010] loss: 0.183096, elapsed 29.888 secs
+checkpoint saved
+[TRAIN MLM 3000, 0001, 03000 / 0010] loss: 0.207131, elapsed 37.822 secs
+[VALID MLM 3000, 0001, 03000 / 0010] loss: 0.166812, elapsed 28.397 secs
+checkpoint saved
+[TRAIN MLM 3500, 0001, 03500 / 0010] loss: 0.145165, elapsed 37.205 secs
+[VALID MLM 3500, 0001, 03500 / 0010] loss: 0.157625, elapsed 28.105 secs
+checkpoint saved
+[TRAIN MLM 4000, 0001, 04000 / 0010] loss: 0.120718, elapsed 37.562 secs
+[VALID MLM 4000, 0001, 04000 / 0010] loss: 0.148994, elapsed 28.912 secs
+checkpoint saved
+[TRAIN MLM 4500, 0001, 04500 / 0010] loss: 0.144541, elapsed 38.870 secs
+[VALID MLM 4500, 0001, 04500 / 0010] loss: 0.143331, elapsed 29.275 secs
+checkpoint saved
+[TRAIN MLM 5000, 0001, 05000 / 0010] loss: 0.190058, elapsed 39.349 secs
+[VALID MLM 5000, 0001, 05000 / 0010] loss: 0.139007, elapsed 28.201 secs
+checkpoint saved
+[TRAIN MLM 5500, 0001, 05500 / 0010] loss: 0.105674, elapsed 36.660 secs
+[VALID MLM 5500, 0001, 05500 / 0010] loss: 0.135657, elapsed 29.166 secs
+checkpoint saved
+[TRAIN MLM 6000, 0001, 06000 / 0010] loss: 0.141381, elapsed 38.017 secs
+[VALID MLM 6000, 0001, 06000 / 0010] loss: 0.132240, elapsed 28.734 secs
+checkpoint saved
+[TRAIN MLM 6500, 0001, 06500 / 0010] loss: 0.114949, elapsed 37.388 secs
+[VALID MLM 6500, 0001, 06500 / 0010] loss: 0.130622, elapsed 28.297 secs
+checkpoint saved
+training time for one epoch: 905.4678444862366
+[TRAIN MLM 0122, 0002, 07000 / 0010] loss: 0.071527, elapsed 37.082 secs
+[VALID MLM 0122, 0002, 07000 / 0010] loss: 0.127440, elapsed 28.516 secs
+checkpoint saved
+[TRAIN MLM 0622, 0002, 07500 / 0010] loss: 0.101440, elapsed 37.626 secs
+[VALID MLM 0622, 0002, 07500 / 0010] loss: 0.126490, elapsed 29.043 secs
+checkpoint saved
+[TRAIN MLM 1122, 0002, 08000 / 0010] loss: 0.084914, elapsed 35.961 secs
+[VALID MLM 1122, 0002, 08000 / 0010] loss: 0.124823, elapsed 29.362 secs
+checkpoint saved
+[TRAIN MLM 1622, 0002, 08500 / 0010] loss: 0.067478, elapsed 35.561 secs
+[VALID MLM 1622, 0002, 08500 / 0010] loss: 0.124001, elapsed 28.650 secs
+checkpoint saved
+[TRAIN MLM 2122, 0002, 09000 / 0010] loss: 0.083493, elapsed 36.644 secs
+[VALID MLM 2122, 0002, 09000 / 0010] loss: 0.123033, elapsed 28.957 secs
+checkpoint saved
+[TRAIN MLM 2622, 0002, 09500 / 0010] loss: 0.151626, elapsed 35.851 secs
+[VALID MLM 2622, 0002, 09500 / 0010] loss: 0.121434, elapsed 28.379 secs
+checkpoint saved
+[TRAIN MLM 3122, 0002, 10000 / 0010] loss: 0.140375, elapsed 36.125 secs
+[VALID MLM 3122, 0002, 10000 / 0010] loss: 0.120267, elapsed 27.789 secs
+checkpoint saved
+[TRAIN MLM 3622, 0002, 10500 / 0010] loss: 0.098981, elapsed 37.197 secs
+[VALID MLM 3622, 0002, 10500 / 0010] loss: 0.119118, elapsed 28.558 secs
+checkpoint saved
+[TRAIN MLM 4122, 0002, 11000 / 0010] loss: 0.083630, elapsed 38.792 secs
+[VALID MLM 4122, 0002, 11000 / 0010] loss: 0.118605, elapsed 28.895 secs
+checkpoint saved
+[TRAIN MLM 4622, 0002, 11500 / 0010] loss: 0.086565, elapsed 37.350 secs
+[VALID MLM 4622, 0002, 11500 / 0010] loss: 0.117651, elapsed 28.211 secs
+checkpoint saved
+[TRAIN MLM 5122, 0002, 12000 / 0010] loss: 0.067943, elapsed 36.012 secs
+[VALID MLM 5122, 0002, 12000 / 0010] loss: 0.116250, elapsed 28.238 secs
+checkpoint saved
+[TRAIN MLM 5622, 0002, 12500 / 0010] loss: 0.135920, elapsed 37.287 secs
+[VALID MLM 5622, 0002, 12500 / 0010] loss: 0.116188, elapsed 28.065 secs
+checkpoint saved
+[TRAIN MLM 6122, 0002, 13000 / 0010] loss: 0.134272, elapsed 36.367 secs
+[VALID MLM 6122, 0002, 13000 / 0010] loss: 0.115567, elapsed 28.223 secs
+checkpoint saved
+[TRAIN MLM 6622, 0002, 13500 / 0010] loss: 0.108033, elapsed 36.600 secs
+[VALID MLM 6622, 0002, 13500 / 0010] loss: 0.114255, elapsed 28.381 secs
+checkpoint saved
+training time for one epoch: 923.4443712234497
+[TRAIN MLM 0244, 0003, 14000 / 0010] loss: 0.070807, elapsed 36.115 secs
+[VALID MLM 0244, 0003, 14000 / 0010] loss: 0.113732, elapsed 27.988 secs
+checkpoint saved
+[TRAIN MLM 0744, 0003, 14500 / 0010] loss: 0.082304, elapsed 36.982 secs
+[VALID MLM 0744, 0003, 14500 / 0010] loss: 0.114022, elapsed 28.317 secs
+[TRAIN MLM 1244, 0003, 15000 / 0010] loss: 0.081723, elapsed 35.664 secs
+[VALID MLM 1244, 0003, 15000 / 0010] loss: 0.114037, elapsed 28.107 secs
+[TRAIN MLM 1744, 0003, 15500 / 0010] loss: 0.062474, elapsed 36.156 secs
+[VALID MLM 1744, 0003, 15500 / 0010] loss: 0.113366, elapsed 28.448 secs
+checkpoint saved
+[TRAIN MLM 2244, 0003, 16000 / 0010] loss: 0.109255, elapsed 35.401 secs
+[VALID MLM 2244, 0003, 16000 / 0010] loss: 0.113184, elapsed 28.449 secs
+checkpoint saved
+[TRAIN MLM 2744, 0003, 16500 / 0010] loss: 0.056135, elapsed 35.958 secs
+[VALID MLM 2744, 0003, 16500 / 0010] loss: 0.113062, elapsed 29.707 secs
+checkpoint saved
+[TRAIN MLM 3244, 0003, 17000 / 0010] loss: 0.058872, elapsed 37.122 secs
+[VALID MLM 3244, 0003, 17000 / 0010] loss: 0.112347, elapsed 28.405 secs
+checkpoint saved
+[TRAIN MLM 3744, 0003, 17500 / 0010] loss: 0.075358, elapsed 36.435 secs
+[VALID MLM 3744, 0003, 17500 / 0010] loss: 0.111896, elapsed 28.750 secs
+checkpoint saved
+[TRAIN MLM 4244, 0003, 18000 / 0010] loss: 0.076204, elapsed 36.837 secs
+[VALID MLM 4244, 0003, 18000 / 0010] loss: 0.111095, elapsed 28.667 secs
+checkpoint saved
+[TRAIN MLM 4744, 0003, 18500 / 0010] loss: 0.074597, elapsed 36.681 secs
+[VALID MLM 4744, 0003, 18500 / 0010] loss: 0.110978, elapsed 28.261 secs
+checkpoint saved
+[TRAIN MLM 5244, 0003, 19000 / 0010] loss: 0.066373, elapsed 36.200 secs
+[VALID MLM 5244, 0003, 19000 / 0010] loss: 0.110558, elapsed 28.489 secs
+checkpoint saved
+[TRAIN MLM 5744, 0003, 19500 / 0010] loss: 0.073611, elapsed 37.201 secs
+[VALID MLM 5744, 0003, 19500 / 0010] loss: 0.110507, elapsed 28.882 secs
+checkpoint saved
+[TRAIN MLM 6244, 0003, 20000 / 0010] loss: 0.074681, elapsed 36.722 secs
+[VALID MLM 6244, 0003, 20000 / 0010] loss: 0.110075, elapsed 30.059 secs
+checkpoint saved
+[TRAIN MLM 6744, 0003, 20500 / 0010] loss: 0.056478, elapsed 36.178 secs
+[VALID MLM 6744, 0003, 20500 / 0010] loss: 0.109628, elapsed 28.679 secs
+checkpoint saved
+training time for one epoch: 920.3917307853699
+[TRAIN MLM 0366, 0004, 21000 / 0010] loss: 0.029462, elapsed 36.227 secs
+[VALID MLM 0366, 0004, 21000 / 0010] loss: 0.110327, elapsed 28.248 secs
+[TRAIN MLM 0866, 0004, 21500 / 0010] loss: 0.083611, elapsed 35.844 secs
+[VALID MLM 0866, 0004, 21500 / 0010] loss: 0.110660, elapsed 27.649 secs
+[TRAIN MLM 1366, 0004, 22000 / 0010] loss: 0.070252, elapsed 35.608 secs
+[VALID MLM 1366, 0004, 22000 / 0010] loss: 0.110307, elapsed 28.175 secs
+[TRAIN MLM 1866, 0004, 22500 / 0010] loss: 0.054980, elapsed 35.571 secs
+[VALID MLM 1866, 0004, 22500 / 0010] loss: 0.109821, elapsed 28.224 secs
+[TRAIN MLM 2366, 0004, 23000 / 0010] loss: 0.073699, elapsed 33.776 secs
+[VALID MLM 2366, 0004, 23000 / 0010] loss: 0.109991, elapsed 27.744 secs
+[TRAIN MLM 2866, 0004, 23500 / 0010] loss: 0.090118, elapsed 36.026 secs
+[VALID MLM 2866, 0004, 23500 / 0010] loss: 0.109840, elapsed 28.290 secs
+[TRAIN MLM 3366, 0004, 24000 / 0010] loss: 0.044703, elapsed 34.877 secs
+[VALID MLM 3366, 0004, 24000 / 0010] loss: 0.109407, elapsed 28.167 secs
+checkpoint saved
+[TRAIN MLM 3866, 0004, 24500 / 0010] loss: 0.054637, elapsed 36.615 secs
+[VALID MLM 3866, 0004, 24500 / 0010] loss: 0.109393, elapsed 28.211 secs
+checkpoint saved
+[TRAIN MLM 4366, 0004, 25000 / 0010] loss: 0.051071, elapsed 36.098 secs
+[VALID MLM 4366, 0004, 25000 / 0010] loss: 0.109482, elapsed 28.057 secs
+[TRAIN MLM 4866, 0004, 25500 / 0010] loss: 0.045492, elapsed 35.359 secs
+[VALID MLM 4866, 0004, 25500 / 0010] loss: 0.108832, elapsed 28.192 secs
+checkpoint saved
+[TRAIN MLM 5366, 0004, 26000 / 0010] loss: 0.052936, elapsed 35.779 secs
+[VALID MLM 5366, 0004, 26000 / 0010] loss: 0.108808, elapsed 28.470 secs
+checkpoint saved
+[TRAIN MLM 5866, 0004, 26500 / 0010] loss: 0.089493, elapsed 35.742 secs
+[VALID MLM 5866, 0004, 26500 / 0010] loss: 0.108438, elapsed 28.170 secs
+checkpoint saved
+[TRAIN MLM 6366, 0004, 27000 / 0010] loss: 0.114757, elapsed 36.405 secs
+[VALID MLM 6366, 0004, 27000 / 0010] loss: 0.108712, elapsed 28.530 secs
+[TRAIN MLM 6866, 0004, 27500 / 0010] loss: 0.066403, elapsed 35.548 secs
+[VALID MLM 6866, 0004, 27500 / 0010] loss: 0.107966, elapsed 28.079 secs
+checkpoint saved
+training time for one epoch: 893.8482146263123
+[TRAIN MLM 0488, 0005, 28000 / 0010] loss: 0.048208, elapsed 36.314 secs
+[VALID MLM 0488, 0005, 28000 / 0010] loss: 0.109201, elapsed 28.180 secs
+[TRAIN MLM 0988, 0005, 28500 / 0010] loss: 0.038915, elapsed 35.051 secs
+[VALID MLM 0988, 0005, 28500 / 0010] loss: 0.109528, elapsed 28.913 secs
+[TRAIN MLM 1488, 0005, 29000 / 0010] loss: 0.036921, elapsed 35.741 secs
+[VALID MLM 1488, 0005, 29000 / 0010] loss: 0.109481, elapsed 28.327 secs
+[TRAIN MLM 1988, 0005, 29500 / 0010] loss: 0.054046, elapsed 35.838 secs
+[VALID MLM 1988, 0005, 29500 / 0010] loss: 0.109381, elapsed 28.189 secs
+[TRAIN MLM 2488, 0005, 30000 / 0010] loss: 0.045186, elapsed 35.648 secs
+[VALID MLM 2488, 0005, 30000 / 0010] loss: 0.109808, elapsed 28.503 secs
+[TRAIN MLM 2988, 0005, 30500 / 0010] loss: 0.069673, elapsed 35.768 secs
+[VALID MLM 2988, 0005, 30500 / 0010] loss: 0.109434, elapsed 28.459 secs
+[TRAIN MLM 3488, 0005, 31000 / 0010] loss: 0.040030, elapsed 36.414 secs
+[VALID MLM 3488, 0005, 31000 / 0010] loss: 0.109651, elapsed 28.278 secs
+[TRAIN MLM 3988, 0005, 31500 / 0010] loss: 0.052819, elapsed 35.014 secs
+[VALID MLM 3988, 0005, 31500 / 0010] loss: 0.109083, elapsed 28.188 secs
+[TRAIN MLM 4488, 0005, 32000 / 0010] loss: 0.039801, elapsed 35.576 secs
+[VALID MLM 4488, 0005, 32000 / 0010] loss: 0.108957, elapsed 29.428 secs
+[TRAIN MLM 4988, 0005, 32500 / 0010] loss: 0.045328, elapsed 35.464 secs
+[VALID MLM 4988, 0005, 32500 / 0010] loss: 0.110110, elapsed 28.252 secs
+[TRAIN MLM 5488, 0005, 33000 / 0010] loss: 0.042702, elapsed 35.597 secs
+[VALID MLM 5488, 0005, 33000 / 0010] loss: 0.108927, elapsed 28.242 secs
+[TRAIN MLM 5988, 0005, 33500 / 0010] loss: 0.063488, elapsed 35.184 secs
+[VALID MLM 5988, 0005, 33500 / 0010] loss: 0.108775, elapsed 28.858 secs
+[TRAIN MLM 6488, 0005, 34000 / 0010] loss: 0.022052, elapsed 35.821 secs
+[VALID MLM 6488, 0005, 34000 / 0010] loss: 0.108371, elapsed 28.687 secs
+training time for one epoch: 860.964825630188
+[TRAIN MLM 0110, 0006, 34500 / 0010] loss: 0.037995, elapsed 35.857 secs
+[VALID MLM 0110, 0006, 34500 / 0010] loss: 0.109285, elapsed 28.152 secs
+[TRAIN MLM 0610, 0006, 35000 / 0010] loss: 0.050786, elapsed 34.444 secs
+[VALID MLM 0610, 0006, 35000 / 0010] loss: 0.110019, elapsed 27.657 secs
+[TRAIN MLM 1110, 0006, 35500 / 0010] loss: 0.054815, elapsed 35.353 secs
+[VALID MLM 1110, 0006, 35500 / 0010] loss: 0.110156, elapsed 28.136 secs
+[TRAIN MLM 1610, 0006, 36000 / 0010] loss: 0.046427, elapsed 35.887 secs
+[VALID MLM 1610, 0006, 36000 / 0010] loss: 0.110229, elapsed 28.231 secs
+[TRAIN MLM 2110, 0006, 36500 / 0010] loss: 0.045224, elapsed 35.534 secs
+[VALID MLM 2110, 0006, 36500 / 0010] loss: 0.110343, elapsed 28.569 secs
+[TRAIN MLM 2610, 0006, 37000 / 0010] loss: 0.018589, elapsed 36.067 secs
+[VALID MLM 2610, 0006, 37000 / 0010] loss: 0.110161, elapsed 28.389 secs
+[TRAIN MLM 3110, 0006, 37500 / 0010] loss: 0.055474, elapsed 35.689 secs
+[VALID MLM 3110, 0006, 37500 / 0010] loss: 0.110326, elapsed 28.207 secs
+[TRAIN MLM 3610, 0006, 38000 / 0010] loss: 0.018132, elapsed 35.961 secs
+[VALID MLM 3610, 0006, 38000 / 0010] loss: 0.110811, elapsed 28.313 secs
+[TRAIN MLM 4110, 0006, 38500 / 0010] loss: 0.024160, elapsed 35.664 secs
+[VALID MLM 4110, 0006, 38500 / 0010] loss: 0.110280, elapsed 28.229 secs
+[TRAIN MLM 4610, 0006, 39000 / 0010] loss: 0.030849, elapsed 36.043 secs
+[VALID MLM 4610, 0006, 39000 / 0010] loss: 0.110157, elapsed 28.327 secs
+[TRAIN MLM 5110, 0006, 39500 / 0010] loss: 0.047710, elapsed 35.771 secs
+[VALID MLM 5110, 0006, 39500 / 0010] loss: 0.110098, elapsed 28.119 secs
