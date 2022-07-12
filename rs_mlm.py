@@ -1,16 +1,16 @@
 import random
 from configuration import Configuration
-from train import train_mlm, train_cls
+from train import train_mlm
 
 # mlm search
 
 n_epochs_mlm = 10
-model_size_list = ['mini', 'base', 'large']
+model_size_list = ['base', 'large', 'mini']
 lr_list = [1e-7, 1e-6, 1e-5, 5e-5, 1e-4, 1e-3]
 wd_list = [1e-4, 1e-3, 1e-2, 5e-2]
 
 for model_size in model_size_list:
-    for i in range(10):
+    for i in range(5):
         print(i, model_size)
         # try:
         mlm_threshold = random.randint(0,10) * 0.1
