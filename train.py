@@ -332,6 +332,8 @@ def train_cls_enhanced(config):
                         'train_loss': train_loss,
                         'valid_loss': valid_loss
                     }, MODEL_CLS_DIR+'model_cls.pth')
+
+                    print('checkpoint saved')
                 start = time.time()
         epoch_end = time.time()
         print('training time for one epoch:', epoch_end-epoch_start)
