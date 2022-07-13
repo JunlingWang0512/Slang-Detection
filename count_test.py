@@ -77,13 +77,13 @@ if __name__ == '__main__':
     df.to_csv('models_results/count_test_' + model_size + '_enhanced.csv')
 
 
-    # baseline
-    model_size = 'base'
-    model_dir = 'model_1657732051'
-    with_adapter = 'yes'
+    # # baseline
+    # model_size = 'base'
+    # model_dir = 'model_1657732051'
+    # with_adapter = 'yes'
 
-    dict_test = {'model_size': model_size, 'test_model_dir': model_dir, 'baseline_with_adapter': with_adapter}
-    config = Configuration(dict_test)
-    key_list, test_loss_list = count_test_baseline_cls(config)
-    df = pd.DataFrame({'count': key_list, 'test_loss':test_loss_list})
-    df.to_csv('models_results/count_test_' + model_size + '_baseline_'+ with_adapter+'.csv')
+    # dict_test = {'model_size': model_size, 'test_model_dir': model_dir, 'baseline_with_adapter': with_adapter}
+    # config = Configuration(dict_test)
+    # key_list, test_loss_list = count_test_baseline_cls(config)
+    # df = pd.DataFrame({'count': key_list, 'test_loss':test_loss_list})
+    # df.to_csv('models_results/count_test_' + model_size + '_baseline_'+ with_adapter+'.csv')
