@@ -168,8 +168,8 @@ def train_cls_baseline(config):
     trainset_cls = CLSDataset(train_cls, tokenizer)
     evalset_cls = CLSDataset(eval_cls, tokenizer)
 
-    trainloader_cls = torch.utils.data.DataLoader(trainset_cls, batch_size = 16, shuffle = True)
-    evalloader_cls = torch.utils.data.DataLoader(evalset_cls, batch_size = 16, shuffle = True)
+    trainloader_cls = torch.utils.data.DataLoader(trainset_cls, batch_size = 4, shuffle = True)
+    evalloader_cls = torch.utils.data.DataLoader(evalset_cls, batch_size = 4, shuffle = True)
 
     optimizer_cls = AdamW(model_cls.parameters(), lr = config.lr_cls, weight_decay = config.wd_cls)
 
