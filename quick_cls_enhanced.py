@@ -12,11 +12,11 @@ print(C.DEVICE)
 n_epochs_cls = 10
 model_size_list = ['base', 'mini', 'large']
 with_adapter_list = ['yes', 'no']
-lr_cls = 1e-6
+lr_cls = 1e-7
 wd_cls = 1e-3
 mlm_adapter_name_list = ['model_1657682495', 'model_1657692000', 'model_1657659496']
 
-dict_list_model = {'n_epochs_cls':[], 'lr_cls':[], 'wd_cls':[], 'model_size':[], 'test_model_dir':[], 'test_loss':[]}
+dict_list_model = {'n_epochs_cls':[], 'lr_cls':[], 'wd_cls':[], 'model_size':[], 'test_model_dir':[], 'test_loss':[], 'mlm_adapter_name':[]}
 for i in range(len(model_size_list)):
     model_size = model_size_list[i]
     mlm_adapter_name = mlm_adapter_name_list[i]

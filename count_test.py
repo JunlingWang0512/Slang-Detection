@@ -5,7 +5,7 @@ from configuration import Configuration
 from dataset_mlm_cls import MLMDateset, CLSDataset
 from train import evaluate, init_tokenizer_model
 
-def test_baseline_cls(config):
+def count_test_baseline_cls(config):
     TEST_MODEL_DIR = 'models_cls_baseline_'+ config.model_size + '/' +config.test_model_dir +'/'
     
     tokenizer, model_cls_test = init_tokenizer_model(config)
@@ -21,12 +21,21 @@ def test_baseline_cls(config):
     model_cls_test.load_state_dict(torch.load(TEST_MODEL_DIR+'state_dict.pth'))
     model_cls_test.to(C.DEVICE)
 
-    testset_cls = CLSDataset(test_cls, tokenizer)
-    testloader_cls = torch.utils.data.DataLoader(testset_cls, batch_size = 16, shuffle = True)
-
-    test_loss = evaluate(model_cls_test, testloader_cls)
-    print(test_loss)
-    return test_loss
+    test_data = pd.read_csv('data/slang_test_count.csv')
+    test_data['label'] = 1
+    # print(test_data)
+    test_group = test_data.groupby('count')
+    key_list = []
+    test_loss_list = []
+    for key, df_group in test_group:
+        df_group = df_group.reset_index(drop = True)
+        testset_cls = CLSDataset(df_group, tokenizer)
+        testloader_cls = torch.utils.data.DataLoader(testset_cls, batch_size = 16, shuffle = True)
+        test_loss = evaluate(model_cls_test, testloader_cls)
+        print(key, test_loss)
+        key_list.append(key)
+        test_loss_list.append(test_loss)
+    return key_list, test_loss_list
 
 def count_test_enhanced_cls(config):
     print(C.DEVICE)
@@ -39,12 +48,14 @@ def count_test_enhanced_cls(config):
     model_cls_test.load_state_dict(torch.load(TEST_MODEL_DIR+'state_dict.pth'))
     model_cls_test.to(C.DEVICE)
 
-    test_data = pd.read_csv('data/slang_test.csv')
+    test_data = pd.read_csv('data/slang_test_count.csv')
     test_data['label'] = 1
+    # print(test_data)
     test_group = test_data.groupby('count')
     key_list = []
     test_loss_list = []
     for key, df_group in test_group:
+        df_group = df_group.reset_index(drop = True)
         testset_cls = CLSDataset(df_group, tokenizer)
         testloader_cls = torch.utils.data.DataLoader(testset_cls, batch_size = 16, shuffle = True)
         test_loss = evaluate(model_cls_test, testloader_cls)
@@ -55,9 +66,23 @@ def count_test_enhanced_cls(config):
 
 
 if __name__ == '__main__':
+    # enhanced
     model_size = 'base'
-    model_dir = 'model_1657724797'
+    model_dir = 'model_1657732051'
 
     dict_test = {'model_size': model_size, 'test_model_dir': model_dir}
     config = Configuration(dict_test)
-    count_test_enhanced_cls(config)
+    key_list, test_loss_list = count_test_enhanced_cls(config)
+    df = pd.DataFrame({'count': key_list, 'test_loss':test_loss_list})
+    df.to_csv('count_test_' + model_size + '_enhanced.csv')
+
+
+    # baseline
+    model_size = 'base'
+    model_dir = 'model_1657732051'
+
+    dict_test = {'model_size': model_size, 'test_model_dir': model_dir}
+    config = Configuration(dict_test)
+    key_list, test_loss_list = count_test_enhanced_cls(config)
+    df = pd.DataFrame({'count': key_list, 'test_loss':test_loss_list})
+    df.to_csv('count_test_' + model_size + '_enhanced.csv')
