@@ -1,8 +1,10 @@
-# Environment Build Up
-For Linux system, use the command below to build up the conda environment.
+# 
+## Environment Build Up and Activate
+For Linux system, use the command below to build up the conda environment and then activate the environment.
 
 ```
 conda env create -f environment.yml
+conda activate csnlp
 ```
 
 # Slang-Detection
