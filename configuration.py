@@ -96,7 +96,6 @@ class Configuration(object):
         parser.add_argument('--wd_cls', type = float, default = 1e-2, help = 'weight decay')
         parser.add_argument('--baseline_with_adapter', default = 'yes', help = 'for baseline model: Whether to add adpater to cls')
         parser.add_argument('--mlm_adapter_name', default = None, help = 'for enhanced model: The adapter name to use when applying mlm')
-        # parser.add_argument('--update_adapter_cls', default = 'yes', help = 'for enhanced model: whether to update adapter when doing cls')
         
         # cls test (model_size)
         parser.add_argument('--test_model_dir', default = None, help = 'cls model dir')
