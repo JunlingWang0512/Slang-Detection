@@ -5,14 +5,15 @@ from train import train_cls_baseline
 from configuration import CONSTANTS as C
 from eval_test import test_baseline_cls
 import os
+import time
 
 print(C.DEVICE)
-
+all_start = time.time()
 # baseline without adapter
-n_epochs_cls = 10
-model_size_list = ['base', 'mini', 'large']
+n_epochs_cls = 20
+model_size_list = ['mini']
 with_adapter_list = ['yes', 'no']
-lr_cls = 2e-7
+lr_cls = 2.5e-7
 wd_cls = 1e-3
 
 dict_list_model = {'baseline_with_adapter':[], 'n_epochs_cls':[], 'lr_cls':[], 'wd_cls':[], 'model_size':[], 'test_model_dir':[], 'test_loss':[]}
@@ -31,4 +32,6 @@ for model_size in model_size_list:
         dict_list_model['test_loss'].append(test_loss)
         if not os.path.exists('models_result/'):
             os.makedirs('models_result/') 
-        pd.DataFrame(dict_list_model).to_csv('models_result/quick_cls_summary_baseline.csv')
+        pd.DataFrame(dict_list_model).to_csv('models_result/quick_cls_summary_baseline_'+str(int(time.time()))+'.csv')
+
+print("time elapsed", time.time()-all_start)

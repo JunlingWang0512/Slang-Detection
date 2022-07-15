@@ -109,11 +109,14 @@ def human_eval_csv(metric_name):
     new_metrics = abs(np.array(df_metrics[metric_name]) - np.mean(np.array(df_metrics[metric_name])))
     avg_idx = np.argmin(new_metrics)
     min_idx = np.argmin(np.array(df_metrics[metric_name]))
-    
+
+    # print(df_paras.loc[max_idx])
+    print(df_paras.loc[avg_idx])
+    # print(df_paras.loc[min_idx])
 
     df_max = pd.read_csv(C.DATA_DIR+df_paras.loc[max_idx, 'generate_name'], index_col=0)
-    df_avg = pd.read_csv(C.DATA_DIR+df_paras.loc[min_idx, 'generate_name'], index_col=0)
-    df_min = pd.read_csv(C.DATA_DIR+df_paras.loc[avg_idx, 'generate_name'], index_col=0)
+    df_avg = pd.read_csv(C.DATA_DIR+df_paras.loc[avg_idx, 'generate_name'], index_col=0)
+    df_min = pd.read_csv(C.DATA_DIR+df_paras.loc[min_idx, 'generate_name'], index_col=0)
 
     word_set = set(df_max['word']).intersection(df_avg['word']).intersection(df_min['word'])
 
@@ -161,6 +164,21 @@ def joined_augment():
     joined_augment=joined_augment.dropna(axis=0).reset_index(drop = True).drop(columns = ['index'])
     joined_augment.to_csv(C.DATA_DIR + C.AUG_RESULT_CSV)
 
+def metric_final_cal(metric_name):
+    generate_name = 'aug_final/avg_'+metric_name + '.csv'
+    metric_list = ['bleu','perplexity','frequency']
+    # metric_list = ['frequency']
+    for metric in metric_list:
+        dict_temp_metric = {'metric':metric,"eval_name":generate_name,'refer_name':'slang_augment_50000_updated.csv'}
+        config = Configuration(dict_temp_metric)
+        metric_cal = get_metric(config)
+        if metric == 'bleu':
+            print('bleu', metric_cal['bleu'])
+        if metric == 'perplexity':
+            print('perplexity', metric_cal['mean_perplexity'])
+        if metric == 'frequency':
+            print('count_rate', metric_cal[1])
+
 if __name__ == '__main__':
     # random_search_paras()
     # metric_cal()
@@ -169,4 +187,7 @@ if __name__ == '__main__':
     # human_eval_csv('perplexity')
     # human_eval_csv('count')
     # human_eval_csv('count_rate')
-    avg_para_augment()
+    # avg_para_augment()
+    metric_final_cal('bleu')
+    metric_final_cal('perplexity')
+    metric_final_cal('count_rate')

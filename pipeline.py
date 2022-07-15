@@ -5,7 +5,7 @@ from data_extraction import extraction_csv
 from data_augmentation import data_trigger_csv, model_init, generate_store
 from random_search import rsearch_trigger_csv, random_search_paras, metric_cal, human_eval_csv, avg_para_augment, joined_augment
 from dataset_mlm_cls import augment_split_csv, data_cls_csv
-from train import train_mlm, train_cls
+from train import train_mlm
 
 if __name__=='__main__':
     config = Configuration.parse_cmd()

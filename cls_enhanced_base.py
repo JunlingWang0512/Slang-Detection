@@ -10,7 +10,7 @@ print(C.DEVICE)
 
 # baseline without adapter
 n_epochs_cls = 10
-model_size_list = ['base', 'mini', 'large']
+model_size_list = ['base']
 with_adapter_list = ['yes', 'no']
 lr_cls = 1e-7
 wd_cls = 1e-3
