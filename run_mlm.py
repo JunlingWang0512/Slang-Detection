@@ -3,7 +3,7 @@ from train import train_mlm
 
 # mlm search
 
-n_epochs_mlm = 10
+n_epochs_mlm = 20
 model_size_list = ['large', 'base', 'mini']
 lr_mlm = 1e-5
 wd_mlm = 1e-2

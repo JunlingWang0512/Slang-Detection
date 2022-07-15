@@ -1,4 +1,5 @@
-# 
+# Model Enhancement with Data Augmentation for Slang Detection
+Computational Semantics Project, ETH Zürich
 ## Environment Build Up and Activate
 For Linux system, use the command below to build up the conda environment and then activate the environment.
 
@@ -7,66 +8,38 @@ conda env create -f environment.yml
 conda activate csnlp
 ```
 
-# Slang-Detection
-Slang Detection, semantic course, ethz
+We can use the pipeline.py file to process different parts of the project.
 
-# Data extraction
-TODO:
-1. optimize the distribution of the words
+## Data extraction
 
-# Data Augmentation
+Use the file data_processing.py
 
-method: GPT2 + top_k/top_p/beam
+## Data Augmentation
 
-need to test which method and which parameter is better. 
+method: GPT2 + top_k/top_p
 
-generation speed: about 4min on CPU, batchsize = 32.
+metrics: bleu, perplexity, frequency
 
-TODO:
-1. Find a method to test the generation quality(BLEU, diversity:word freqency, perplexity, hugging face, human evaluation, lexical differences, MAUVE). 
-2. Do grid search / random search on the parameters, find the dataset with best quality. write script
-3. random 100 augmented data for human evaluation
+to get the final augmentation examples.
 
-(OPTIONAL)
-1. If we can pretrain on GPT2 and then generate.
-2. Generate on other datasets.
+```
+python pipeline.py --pipeline final_augmentation
+```
 
+## Mask Language Modelling
+run rs_mlm.py for random search for parameters for MLM.
 
-# MLM and CLS
+run run_mlm.py for final mask language modellig adpater training and storing.
 
-TODO:
-1. add evaluation and test process.
-2. test on GPU.
-3. add LR scheduler and different opt method.
-4. add some special mask for slang.
+## Classification
 
+### Baseline Model
+run rs_cls_baseline.py for random search baseline.
 
+run cls_baseline_base.py and cls_baseline_mini.py for final baseline.
 
-lr
-weight decay
-batch size 4-8 比较好
-validation+early stop
+### Enhanced Model
 
-1. 主结果
+run rs_cls_enhanced.py for random search enhanced model.
 
-2. test数据按sample个数分类
-
-3. baseline + blank adapter  --> 证明slang确实放进了adapter里面
-
-4. tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-bertlarge, bert --- 对不同大小的模型都能起作用
-
-5. adapter size的影响(config: para: dimension reduct)
-
-
-
-
-step1: 划分数据 ty
-step2：MLM: freeze bert全部参数，跑一个bert base的，跑bert large，跑bert mini---于是得到三个adapter
-step3：load adapter跑bert base，跑bert large，跑bert mini 逐个调参
-step4:load empty adapter跑baseline
-step5:不load adapter 跑另一个baseline
-ty调参写报告
-
-
-1. 
+run cls_enhanced_base.py and cls_enhanced_mini.py for final enhanced model.
